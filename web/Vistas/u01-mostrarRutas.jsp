@@ -47,7 +47,7 @@ String fecha = request.getParameter("fecha");
                 <td><%=ruta.getFecha()%></td>
                 <td><%=ruta.getPrecio()%></td>
                 <td>
-                    <a class="btnAsiento"  name="btnAsiento" onclick="EscoAsiento(<%=ruta.getItinerarios_id()%>)">hjhg</a>
+                    <a class="btnAsiento"  name="btnAsiento" onclick="EscoAsiento(<%=ruta.getItinerarios_id()%>)">Ver asientos</a>
                 </td>
             </tr>
             <% }%>

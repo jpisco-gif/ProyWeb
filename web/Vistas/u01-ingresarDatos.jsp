@@ -104,7 +104,12 @@
                         </tr>
                     </table>
                     <div class="submit">
-                        <input type="submit" name="accion" value="Agregar">
+                        <p>
+                            <input type="submit" name="accion" value="Agregar">
+                        </p>
+                        <p>
+                            <input type="submit" name="accion" values="pagar">
+                        </p>
                     </div>
                 </form>
             </div>

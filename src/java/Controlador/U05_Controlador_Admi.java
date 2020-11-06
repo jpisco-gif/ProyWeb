@@ -7,12 +7,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
+@WebServlet(name = "U05_Controlador_Admi", urlPatterns = {"/U05_Controlador_Admi"})
 public class U05_Controlador_Admi extends HttpServlet {
     
     String listar="Vistas/U05-G-L.jsp";
@@ -57,6 +58,7 @@ public class U05_Controlador_Admi extends HttpServlet {
       String acceso="";
        String accion=request.getParameter("accion");
        if (accion.equalsIgnoreCase("listar")){
+           System.out.println("lskjdfsdfsdf");
         acceso=listar;
        }
        

@@ -12,7 +12,7 @@
 <html class="general">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="../Css/newcss.css">
         <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 
         <title>Comprar pasaje</title>
@@ -69,7 +69,7 @@
                 </tr>
                 <%
                     U01_RutasDao dao = new U01_RutasDao();
-                    List<U01_Ruta> list = dao.consultar_ruta();
+                    List<U01_Ruta> list = dao.consultar_todos();
                     Iterator<U01_Ruta> iter = list.iterator();
                     U01_Ruta ruta = null;
                     while (iter.hasNext()) {
