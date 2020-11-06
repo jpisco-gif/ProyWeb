@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author V330
  */
-public class NewServlet extends HttpServlet {
+public class U03A_Controlador extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +35,10 @@ public class NewServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title>Servlet U03A_Controlador</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet U03A_Controlador at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
