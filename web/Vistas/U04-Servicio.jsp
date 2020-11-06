@@ -31,9 +31,14 @@
                          if (sesion.getAttribute("usuario")!=null && sesion.getAttribute("contraseña")!=null) {
                              usuario=sesion.getAttribute("usuario").toString();
                              contraseña=sesion.getAttribute("contraseña").toString();
-                             out.println("<li class='menu__item'>");
-                           out.println("<a class='menu__link' href='../Vistas/u04-logout.jsp'>Logout</a>");
-                           out.println("</li>"); 
+                              out.println("<li class='menu__item'>");
+                                    out.println("<a class='menu__link' href='../Vistas/u04-logout.jsp'>Logout</a>");
+                                    out.println("</li>"); 
+                                    out.println("<li class='menu__item'>");
+                                    out.println("<a class='menu__link'>");
+                                    out.println(usuario);
+                                    out.println("</a>");
+                                    out.println("</li>"); 
                                                          
                      } else {  
                            out.println("<li class='menu__item'>");
@@ -51,11 +56,11 @@
     </header>
     <div class="banner">
         <ul>
-            <li><img src="../U04-img/arequipa.jpg" alt="" class="banner__img"></li>
-            <li><img src="../U04-img/Ancash.jpg" alt="" class="banner__img"></li>
-            <li><img src="../U04-img/ica.jpg" alt="" class="banner__img"></li>
-            <li><img src="../U04-img/cuzco.jpg" alt="" class="banner__img"></li>
-            <li><img src="../U04-img/huancayo.jpg" alt="" class="banner__img"></li>
+            <li><img src="../Imagenes/arequipa.jpg" alt="" class="banner__img"></li>
+            <li><img src="../Imagenes/Ancash.jpg" alt="" class="banner__img"></li>
+            <li><img src="../Imagenes/ica.jpg" alt="" class="banner__img"></li>
+            <li><img src="../Imagenes/cuzco.jpg" alt="" class="banner__img"></li>
+            <li><img src="../Imagenes/huancayo.jpg" alt="" class="banner__img"></li>
         </ul>
         <div class="contenedor">
             <h2 class="banner__titulo">La mejor seguridad de buses del Peru</h2>
@@ -67,19 +72,19 @@
         <div class="contenedor">
             <section class="info">
                 <article class="info__columna">
-                    <img src="../U04-img/carro.png" alt="" class="info__img">
+                    <img src="../Imagenes/carro.png" alt="" class="info__img">
                     <h2 class="info__titulo">!No esperes! </h2>
                     <p class="info__txt">Lo que Necesitas saber para viajar con toda seguridad.</p>
                     <p class="infor__txt">!Informate Aqui!</p>
                 </article>
                 <article class="info__columna">
-                    <img src="../U04-img/reconocer.png" alt="" class="info__img">
+                    <img src="../Imagenes/reconocer.png" alt="" class="info__img">
                     <h2 class="info__titulo">!Excelente!</h2>
                     <p class="info__txt">La excelencia de la calidad con todos los protocolos</p>
                     <p class="infor__txt">!CLIC Aqui!</p>
                 </article>
                 <article class="info__columna">
-                    <img src="../U04-img/compra.png" alt="" class="info__img">
+                    <img src="../Imagenes/compra.png" alt="" class="info__img">
                     <h2 class="info__titulo">!Aprovecha!</h2>
                     <p class="info__txt">Descarga la app muy pronto y con descuentos</p>
                     <p class="infor__txt">!Conoce mas Aqui!</p>
@@ -93,7 +98,7 @@
                     </p>
                 </div>
                 <div>
-                    <embed src="../U04-img/servicios.mp4" type="" width="700" height="500">
+                    <embed src="../Imagenes/servicios.mp4" type="" width="700" height="500">
                 </div>
 
 

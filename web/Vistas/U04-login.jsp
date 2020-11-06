@@ -11,7 +11,7 @@
     <link href="https://file.myfontastic.com/t5tNwfwUapz4yDzK3B6sfe/icons.css" rel="stylesheet">
 <title>Iniciar Sesion</title>
 </head>
-<body background="../U04-img/huancayo.jpg" style=" display: block; max-width: 100%">
+<body background="../Imagenes/huancayo.jpg" style=" display: block; max-width: 100%">
     <header class="header">
         <div class="contenedor">
             <h1 class="logo">Llama bus</h1>

@@ -70,30 +70,29 @@ public class U04_CuentaDao extends U04_Cuenta{
         }
     }
     
-    public int regitrar(int rol_id, String usuario, String contraseña, String email) throws ClassNotFoundException{
+   public boolean regitrar(String usuario, String contraseña, String email) throws ClassNotFoundException{
 
         Class.forName("com.mysql.jdbc.Driver");
         
         try (Connection y = DriverManager
-            .getConnection("jdbc:mysql://localhost:3306/llamabus?zeroDateTimeBehavior=convertToNull&useSSL=false&useTimezone=true&serverTimezone=UTC", "root", "Peruano2020");
+            .getConnection("jdbc:mysql://localhost:3306/llamabus?zeroDateTimeBehavior=convertToNull&useSSL=false&useTimezone=true&serverTimezone=UTC", "root", "");
 
             // Step 2:Create a statement using connection object
             PreparedStatement x = y
-            .prepareStatement("insert into cuentas(rol_id, usuario, contraseña, email) values(?,?,?,?)")) {
-            x.setInt(1, rol_id);
-            x.setString(2, usuario);
-            x.setString(3, contraseña);
-            x.setString(4, email);
+            .prepareStatement("insert into cuentas(rol_id, usuario, contraseña, email)  values(1,?,?,?)")) {
+            x.setString(1, usuario);
+            x.setString(2, contraseña);
+            x.setString(3, email);
             
             if (x.executeUpdate()==1) {
-                return 1;
+                return true;
             }
   
             
         }catch(Exception e){
                     System.out.println("error"+e);  
            }
-        return 0;
+        return false;
          
         }
 

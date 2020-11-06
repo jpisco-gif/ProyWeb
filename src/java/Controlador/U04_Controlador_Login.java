@@ -55,7 +55,7 @@ public class U04_Controlador_Login extends HttpServlet{
                     sesion.setAttribute("usuario", usuario);
                     sesion.setAttribute("contraseña", contraseña);                   
                     sesion.setAttribute("rol_id", "1");
-                    response.sendRedirect("/web-final/vistas/vista_usuario/Vistas/U04-index.jsp");
+                    response.sendRedirect("/ProyWeb/Vistas/U04-index.jsp");
                     break;
                     
                 case 2:
@@ -63,14 +63,14 @@ public class U04_Controlador_Login extends HttpServlet{
                     sesion.setAttribute("usuario", usuario);
                     sesion.setAttribute("contraseña", contraseña);
                     sesion.setAttribute("rol_id", "2");
-                    response.sendRedirect("/web-final/vistas/vista_administrador/index.jsp");
+                    response.sendRedirect("/ProyWebFin/vistas/index.jsp");
                     break;
                     
                 case 3:
                     sesion.setAttribute("usuario", usuario);
                     sesion.setAttribute("contraseña", contraseña);
                     sesion.setAttribute("rol_id", "3");
-                    response.sendRedirect("/web-final/vistas/vista_gerencia/vistas/U05-index.jsp");
+                    response.sendRedirect("/ProyWebFin/vistas/U05-index.jsp");
                     break;
                 default:
                     out.println("<script type=\"text/javascript\">");

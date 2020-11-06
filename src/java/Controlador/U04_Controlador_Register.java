@@ -37,52 +37,26 @@ public class U04_Controlador_Register extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         HttpSession sesion= request.getSession(false);
-        PrintWriter out= response.getWriter();
-        
-        int rol_id= Integer.parseInt(request.getParameter("rol_id"));
+        PrintWriter out= response.getWriter(); 
         String usuario = request.getParameter("usuario");
         String contraseña = request.getParameter("contraseña");
         String email= request.getParameter("email");
-        U04_CuentaDao loginBean= new U04_CuentaDao();
-        loginBean.setRol_id(rol_id);
+        U04_CuentaDao loginBean= new U04_CuentaDao(); 
         loginBean.setEmail(usuario);
         loginBean.setContraseña(contraseña);
         loginBean.setFullname(email);
         
         try {
-            switch (loginDao.regitrar(rol_id, usuario, contraseña, email)) {
-                case 1:
-                    sesion.setAttribute("usuario", usuario);
+            if (loginDao.regitrar(usuario, contraseña, email)) {
+                sesion.setAttribute("usuario", usuario);
                     sesion.setAttribute("contraseña", contraseña); 
-                    sesion.setAttribute("email", email);    
-                    sesion.setAttribute("rol_id", "1");
-                    response.sendRedirect("Vistas/U04-index.jsp");
-                    break;
-                    
-                case 2:
-                    
-                    sesion.setAttribute("usuario", usuario);
-                    sesion.setAttribute("contraseña", contraseña);
-                    if (usuario.equals("admin")) {
-                        sesion.setAttribute("rol_id", "2");
-                    }                  
-                    response.sendRedirect("Vistas/U04-login.jsp");
-                    break;
-                    
-                case 3:
-                    sesion.setAttribute("usuario", usuario);
-                    sesion.setAttribute("contraseña", contraseña);
-                    if (usuario.equals("gerente")) {
-                        sesion.setAttribute("rol_id", "3");
-                    }
-                    response.sendRedirect("Vistas/U04-login.jsp");
-                    break;
-                default:
-                    out.println("<script type=\"text/javascript\">");
+                    sesion.setAttribute("email", email);  
+                    response.sendRedirect("/ProyWeb/Vistas/U04-login.jsp");
+            } else {
+                out.println("<script type=\"text/javascript\">");
                     out.println("alert('Error al registrarte, intente denuevo');");
                     out.println("location='Vistas/U04-login.jsp';");
                     out.println("</script>");
-                    
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(U04_Controlador_Register.class.getName()).log(Level.SEVERE, null, ex);
