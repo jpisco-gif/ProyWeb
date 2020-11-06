@@ -11,19 +11,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author V330
- */
+@WebServlet(name = "U03A_Controlador", urlPatterns = {"/U03A_Controlador"})
 public class U03A_Controlador extends HttpServlet {
 
-    String listarEn = "Web Pages/Vistas/U03A_listarEn.jsp";
-    String addEn = "Web-Pages/Vistas/U03A_addEn.jsp";
-    String editEn = "Web-Pages/Vistas/U03A_editEn.jsp";
+    String listarEn = "Vistas/U03A-listarEn.jsp";
+    String addEn = "Vistas/U03A-addEn.jsp";
+    String editEn = "Vistas/U03A-editEn.jsp";
     U03A_EncomiendaDao end = new U03A_EncomiendaDao();
     U03A_Encomienda en = new U03A_Encomienda();
 
@@ -103,8 +101,8 @@ public class U03A_Controlador extends HttpServlet {
             end.edit(en);
             acceso = listarEn;
         }
-        RequestDispatcher vista = request.getRequestDispatcher(acceso);
-        vista.forward(request, response);
+        RequestDispatcher vista=request.getRequestDispatcher(acceso);
+       vista.forward(request,response);
     }
 
     /**

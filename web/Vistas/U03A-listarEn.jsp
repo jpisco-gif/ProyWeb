@@ -52,7 +52,7 @@
                         <td><%=en.getRecoge_ape()%></td>
                         <td><%=en.getRecoge_dni()%></td>
                         <td><%=en.getLugar_recojo()%></td>
-                        <td><a href="U03A_Controlador?accion=editarEn&id=<%=en.getId()%> " >editar</a> </td>
+                        <td><a href="../U03A_Controlador?accion=editarEn&id=<%=en.getId()%> " >editar</a> </td>
                         <td><a href="U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" >Eliminar</a> </td>                            
                     </tr>
                 <%}%>

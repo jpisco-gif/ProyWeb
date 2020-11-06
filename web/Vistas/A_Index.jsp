@@ -30,7 +30,7 @@
                         </li>
                         <li class="usuarios"><a href="U03A_Controlador?accion=listar" onclick="" target="cabecera" >Usuarios</a></li>
                         <li class="viajes "><a href="user02-viajes.html">Viajes</a></li>
-                        <li class="encomiendas"><a href="U03A_listarEn.jsp" >Encomiendas</a></li>
+                        <li class="encomiendas"><a href="U03A-listarEn.jsp" >Encomiendas</a></li>
                         <li class="reporte detallado"><a href="user02-perfil.html">Perfil</a></li>
                     </ul>
                 </nav><!--  
