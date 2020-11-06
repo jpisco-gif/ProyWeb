@@ -4,9 +4,17 @@
         <servlet-name>U03A_Controlador</servlet-name>
         <servlet-class>Controlador.U03A_Controlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>U02_Controlador</servlet-name>
+        <servlet-class>Controlador.U02_Controlador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>U03A_Controlador</servlet-name>
         <url-pattern>/U03A_Controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>U02_Controlador</servlet-name>
+        <url-pattern>/U02_Controlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
