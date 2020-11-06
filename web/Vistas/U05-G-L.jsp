@@ -24,14 +24,22 @@
                         <th>contraseña</th>
                         <th>email</th>
                         
-                       
+                        <th>persona_id</th>
+                        <th>nombres</th>
+                        <th>apellido_paterno</th>
+                        <th>apellido_materno</th>
+                        <th>sexo</th>
+                        <th>telefono</th>
+                        <th>edad</th>
+                        <th>documento_id</th>
+                        <th>cod_documento</th>
                         <th>modificar</th>
                     </tr>
                     
                 </thead>
                 <%
                 U05_AdmiDao dao=new U05_AdmiDao();
-                List<U05_Admi> list=dao.listar2();
+                List<U05_Admi> list=dao.listar();
                 Iterator<U05_Admi> iter=list.iterator();
                 U05_Admi per=null;
                 while(iter.hasNext())
@@ -46,7 +54,15 @@
                         <td><%=per.getContraseña() %></td>
                         <td><%=per.getEmail() %></td>
  
-                        
+                        <td><%=per.getPersona_id() %></td>
+                        <td><%=per.getNombres() %></td>
+                        <td><%=per.getApellido_paterno() %></td>
+                        <td><%=per.getApellido_materno() %></td>
+                        <td><%=per.getSexo() %></td>
+                        <td><%=per.getTelefono() %></td>
+                        <td><%=per.getEdad() %></td>
+                        <td><%=per.getDocumento_id() %></td>
+                        <td><%=per.getCod_documento() %></td>
                         <td>
                             <a href="U05_Controlador_Admi?accion=editar&cuenta_id=<%=per.getCuenta_id()%>">Editar Cuenta</a>
                             <a href="U05_Controlador_Admi?accion=editar2&cuenta_id=<%=per.getCuenta_id()%>">Editar Informacion personal</a>
