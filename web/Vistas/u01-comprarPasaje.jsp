@@ -62,8 +62,15 @@
             <table border="1">
                 <tr>
                     <td>Cod. itinerario</td>
+                    <td>id origen</td>
+                    <td>id destino</td>
+                    <td>Origen</td>
+                    <td>Destino</td>
+                    <td>P. embarque</td>
+                    <td>P. llegada</td>
                     <td>Duración</td>
                     <td>Fecha</td>
+                    <td>Hora</td>
                     <td>Precio</td>
                     <td>Asientos</td>
                 </tr>
@@ -77,8 +84,15 @@
                 %>
                 <tr>
                     <td><%=ruta.getItinerarios_id()%></td>
+                    <td><%=ruta.getId_origen()%></td>
+                    <td><%=ruta.getId_destino()%></td>
+                    <td><%=ruta.getOrigen()%></td>
+                    <td><%=ruta.getDestino()%></td>
+                    <td><%=ruta.getPuerta_embarque()%></td>
+                    <td><%=ruta.getPuerta_llegada()%></td>
                     <td><%=ruta.getDuracion()%></td>
                     <td><%=ruta.getFecha()%></td>
+                    <td><%=ruta.getHora()%></td>
                     <td><%=ruta.getPrecio()%></td>
                     <td>
                         <a class="btnAsiento"  name="btnAsiento" onclick="EscoAsiento(<%=ruta.getItinerarios_id()%>,<%=ruta.getPrecio()%>)"><input type="button" value="Ver asientos"></a>

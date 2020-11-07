@@ -22,6 +22,8 @@ String fecha = request.getParameter("fecha");
         <table border="1">
             <tr>
                 <td>Cod. itinerario</td>
+                <td>Origen</td>
+                <td>Destino</td>
                 <td>Puerta de llegada</td>
                 <td>Duración</td>
                 <td>Fecha</td>
@@ -42,6 +44,8 @@ String fecha = request.getParameter("fecha");
             %>
             <tr>
                 <td><%=ruta.getItinerarios_id()%></td>
+                <td><%=ruta.getOrigen()%></td>
+                <td><%=ruta.getDestino()%></td>
                 <td><%=ruta.getPuerta_llegada()%></td>
                 <td><%=ruta.getDuracion()%></td>
                 <td><%=ruta.getFecha()%></td>

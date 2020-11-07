@@ -12,6 +12,8 @@ package Modelo;
 public class U01_Ruta {
     private String fecha;
     private String hora;
+    private int id_origen;
+    private int id_destino;
     private String origen;
     private String destino;
     private int puerta_embarque;
@@ -23,9 +25,11 @@ public class U01_Ruta {
     public U01_Ruta() {
     }
 
-    public U01_Ruta(String fecha, String hora, String origen, String destino, int puerta_embarque, int puerta_llegada, int itinerarios_id, int duracion, double precio) {
+    public U01_Ruta(String fecha, String hora, int id_origen, int id_destino, String origen, String destino, int puerta_embarque, int puerta_llegada, int itinerarios_id, int duracion, double precio) {
         this.fecha = fecha;
         this.hora = hora;
+        this.id_origen = id_origen;
+        this.id_destino = id_destino;
         this.origen = origen;
         this.destino = destino;
         this.puerta_embarque = puerta_embarque;
@@ -34,6 +38,24 @@ public class U01_Ruta {
         this.duracion = duracion;
         this.precio = precio;
     }
+
+    public int getId_origen() {
+        return id_origen;
+    }
+
+    public void setId_origen(int id_origen) {
+        this.id_origen = id_origen;
+    }
+
+    public int getId_destino() {
+        return id_destino;
+    }
+
+    public void setId_destino(int id_destino) {
+        this.id_destino = id_destino;
+    }
+
+    
 
     public String getHora() {
         return hora;
