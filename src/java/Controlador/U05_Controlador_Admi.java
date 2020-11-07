@@ -19,8 +19,8 @@ public class U05_Controlador_Admi extends HttpServlet {
     String listar="Vistas/U05-G-L.jsp";
     String add="Vistas/U05-G-A1.jsp";
     String add2="Vistas/U05-G-A2.jsp";
-    String edit="vistas/U05-edit.jsp";
-    String edit2="vistas/U05-edit2.jsp";
+    String edit="Vistas/U05-G-E1.jsp";
+    String edit2="Vistas/U05-G-E2.jsp";
     U05_Admi p=new U05_Admi();
     U05_AdmiDao dao=new U05_AdmiDao();
     
