@@ -3,8 +3,10 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%
-    int itinerario_id = Integer.parseInt(request.getParameter("val"));
-    double precio = Double.parseDouble(request.getParameter("val2"));
+    //int itinerario_id = Integer.parseInt(request.getParameter("val"));
+    //double precio = Double.parseDouble(request.getParameter("val2"));
+    int itinerario_id = 1;
+    double precio = 2;
     
     U01_PasajeroDao dao = new U01_PasajeroDao();
     List<U01_Asiento> list = dao.consultarDisponibilidad(itinerario_id);//aqui van los atributos
@@ -13,12 +15,14 @@
 
 
 %>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/estilos.css">
+        
         <title>JSP Page</title>
     </head>
     <body>
@@ -30,7 +34,7 @@
                     <div class="asientos"> 
                         <div class="fila">
                             <%--=list.get(0).getDisponibilidad()--%>
-                            <p class="asiento">1 - <%=list.get(0).getDisponibilidad()%></p>
+                            <p class="asiento">1 </p>
                             <a class="btnAsiento"  name="btnAsiento" onclick="ingresaDatos(2, <%=itinerario_id%>, <%=precio%>)"><p class="asiento">2</p></a>
                             <a class="btnAsiento"  name="btnAsiento" onclick="ingresaDatos(3, <%=itinerario_id%>, <%=precio%>)"><p class="asiento">3</p></a>
                             <a class="btnAsiento"  name="btnAsiento" onclick="ingresaDatos(4, <%=itinerario_id%>, <%=precio%>)"><p class="asiento">4</p></a>

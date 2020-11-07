@@ -82,6 +82,7 @@
                     <td><%=ruta.getPrecio()%></td>
                     <td>
                         <a class="btnAsiento"  name="btnAsiento" onclick="EscoAsiento(<%=ruta.getItinerarios_id()%>,<%=ruta.getPrecio()%>)"><input type="button" value="Ver asientos"></a>
+                        
                     </td>
                 </tr>
                 <% }%>
@@ -98,13 +99,15 @@
 
     </body>
     <script>
+        
         function EscoAsiento(val, val2) {
-            $.post("u01-verAsientos.jsp", {val: val,val2: val2})
+            $.post("u01-verAsientos.jsp", {val: val, val2: val2})
                     .done(function (data) {
                         $('#contenido').html(data);
 //                console.log(data);
                     });
         }
+        
         function ingresaDatos(val, val2, val3) {
             $.post("u01-ingresarDatos.jsp", {val: val, val2: val2, val3: val3})
                     .done(function (data) {
