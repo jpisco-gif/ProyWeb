@@ -27,7 +27,7 @@ public class U04_CuentaDao extends U04_Cuenta{
 
             // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection
-            .prepareStatement("select rol_id from cuentas where usuario = ? and contraseña = ? ")) {
+            .prepareStatement("select rol_id,cuenta_id from cuentas where usuario = ? and contraseña = ? ")) {
             
             preparedStatement.setString(1, usuario);
             preparedStatement.setString(2, contraseña);
@@ -50,7 +50,10 @@ public class U04_CuentaDao extends U04_Cuenta{
         
         
     }
-  
+    public static void main(String[] args) throws ClassNotFoundException {
+        U04_CuentaDao sc= new U04_CuentaDao();
+        System.out.println(sc.validate("admi1", "admi1"));
+    }
     
     
     

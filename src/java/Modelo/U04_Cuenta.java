@@ -10,6 +10,7 @@ package Modelo;
  * @author V330
  */
 public class U04_Cuenta {
+    private int cuenta_id;
     private int rol_id;
     private String usuario;
     private String direccion;
@@ -18,6 +19,14 @@ public class U04_Cuenta {
     private String fullname;
     private int edad;
     private String mensaje;
+
+    public int getCuenta_id() {
+        return cuenta_id;
+    }
+
+    public void setCuenta_id(int cuenta_id) {
+        this.cuenta_id = cuenta_id;
+    }
 
    
 
