@@ -5,8 +5,10 @@
  */
 package Controlador;
 
+import Modelo.U01_Comprobante;
 import Modelo.U01_Pasajero;
 import Modelo.U01_Ruta;
+import ModeloDao.U01_ComprobanteDao;
 import ModeloDao.U01_PasajeroDao;
 import ModeloDao.U01_RutasDao;
 import java.io.IOException;
@@ -29,10 +31,14 @@ public class U01_Controlador extends HttpServlet {
 //-------pasajero------------
     String guardar_pasajero = "vista/u01-compraPasajes.jsp";
     String mostrar_rutas = "/vista/u01-mostrarRutas.jsp";
+    String comprar_pasajes = "/Vistas/u01-comprarPasaje.jsp";
+    
     U01_Pasajero pasajero = new U01_Pasajero();
     U01_PasajeroDao pasajeroDao = new U01_PasajeroDao();
     U01_Ruta ruta = new U01_Ruta();
     U01_RutasDao rutaDao = new U01_RutasDao();
+    U01_Comprobante comp = new U01_Comprobante();
+    U01_ComprobanteDao compDao = new U01_ComprobanteDao();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -127,7 +133,55 @@ public class U01_Controlador extends HttpServlet {
 
             acceso = mostrar_rutas;    
         }
-//        RequestDispatcher vista=request.getRequestDispatcher(acceso);
-//        vista.forward(request,response);
+        
+        else if(accion.equalsIgnoreCase("guardarPasaje")){
+            String tipo_doc = request.getParameter("tipo-doc");
+            String numdoc = request.getParameter("numdoc");
+            String nombre = request.getParameter("nombre");
+            String apepat = request.getParameter("apepat");
+            String apemat = request.getParameter("apemat");
+            int edad = Integer.parseInt(request.getParameter("edad"));
+            String sexo = request.getParameter("sexo");
+            int telefono = Integer.parseInt(request.getParameter("telef"));
+            String correo = request.getParameter("correo");
+            int num_asiento = Integer.parseInt(request.getParameter("nom_asiento"));
+            String usuario_id = request.getParameter("usuario_id");
+            double precio = Double.parseDouble(request.getParameter("precio"));
+            int itinerario_id = Integer.parseInt(request.getParameter("itinerario_id"));
+            
+            System.out.println("tipo-doc: "+tipo_doc);
+            System.out.println("numdoc: "+numdoc);
+            System.out.println("nombre: "+nombre);
+            System.out.println("apepat: "+apepat);
+            System.out.println("apemat: "+apemat);
+            System.out.println("edad: "+edad);
+            System.out.println("sexo: "+sexo);
+            System.out.println("telefono: "+telefono);
+            System.out.println("correo: "+correo);
+            System.out.println("num_asiento: "+num_asiento);
+            System.out.println("usuario_id: "+usuario_id);
+            System.out.println("precio: "+precio);
+            System.out.println("itinerario: "+itinerario_id);
+            comp.setTipo_doc(tipo_doc);
+            comp.setNumdoc(numdoc);
+            comp.setNombre(nombre);
+            comp.setApepat(apepat);
+            comp.setApemat(apemat);
+            comp.setEdad(edad);
+            comp.setSexo(sexo);
+            comp.setTelefono(telefono);
+            comp.setCorreo(correo);
+            comp.setNum_asiento(num_asiento);
+            comp.setUsuario_id(usuario_id);
+            comp.setPrecio(precio);
+            comp.setItinerario_id(itinerario_id);
+            compDao.guardar_pasaje(comp);
+            
+            acceso = comprar_pasajes;
+            
+        }
+        
+        RequestDispatcher vista=request.getRequestDispatcher(acceso);
+        vista.forward(request,response);
     }
 }

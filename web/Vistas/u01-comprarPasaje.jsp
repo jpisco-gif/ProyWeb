@@ -13,7 +13,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../Css/newcss.css">
-        <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" herf="Css/newcss.css">
+        <script type="text/javascript" src="../js/jquery.js"></script>
 
         <title>Comprar pasaje</title>
     </head>

@@ -16,14 +16,14 @@
         <section class="ingresar-datos">
             <h3>Ingrese sus datos</h3>
             <div class="muestra-form">
-                <form action="<%=request.getContextPath()%>/Controlador" method="post">
+                <form action="../U01_Controlador" method="post">
                     itinerario: <%=itinerario_id%>
                     numero de asiento: <%=nom_asiento%>
                     <table class="formulario">
                         <tr>
                             <td class="izq">Tipo de documento: </td>
                             <td>
-                                <select name="tipo" id="tipo-doc">
+                                <select name="tipo-doc" id="tipo-doc">
                                     <option value="1">DNI</option>
                                     <option value="3">Carnet de extranjería</option>
                                     <option value="2">Pasaporte</option>
@@ -99,16 +99,15 @@
                                 <input type="hidden" name="itinerario_id" value="<%=itinerario_id%>">
                                 <input type="hidden" name="nom_asiento" value="<%=nom_asiento%>">
                                 <input type="hidden" name="usuario_id" value="1">
-                                <input type="hidden" name="precio" value="<%=precio%>"
+                                <input type="hidden" name="precio" value="<%=precio%>">
+                                <input type="hidden" name="accion" value="guardarPasaje">
+                                       
                             </td>
                         </tr>
                     </table>
                     <div class="submit">
                         <p>
                             <input type="submit" name="accion" value="Agregar">
-                        </p>
-                        <p>
-                            <input type="submit" name="accion" values="pagar">
                         </p>
                     </div>
                 </form>

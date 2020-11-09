@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    
     <servlet>
         <servlet-name>U05_Controlador_Admi</servlet-name>
         <servlet-class>Controlador.U05_Controlador_Admi</servlet-class>
     </servlet>
-    
     <servlet>
         <servlet-name>U03A_Controlador</servlet-name>
         <servlet-class>Controlador.U03A_Controlador</servlet-class>
@@ -14,12 +12,10 @@
         <servlet-name>U02_Controlador</servlet-name>
         <servlet-class>Controlador.U02_Controlador</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>U05_Controlador_Admi</servlet-name>
         <url-pattern>/U05_Controlador_Admi</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>U03A_Controlador</servlet-name>
         <url-pattern>/U03A_Controlador</url-pattern>
