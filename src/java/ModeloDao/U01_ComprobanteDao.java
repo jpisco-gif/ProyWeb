@@ -19,7 +19,7 @@ import java.sql.ResultSet;
 public class U01_ComprobanteDao implements U01_CRUD_COMPROBANTE{
 Conexion cn = new Conexion();
 Connection con;
-PreparedStatement ps;
+PreparedStatement ps, ps2;
 ResultSet rs;
 U01_Comprobante comp = new U01_Comprobante();
     
@@ -40,11 +40,12 @@ U01_Comprobante comp = new U01_Comprobante();
             ps.setInt(9, 1);//cuenta id
             ps.executeUpdate();
 
-            ps=con.prepareStatement("insert into comprobantes (persona_id, cuenta_id, itinerario_id, asiento_id, monto) values (3,?,?,?,?)"); 
+            ps=con.prepareStatement("insert into comprobantes (persona_id, cuenta_id, itinerario_id, asiento_id, monto, estado) values ((select max(persona_id)from personas),?,?,?,?,?)"); 
             ps.setInt(1, 1);//cuenta id
             ps.setInt(2, comp.getItinerario_id());
             ps.setInt(3, comp.getNum_asiento());        
             ps.setDouble(4, comp.getPrecio());
+            ps.setInt(5, comp.getEstado_pago());
             ps.executeUpdate();
             
         } catch (Exception e) {

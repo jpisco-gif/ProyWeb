@@ -100,6 +100,7 @@
                                 <input type="hidden" name="nom_asiento" value="<%=nom_asiento%>">
                                 <input type="hidden" name="usuario_id" value="1">
                                 <input type="hidden" name="precio" value="<%=precio%>">
+                                <input type="hidden" name="estado_pago" value="0">
                                 <input type="hidden" name="accion" value="guardarPasaje">
                                        
                             </td>

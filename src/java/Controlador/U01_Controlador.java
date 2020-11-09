@@ -148,6 +148,7 @@ public class U01_Controlador extends HttpServlet {
             String usuario_id = request.getParameter("usuario_id");
             double precio = Double.parseDouble(request.getParameter("precio"));
             int itinerario_id = Integer.parseInt(request.getParameter("itinerario_id"));
+            int estado_pago = Integer.parseInt(request.getParameter("estado_pago"));
             
             System.out.println("tipo-doc: "+tipo_doc);
             System.out.println("numdoc: "+numdoc);
@@ -162,6 +163,7 @@ public class U01_Controlador extends HttpServlet {
             System.out.println("usuario_id: "+usuario_id);
             System.out.println("precio: "+precio);
             System.out.println("itinerario: "+itinerario_id);
+            System.out.println("estado pago: "+estado_pago);
             comp.setTipo_doc(tipo_doc);
             comp.setNumdoc(numdoc);
             comp.setNombre(nombre);
@@ -175,10 +177,10 @@ public class U01_Controlador extends HttpServlet {
             comp.setUsuario_id(usuario_id);
             comp.setPrecio(precio);
             comp.setItinerario_id(itinerario_id);
+            comp.setEstado_pago(estado_pago);
             compDao.guardar_pasaje(comp);
             
             acceso = comprar_pasajes;
-            
         }
         
         RequestDispatcher vista=request.getRequestDispatcher(acceso);

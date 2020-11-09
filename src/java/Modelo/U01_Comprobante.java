@@ -15,11 +15,12 @@ public class U01_Comprobante {
     private String usuario_id;
     private double precio;
     private int itinerario_id;
+    private int estado_pago;
 
     public U01_Comprobante() {
     }
 
-    public U01_Comprobante(String tipo_doc, String numdoc, String nombre, String apepat, String apemat, int edad, String sexo, int telefono, String correo, int num_asiento, String usuario_id, double precio, int itinerario_id) {
+    public U01_Comprobante(String tipo_doc, String numdoc, String nombre, String apepat, String apemat, int edad, String sexo, int telefono, String correo, int num_asiento, String usuario_id, double precio, int itinerario_id, int estado_pago) {
         this.tipo_doc = tipo_doc;
         this.numdoc = numdoc;
         this.nombre = nombre;
@@ -33,7 +34,18 @@ public class U01_Comprobante {
         this.usuario_id = usuario_id;
         this.precio = precio;
         this.itinerario_id = itinerario_id;
+        this.estado_pago = estado_pago;
     }
+
+    public int getEstado_pago() {
+        return estado_pago;
+    }
+
+    public void setEstado_pago(int estado_pago) {
+        this.estado_pago = estado_pago;
+    }
+
+    
 
     public int getItinerario_id() {
         return itinerario_id;
