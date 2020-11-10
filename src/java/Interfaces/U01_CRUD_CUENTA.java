@@ -5,14 +5,13 @@
  */
 package Interfaces;
 
-import Modelo.U01_Comprobante;
+import Modelo.U04_Cuenta;
 import java.util.List;
 
 /**
  *
  * @author Manuel
  */
-public interface U01_CRUD_COMPROBANTE {
-    public boolean guardar_pasaje(U01_Comprobante comp);
-    public List mostrar_pasaje(int cuenta_id);
+public interface U01_CRUD_CUENTA {
+    public List login(U04_Cuenta cuenta);
 }

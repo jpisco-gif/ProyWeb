@@ -1,8 +1,8 @@
-<%-- 
-    Document   : u01-comprarPasaje
-    Created on : 26-oct-2020, 21:39:34
-    Author     : Manuel
---%>
+<%
+    int cuenta_id = 1;
+%>
+<%@page import="Modelo.U01_Comprobante"%>
+<%@page import="ModeloDao.U01_ComprobanteDao"%>
 <%@page import="Modelo.U01_Ruta"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
@@ -30,6 +30,7 @@
                         <li class="menu__item"><a class="menu__link" href="U04-Nosotros.jsp">Nosotros</a></li>
                         <li class="menu__item"><a class="menu__link" href="U04-AtencioAlCliente.jsp">Atencion al cliente</a></li>
                         <li class="menu__item"><a class="menu__link" href="u01-comprarPasaje.jsp">compra de pasaje</a></li>
+                        
                             <%
 
                                 HttpSession sesion = request.getSession();
@@ -52,7 +53,7 @@
 
                                 }
                             %> 
-
+                            <li>id de la cuenta: ${sessionScope.cuenta_id};</li>
 
                     </ul>
                 </nav>
@@ -97,7 +98,7 @@
                     <td><%=ruta.getPrecio()%></td>
                     <td>
                         <a class="btnAsiento"  name="btnAsiento" onclick="EscoAsiento(<%=ruta.getItinerarios_id()%>,<%=ruta.getPrecio()%>)"><input type="button" value="Ver asientos"></a>
-                        
+
                     </td>
                 </tr>
                 <% }%>
@@ -111,10 +112,44 @@
 
             </div>
         </section>
+        <section class="info-rutas">
+            <h3>Sus viajes pendientes</h3>
+            <table border="1">
+                <tr>
+                    <td>Nombres</td>
+                    <td>Apellido paterno</td>
+                    <td>Apellido materno</td>
+                    <td>Nro. documento</td>
+                    <td>Nro. asiento</td>
+                    <td></td>
+                    
+                </tr>
+                <%
+                    U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
+                    List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
+                    Iterator<U01_Comprobante> iter2 = list2.iterator();
+                    U01_Comprobante comp = null;
+                    while (iter2.hasNext()) {
+                        comp = iter2.next();
+                %>
+                <tr>
+                    <td><%=comp.getNombre()%></td>
+                    <td><%=comp.getApepat()%></td>
+                    <td><%=comp.getApemat()%></td>
+                    <td><%=comp.getNumdoc()%></td>
+                    <td><%=comp.getNum_asiento()%></td>
+                    <td><input type="button" value="eliminar"></td>
+                </tr>
+                <% }%>
+            </table>
+            <div>
+                <input type="button" value="Pagar todos">
+            </div>
+        </section>
 
     </body>
     <script>
-        
+
         function EscoAsiento(val, val2) {
             $.post("u01-verAsientos.jsp", {val: val, val2: val2})
                     .done(function (data) {
@@ -122,7 +157,7 @@
 //                console.log(data);
                     });
         }
-        
+
         function ingresaDatos(val, val2, val3) {
             $.post("u01-ingresarDatos.jsp", {val: val, val2: val2, val3: val3})
                     .done(function (data) {

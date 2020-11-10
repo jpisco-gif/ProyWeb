@@ -8,12 +8,16 @@ package Controlador;
 import Modelo.U01_Comprobante;
 import Modelo.U01_Pasajero;
 import Modelo.U01_Ruta;
+import Modelo.U04_Cuenta;
 import ModeloDao.U01_ComprobanteDao;
+import ModeloDao.U01_CuentaDao;
 import ModeloDao.U01_PasajeroDao;
 import ModeloDao.U01_RutasDao;
+import ModeloDao.U04_CuentaDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,6 +25,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -39,6 +44,8 @@ public class U01_Controlador extends HttpServlet {
     U01_RutasDao rutaDao = new U01_RutasDao();
     U01_Comprobante comp = new U01_Comprobante();
     U01_ComprobanteDao compDao = new U01_ComprobanteDao();
+    U04_Cuenta cuenta = new U04_Cuenta();
+    U01_CuentaDao cuentaDao = new U01_CuentaDao();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -69,7 +76,7 @@ public class U01_Controlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        HttpSession sesion = request.getSession();
         String acceso = "";
         String accion = request.getParameter("accion");
         
@@ -181,9 +188,49 @@ public class U01_Controlador extends HttpServlet {
             compDao.guardar_pasaje(comp);
             
             acceso = comprar_pasajes;
+            response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
         }
         
-        RequestDispatcher vista=request.getRequestDispatcher(acceso);
-        vista.forward(request,response);
+        else if(accion.equalsIgnoreCase("login")){
+            String usuario = request.getParameter("usuario");
+            String contraseña = request.getParameter("contraseña");
+            
+            System.out.println("usuario: "+usuario);
+            System.out.println("contraseña: "+contraseña);
+            
+            cuenta.setUsuario(usuario);
+            cuenta.setContraseña(contraseña);
+            //cuentaDao.login(cuenta);
+            
+            List<U04_Cuenta> list = cuentaDao.login(cuenta);
+            int rol_id2 = list.get(0).getRol_id();
+            int cuenta_id2 = list.get(0).getCuenta_id();
+            System.out.println("usuario2: "+rol_id2);
+            System.out.println("cuenta2: "+cuenta_id2);
+            sesion.setAttribute("cuenta_id", cuenta_id2);
+            if(rol_id2 == 1){
+                response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
+            }
+            else if(rol_id2 == 2){
+                response.sendRedirect("Vistas/u01-consultarRuta.jsp");
+            }
+            else if(rol_id2 == 3){
+                response.sendRedirect("Vistas/U05-G-index.jsp");
+            }
+
+//            switch(rol_id2){
+//                case 1:
+//                    response.sendRedirect("Vistas/u01-comprarPasaje.jsp"); break;
+//                case 2:
+//                    response.sendRedirect("jsp del administrador"); break;
+//                case 3:
+//                    response.sendRedirect("jsp del gerente"); break;
+//            }
+//            
+//            
+//            response.sendRedirect("enviar al login");
+        }
+        
+            //response.sendRedirect("Vistas/u01-comprarPasaje.jsp");//aqui falta corregir
     }
 }

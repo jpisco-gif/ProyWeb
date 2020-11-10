@@ -27,7 +27,7 @@ public class U01_PasajeroDao implements U01_CRUD_ASIENTOS{
     @Override
     public List consultarDisponibilidad(int itinerario_id) {
         ArrayList<U01_Asiento> list = new ArrayList<>();
-        String sql = "select itinerario_id, nom_asiento, t3.disponible from itinerarios"
+        String sql = "select itinerario_id, nom_asiento, t3.estado from itinerarios"
                 + " t1 inner join buses t2 on t1.bus_id = t2.bus_id inner join asientos "
                 + "t3 on t2.bus_id = t3.bus_id where itinerario_id = ?";
         //where itinerario_id = ? and asiento_id = ?
@@ -38,12 +38,13 @@ public class U01_PasajeroDao implements U01_CRUD_ASIENTOS{
             rs = ps.executeQuery();
             while(rs.next()){
                 U01_Asiento asientos = new U01_Asiento();
-                asientos.setDisponibilidad(rs.getInt("disponible"));
+                asientos.setDisponibilidad(rs.getInt("t3.estado"));
                 asientos.setId_asiento(rs.getInt("nom_asiento"));
                 list.add(asientos);
             }
         } catch (Exception e) {
         }
+        
         return list;
     }
 

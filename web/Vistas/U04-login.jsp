@@ -32,12 +32,13 @@
      <div class="login-header">
   <h1>Iniciar Sesion</h1>
   </div>
-  <form action="<%=request.getContextPath()%>/login" method="post">
+  <form action="../U01_Controlador" method="post">
        <div class="login-form">
      <label>usuario:</label>
      <input type="text" name="usuario" />
      <label>contraseña:</label>
      <input type="password" name="contraseña" />  
+     <input type="hidden" name="accion" value="login"/>
      <input type="submit" value="Ingresar" />
        
    

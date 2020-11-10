@@ -11,6 +11,8 @@ import Modelo.U01_Comprobante;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -52,5 +54,36 @@ U01_Comprobante comp = new U01_Comprobante();
         }
         return false;
     }
+
+    @Override
+    public List mostrar_pasaje(int cuenta_id) {
+        ArrayList<U01_Comprobante> list = new ArrayList<>();
+                
+        String sql = "select nombres, apellido_paterno, apellido_materno, cod_documento, \n"
+                + "t3.nom_asiento from personas t1 \n"
+                + "inner join comprobantes t2 on t1.persona_id = t2.persona_id \n"
+                +"inner join asientos t3 on t2.asiento_id = t3.asiento_id\n";
+               // + "where cuenta_id = ?";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            //ps.setInt(1, cuenta_id);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                U01_Comprobante comp = new U01_Comprobante();
+                comp.setNombre(rs.getString("nombres"));
+                comp.setApepat(rs.getString("apellido_paterno"));
+                comp.setApemat(rs.getString("apellido_materno")); 
+                comp.setNumdoc(rs.getString("cod_documento"));
+                comp.setNum_asiento(rs.getInt("t3.nom_asiento"));
+                
+                list.add(comp);
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    
+    }
+    
     
 }

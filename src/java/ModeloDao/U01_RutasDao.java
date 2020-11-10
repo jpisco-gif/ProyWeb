@@ -64,9 +64,6 @@ public class U01_RutasDao implements U01_CRUD_RUTA{
     @Override
     public List consultar_todos() {
         ArrayList<U01_Ruta> list = new ArrayList<>();
-//        String sql = "select itinerario_id, fecha_salida,t2.llegada_id, duracion,  "
-//                + "costo_ruta from itinerarios as t1 inner join rutas as t2 on t1.ruta_id = t2.ruta_id";
-//                // "inner join llegadas as t3 on (t2.llegada_id = t3.llegada_id)";
                 
         String sql = "select itinerario_id, t5.terminal_id, (select ciudad from terminales where terminal_id = t5.terminal_id)"
                 + " as destino,t2.embarque_id, t6.terminal_id, (select ciudad from terminales where terminal_id = t6.terminal_id) as origen,"
