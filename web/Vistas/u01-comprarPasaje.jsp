@@ -1,5 +1,5 @@
-<%
-    int cuenta_id = 1;
+<%  
+    int cuenta_id = (Integer)session.getAttribute("cuenta_id"); 
 %>
 <%@page import="Modelo.U01_Comprobante"%>
 <%@page import="ModeloDao.U01_ComprobanteDao"%>
@@ -53,7 +53,7 @@
 
                                 }
                             %> 
-                            <li>id de la cuenta: ${sessionScope.cuenta_id};</li>
+                            <li>id de la cuenta: <%=cuenta_id%></li>
 
                     </ul>
                 </nav>
@@ -97,7 +97,7 @@
                     <td><%=ruta.getHora()%></td>
                     <td><%=ruta.getPrecio()%></td>
                     <td>
-                        <a class="btnAsiento"  name="btnAsiento" onclick="EscoAsiento(<%=ruta.getItinerarios_id()%>,<%=ruta.getPrecio()%>)"><input type="button" value="Ver asientos"></a>
+                        <a class="btnAsiento"  name="btnAsiento" onclick="EscoAsiento(<%=ruta.getItinerarios_id()%>,<%=ruta.getPrecio()%>,<%=cuenta_id%>)"><input type="button" value="Ver asientos"></a>
 
                     </td>
                 </tr>
@@ -138,28 +138,36 @@
                     <td><%=comp.getApemat()%></td>
                     <td><%=comp.getNumdoc()%></td>
                     <td><%=comp.getNum_asiento()%></td>
-                    <td><input type="button" value="eliminar"></td>
+                    
+                        <form action="../U01_Controlador" method="post">
+                        <input type="hidden" name="accion" value="eliminar-pasaje">
+                        <input type="hidden" name="comprobante_id" value="<%=comp.getComprobante_id()%>">
+                        <td>
+                        <input type="submit" name="submit" value="eliminar">    
+                        </td>
+                        </form>
+                    
                 </tr>
                 <% }%>
             </table>
             <div>
-                <input type="button" value="Pagar todos">
+                <input type="button" value="Pagar todos" class="pagar-todos">
             </div>
         </section>
 
     </body>
     <script>
 
-        function EscoAsiento(val, val2) {
-            $.post("u01-verAsientos.jsp", {val: val, val2: val2})
+        function EscoAsiento(val, val2, val3) {
+            $.post("u01-verAsientos.jsp", {val: val, val2: val2, val3: val3})
                     .done(function (data) {
                         $('#contenido').html(data);
 //                console.log(data);
                     });
         }
 
-        function ingresaDatos(val, val2, val3) {
-            $.post("u01-ingresarDatos.jsp", {val: val, val2: val2, val3: val3})
+        function ingresaDatos(val, val2, val3, val4) {
+            $.post("u01-ingresarDatos.jsp", {val: val, val2: val2, val3: val3, val4: val4})
                     .done(function (data) {
                         $('#contenido2').html(data);
 //                console.log(data);

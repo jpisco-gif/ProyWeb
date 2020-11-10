@@ -1,4 +1,6 @@
-
+<%
+    int cuenta_id = (Integer)session.getAttribute("cuenta_id");   
+%>
 <%@page import="java.util.Iterator"%>
 <%@page import="Modelo.U01_Comprobante"%>
 <%@page import="java.util.List"%>
@@ -24,7 +26,7 @@
                 </tr>
                 <%
                     U01_ComprobanteDao dao = new U01_ComprobanteDao();
-                    List<U01_Comprobante> list = dao.mostrar_pasaje();
+                    List<U01_Comprobante> list = dao.mostrar_pasaje(cuenta_id);
                     Iterator<U01_Comprobante> iter = list.iterator();
                     U01_Comprobante comp = null;
                     while (iter.hasNext()) {

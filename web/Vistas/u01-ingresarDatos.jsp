@@ -2,6 +2,7 @@
     int itinerario_id = Integer.parseInt(request.getParameter("val2"));
     int nom_asiento = Integer.parseInt(request.getParameter("val"));
     double precio = Double.parseDouble(request.getParameter("val3"));
+    int cuenta_id = Integer.parseInt(request.getParameter("val4"));   
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,7 +24,7 @@
                         <tr>
                             <td class="izq">Tipo de documento: </td>
                             <td>
-                                <select name="tipo-doc" id="tipo-doc">
+                                <select name="tipo-doc" id="tipo-doc" class="select">
                                     <option value="1">DNI</option>
                                     <option value="3">Carnet de extranjería</option>
                                     <option value="2">Pasaporte</option>
@@ -35,7 +36,7 @@
                                 <label for="numdoc">Número de documento: </label>
                             </td>
                             <td>
-                                <input type="text" name="numdoc" id="numdoc" placeholder="Ingrese su numero de documento">
+                                <input type="text" class="input" name="numdoc" id="numdoc" placeholder="Ingrese su numero de documento">
                             </td>
                         </tr>
                         <tr>
@@ -43,7 +44,7 @@
                                 <label for="nombre">Nombre: </label>
                             </td>
                             <td>
-                                <input type="text" name="nombre" id="nombre" placeholder="Ingrese sus nombres">
+                                <input type="text" class="input" name="nombre" id="nombre" placeholder="Ingrese sus nombres">
                             </td>
                         </tr>
                         <tr>
@@ -51,7 +52,7 @@
                                 <label for="apepat">Apellido paterno: </label>
                             </td>
                             <td>
-                                <input type="text" name="apepat" id="apepat" placeholder="Ingrese su apellido paterno">
+                                <input type="text" class="input" name="apepat" id="apepat" placeholder="Ingrese su apellido paterno">
                             </td>
                         </tr>
                         <tr>
@@ -59,7 +60,7 @@
                                 <label for="apemat">Apellido materno: </label>
                             </td>
                             <td>
-                                <input type="text" name="apemat" id="apemat" placeholder="Ingrese su apellido materno">
+                                <input type="text" class="input" name="apemat" id="apemat" placeholder="Ingrese su apellido materno">
                             </td>
                         </tr>
                         <tr>
@@ -67,7 +68,7 @@
                                 <label for="edad">Edad: </label>
                             </td>
                             <td>
-                                <input type="text" name="edad" id="edad" placeholder="Ingrese su edad">
+                                <input type="text" class="input" name="edad" id="edad" placeholder="Ingrese su edad">
                             </td>
                         </tr>
                         <tr>
@@ -75,7 +76,7 @@
                                 <label for="sexo">Sexo: </label>
                             </td>
                             <td>
-                                <select name="sexo" id="sexo">
+                                <select name="sexo" class="select" id="sexo">
                                     <option value="">Seleccione</option>
                                     <option value="H">Hombre</option>
                                     <option value="M">Mujer</option>
@@ -87,7 +88,7 @@
                                 <label for="telef">Telefono</label>
                             </td>
                             <td>
-                                <input type="tel" placeholder="Ingrese su telefono" name="telef" id="telef">
+                                <input type="tel" class="input" placeholder="Ingrese su telefono" name="telef" id="telef">
                             </td>
                         </tr>
                         <tr>
@@ -95,10 +96,10 @@
                                 <label for="correo">Correo</label>
                             </td>
                             <td>
-                                <input type="email" name="correo" id="correo" placeholder="Ingrese su correo">
+                                <input type="email" class="input" name="correo" id="correo" placeholder="Ingrese su correo">
                                 <input type="hidden" name="itinerario_id" value="<%=itinerario_id%>">
                                 <input type="hidden" name="nom_asiento" value="<%=nom_asiento%>">
-                                <input type="hidden" name="usuario_id" value="1">
+                                <input type="hidden" name="usuario_id" value="<%=cuenta_id%>">
                                 <input type="hidden" name="precio" value="<%=precio%>">
                                 <input type="hidden" name="estado_pago" value="0">
                                 <input type="hidden" name="accion" value="guardarPasaje">

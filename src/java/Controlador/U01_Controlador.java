@@ -216,19 +216,15 @@ public class U01_Controlador extends HttpServlet {
             }
             else if(rol_id2 == 3){
                 response.sendRedirect("Vistas/U05-G-index.jsp");
-            }
-
-//            switch(rol_id2){
-//                case 1:
-//                    response.sendRedirect("Vistas/u01-comprarPasaje.jsp"); break;
-//                case 2:
-//                    response.sendRedirect("jsp del administrador"); break;
-//                case 3:
-//                    response.sendRedirect("jsp del gerente"); break;
-//            }
-//            
-//            
-//            response.sendRedirect("enviar al login");
+            }     
+        }
+        
+        else if(accion.equalsIgnoreCase("eliminar-pasaje")){
+            int comprobante_id = Integer.parseInt(request.getParameter("comprobante_id"));
+            System.out.println("comprobante_id: "+comprobante_id);
+            compDao.eliminar_pasaje(comprobante_id);
+            
+            response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
         }
         
             //response.sendRedirect("Vistas/u01-comprarPasaje.jsp");//aqui falta corregir

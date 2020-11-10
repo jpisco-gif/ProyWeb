@@ -69,10 +69,26 @@
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
+    background-color: yellow;
 }
-
-
-
+.libre{
+    margin: 15px 8px;
+    padding: 2px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+.ocupado{
+    margin: 15px 8px;
+    padding: 2px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
 /* ------formularios------ */
 
 .ingresar-datos h3{
@@ -96,8 +112,7 @@ form{
 .izq{
     width: 150px;
 }
-input, select{
-    width: 100%;
+.input, .select{
     height: 30px;
 }
 td{
@@ -120,6 +135,9 @@ td{
 }
 #contenido2{
     width: 50%;
+}
+.pagar-todos{
+    margin: 1em 0;
 }
 /*###################u02##########################*/
 /*###################u03##########################*/

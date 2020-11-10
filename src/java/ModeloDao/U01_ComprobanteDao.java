@@ -39,11 +39,11 @@ U01_Comprobante comp = new U01_Comprobante();
             ps.setInt(6, comp.getEdad());
             ps.setString(7, comp.getTipo_doc());
             ps.setString(8, comp.getNumdoc());
-            ps.setInt(9, 1);//cuenta id
+            ps.setString(9, comp.getUsuario_id());//cuenta id
             ps.executeUpdate();
 
             ps=con.prepareStatement("insert into comprobantes (persona_id, cuenta_id, itinerario_id, asiento_id, monto, estado) values ((select max(persona_id)from personas),?,?,?,?,?)"); 
-            ps.setInt(1, 1);//cuenta id
+            ps.setString(1, comp.getUsuario_id());//cuenta id
             ps.setInt(2, comp.getItinerario_id());
             ps.setInt(3, comp.getNum_asiento());        
             ps.setDouble(4, comp.getPrecio());
@@ -60,14 +60,14 @@ U01_Comprobante comp = new U01_Comprobante();
         ArrayList<U01_Comprobante> list = new ArrayList<>();
                 
         String sql = "select nombres, apellido_paterno, apellido_materno, cod_documento, \n"
-                + "t3.nom_asiento from personas t1 \n"
+                + "t3.nom_asiento, t2.comprobante_id from personas t1 \n"
                 + "inner join comprobantes t2 on t1.persona_id = t2.persona_id \n"
-                +"inner join asientos t3 on t2.asiento_id = t3.asiento_id\n";
-               // + "where cuenta_id = ?";
+                +"inner join asientos t3 on t2.asiento_id = t3.asiento_id\n"
+                + "where t2.cuenta_id = ?";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
-            //ps.setInt(1, cuenta_id);
+            ps.setInt(1, cuenta_id);
             rs = ps.executeQuery();
             while(rs.next()){
                 U01_Comprobante comp = new U01_Comprobante();
@@ -76,6 +76,7 @@ U01_Comprobante comp = new U01_Comprobante();
                 comp.setApemat(rs.getString("apellido_materno")); 
                 comp.setNumdoc(rs.getString("cod_documento"));
                 comp.setNum_asiento(rs.getInt("t3.nom_asiento"));
+                comp.setComprobante_id(rs.getInt("t2.comprobante_id"));
                 
                 list.add(comp);
             }
@@ -83,6 +84,17 @@ U01_Comprobante comp = new U01_Comprobante();
         }
         return list;
     
+    }
+    
+    public void eliminar_pasaje(int comprobante_id){
+        String sql = "delete from comprobantes where comprobante_id = ?";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, comprobante_id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
     }
     
     
