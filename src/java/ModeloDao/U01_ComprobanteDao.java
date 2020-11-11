@@ -1,4 +1,4 @@
-/*
+  /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -48,6 +48,11 @@ U01_Comprobante comp = new U01_Comprobante();
             ps.setInt(3, comp.getNum_asiento());        
             ps.setDouble(4, comp.getPrecio());
             ps.setInt(5, comp.getEstado_pago());
+            ps.executeUpdate();
+            
+            ps=con.prepareStatement("update asientos as t1 inner join comprobantes as t2 on t1.asiento_id = t2.asiento_id set t1.estado = 1 where nom_asiento = ? and itinerario_id = ?");
+            ps.setInt(1, comp.getNum_asiento());
+            ps.setInt(2, comp.getItinerario_id());
             ps.executeUpdate();
             
         } catch (Exception e) {
