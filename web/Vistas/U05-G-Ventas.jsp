@@ -1,6 +1,6 @@
 <%-- 
-    Document   : U05-index
-    Created on : 26/10/2020, 12:16:07 AM
+    Document   : U05-cuentas
+    Created on : 26/10/2020, 12:20:37 AM
     Author     : Anthony Morales
 --%>
 
@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Index-Gerencia</title>
+  <title>Cuentas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="U05-estilos.css">
 </head>
@@ -42,47 +42,38 @@
                     --><main>    
                       <section class="reporte-grafico">
                         <div class="head_title">
-                          <h1>BIENVENIDO</h1>
+                          <h1>CUENTAS</h1>
 
                         
                         
                         </div>
 
-                        <div class="bienvenida3">
-                            <div class="bienvenida_imagen"><img src="../Imagenes/U05-personal.svg" alt="Personal"></div>
-                          <div class="bienvenida_texto">
-                            <div class="bienvenida_titulo"><h3>Cuentas</h3><hr></div>
-                            <div class="bienvenida_parrafo"><br><br><p>En ese apartado podras ver y crear cuentas de administradores</p></div>
+                        <div class="finanzas">
+                          
+                          <div class="finanzas_texto">
+                            <div class="finanzas_titulo"><h3>Administradores</h3><hr></div>
+                            <div class="finanzas_parrafo">
+                                
+                              
+                              <p><a href="../U05_Controlador_Ventas_Mes?accion=listar" target="iframe_a">Ventas Por mes</a></p>
+                            
+                              <p><a href="../U05_Controlador_Ventas_Ruta?accion=listar" target="iframe_a">Ventas Por Ruta</a></p>
+                              
+                              <p><a href="../U05_Controlador_Ventas_Clase?accion=listar" target="iframe_a">Ventas Por Clase</a></p>
+                  
+                              <iframe src="U05-blanco.jsp" name="iframe_a" height="400px" width="1200px" title="Iframe Example"></iframe>
+                  
+                            
+                                
+                                
+                              
+
+                              
+                            
+                            
+                            </div>
                           </div>
                         </div>
-
-                        <br>
-                        <br>
-                        <br>
-
-                        <div class="bienvenida">
-                            <div class="bienvenida_imagen"><img src="../Imagenes/U05-ruta.png" alt="Llama"></div>
-                          <div class="bienvenida_texto">
-                            <div class="bienvenida_titulo"><h3>Rutas</h3><hr></div>
-                            <div class="bienvenida_parrafo"><br><br><p>En ese apartado podras ver y crear rutas</p></div>
-                          </div>
-                        </div>
-
-                        <br>
-                        <br>
-                        <br>
-
-                        
-
-                        <div class="bienvenida2">
-                            <div class="bienvenida_imagen"><img src="../Imagenes/U05-finanzas.png" alt="finanzas"></div>
-                          <div class="bienvenida_texto">
-                            <div class="bienvenida_titulo"><h3>Finanzas</h3><hr></div>
-                            <div class="bienvenida_parrafo"><br><br><p>En ese apartado podras ver los estados financieros , las ventas , las ganancias y perdidas</p></div>
-                          </div>
-                        </div>
-
-                        
 
                         
 
