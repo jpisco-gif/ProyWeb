@@ -32,11 +32,9 @@
                         <li class="reporte">
                           <h4>Gerencia</h4>
                         </li>
-                        <li class="Home"><a href="U05-index.jsp">Home</a></li>
-                        <li class="Reuniones"><a href="U05-cuentas.jsp">Cuentas</a></li>
-                        <li class="Reuniones"><a href="U05-ruta.jsp">Rutas</a></li>
-                        <li class="Finanzas"><a href="U05-finanzas.jsp">Finanzas</a></li>
-                        <li class="Personal"><a href="#">Perfil</a></li>
+                        <li class="Home"><a href="U05-G-index.jsp">Home</a></li>
+                        <li class="Reuniones"><a href="U05-G-cuentas.jsp">Cuentas</a></li>
+                        <li class="Finanzas"><a href="U05-G-Ventas.jsp">Ventas</a></li>
                         <li class="Personal"><a href="#">Cerrar sesion</a></li>
                       </ul>
                     </nav><!--  

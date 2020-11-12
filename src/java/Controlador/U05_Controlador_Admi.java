@@ -184,12 +184,9 @@ public class U05_Controlador_Admi extends HttpServlet {
        }
        
        
-       
-       
-       
        RequestDispatcher vista=request.getRequestDispatcher(acceso);
        vista.forward(request,response);
-        
+    
         
     }
 
