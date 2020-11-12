@@ -152,7 +152,7 @@ public class U01_Controlador extends HttpServlet {
             int telefono = Integer.parseInt(request.getParameter("telef"));
             String correo = request.getParameter("correo");
             int num_asiento = Integer.parseInt(request.getParameter("nom_asiento"));
-            String usuario_id = request.getParameter("usuario_id");
+            int cuenta_id = Integer.parseInt(request.getParameter("cuenta_id"));
             double precio = Double.parseDouble(request.getParameter("precio"));
             int itinerario_id = Integer.parseInt(request.getParameter("itinerario_id"));
             int estado_pago = Integer.parseInt(request.getParameter("estado_pago"));
@@ -167,7 +167,7 @@ public class U01_Controlador extends HttpServlet {
             System.out.println("telefono: "+telefono);
             System.out.println("correo: "+correo);
             System.out.println("num_asiento: "+num_asiento);
-            System.out.println("usuario_id: "+usuario_id);
+            System.out.println("cuenta_id: "+cuenta_id);
             System.out.println("precio: "+precio);
             System.out.println("itinerario: "+itinerario_id);
             System.out.println("estado pago: "+estado_pago);
@@ -181,7 +181,7 @@ public class U01_Controlador extends HttpServlet {
             comp.setTelefono(telefono);
             comp.setCorreo(correo);
             comp.setNum_asiento(num_asiento);
-            comp.setUsuario_id(usuario_id);
+            comp.setCuenta_id(cuenta_id);
             comp.setPrecio(precio);
             comp.setItinerario_id(itinerario_id);
             comp.setEstado_pago(estado_pago);
@@ -221,8 +221,20 @@ public class U01_Controlador extends HttpServlet {
         
         else if(accion.equalsIgnoreCase("eliminar-pasaje")){
             int comprobante_id = Integer.parseInt(request.getParameter("comprobante_id"));
+            int persona_id = Integer.parseInt(request.getParameter("persona_id"));
+            int itinerario_id = Integer.parseInt(request.getParameter("itinerario_id"));
+            int num_asiento = Integer.parseInt(request.getParameter("num_asiento"));
             System.out.println("comprobante_id: "+comprobante_id);
-            compDao.eliminar_pasaje(comprobante_id);
+            System.out.println("persona_id: "+persona_id);
+            compDao.eliminar_pasaje(comprobante_id, persona_id, itinerario_id, num_asiento);
+            
+            response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
+        }
+        
+        else if(accion.equalsIgnoreCase("pagar-pasajes")){
+            int cuenta_id = Integer.parseInt(request.getParameter("cuenta_id"));
+            System.out.println("cuenta_id: "+cuenta_id);
+            compDao.pagar(cuenta_id);
             
             response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
         }

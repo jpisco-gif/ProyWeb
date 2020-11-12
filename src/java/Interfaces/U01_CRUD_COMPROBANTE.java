@@ -15,4 +15,6 @@ import java.util.List;
 public interface U01_CRUD_COMPROBANTE {
     public boolean guardar_pasaje(U01_Comprobante comp);
     public List mostrar_pasaje(int cuenta_id);
+    public void eliminar_pasaje(int comprobante_id, int persona_id, int itinerario_id, int num_asiento);
+    public void pagar(int cuenta_id);
 }

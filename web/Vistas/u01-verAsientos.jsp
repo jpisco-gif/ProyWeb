@@ -104,11 +104,17 @@
     </body>
     <script>
         function ingresaDatos(val, val2, val3, val4, val5) {
-            $.post("u01-ingresarDatos.jsp", {val: val, val2: val2, val3: val3, val4: val4, val5: val5})
+            if(val5 == 1){
+                alert("El asiento esta ocupado");
+            }
+            else if(val5 == 0){
+                $.post("u01-ingresarDatos.jsp", {val: val, val2: val2, val3: val3, val4: val4, val5: val5})
                     .done(function (data) {
                         $('#contenido2').html(data);
 //                console.log(data);
                     });
+            }
+            
         }
     </script>
 </html>

@@ -99,7 +99,7 @@
                                 <input type="email" class="input" name="correo" id="correo" placeholder="Ingrese su correo">
                                 <input type="hidden" name="itinerario_id" value="<%=itinerario_id%>">
                                 <input type="hidden" name="nom_asiento" value="<%=nom_asiento%>">
-                                <input type="hidden" name="usuario_id" value="<%=cuenta_id%>">
+                                <input type="hidden" name="cuenta_id" value="<%=cuenta_id%>">
                                 <input type="hidden" name="precio" value="<%=precio%>">
                                 <input type="hidden" name="estado_pago" value="0">
                                 <input type="hidden" name="accion" value="guardarPasaje">

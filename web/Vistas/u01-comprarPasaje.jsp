@@ -1,5 +1,5 @@
-<%  
-    int cuenta_id = (Integer)session.getAttribute("cuenta_id"); 
+<%
+    int cuenta_id = (Integer) session.getAttribute("cuenta_id");
 %>
 <%@page import="Modelo.U01_Comprobante"%>
 <%@page import="ModeloDao.U01_ComprobanteDao"%>
@@ -30,30 +30,29 @@
                         <li class="menu__item"><a class="menu__link" href="U04-Nosotros.jsp">Nosotros</a></li>
                         <li class="menu__item"><a class="menu__link" href="U04-AtencioAlCliente.jsp">Atencion al cliente</a></li>
                         <li class="menu__item"><a class="menu__link" href="u01-comprarPasaje.jsp">compra de pasaje</a></li>
-                        
-                            <%
 
-                                HttpSession sesion = request.getSession();
-                                String usuario;
-                                String contraseña;
-                                if (sesion.getAttribute("usuario") != null && sesion.getAttribute("contraseña") != null) {
-                                    usuario = sesion.getAttribute("usuario").toString();
-                                    contraseña = sesion.getAttribute("contraseña").toString();
-                                    out.println("<li class='menu__item'>");
-                                    out.println("<a class='menu__link' href='../Vistas/u04-logout.jsp'>Logout</a>");
-                                    out.println("</li>");
+                        <%
+                            HttpSession sesion = request.getSession();
+                            String usuario;
+                            String contraseña;
+                            if (sesion.getAttribute("usuario") != null && sesion.getAttribute("contraseña") != null) {
+                                usuario = sesion.getAttribute("usuario").toString();
+                                contraseña = sesion.getAttribute("contraseña").toString();
+                                out.println("<li class='menu__item'>");
+                                out.println("<a class='menu__link' href='../Vistas/u04-logout.jsp'>Logout</a>");
+                                out.println("</li>");
 
-                                } else {
-                                    out.println("<li class='menu__item'>");
-                                    out.println("<a class='menu__link' href='../Vistas/U04-login.jsp'>Login</a>");
-                                    out.println("</li>");
+                            } else {
+                                out.println("<li class='menu__item'>");
+                                out.println("<a class='menu__link' href='../Vistas/U04-login.jsp'>Login</a>");
+                                out.println("</li>");
 
-                                }
-                                {
+                            }
+                            {
 
-                                }
-                            %> 
-                            <li>id de la cuenta: <%=cuenta_id%></li>
+                            }
+                        %> 
+                        <li>id de la cuenta: <%=cuenta_id%></li>
 
                     </ul>
                 </nav>
@@ -112,47 +111,61 @@
 
             </div>
         </section>
+        <%
+            U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
+            List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
+            int i = list2.get(0).getItinerario_id();
+            if(i != 0){
+        %>
         <section class="info-rutas">
             <h3>Sus viajes pendientes</h3>
             <table border="1">
                 <tr>
+                    <td>persona id</td>
                     <td>Nombres</td>
                     <td>Apellido paterno</td>
                     <td>Apellido materno</td>
                     <td>Nro. documento</td>
                     <td>Nro. asiento</td>
                     <td></td>
-                    
+
                 </tr>
                 <%
-                    U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
-                    List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
                     Iterator<U01_Comprobante> iter2 = list2.iterator();
                     U01_Comprobante comp = null;
                     while (iter2.hasNext()) {
-                        comp = iter2.next();
+                        comp = iter2.next();                      
                 %>
                 <tr>
+                    <td><%=comp.getUsuario_id()%></td>
                     <td><%=comp.getNombre()%></td>
                     <td><%=comp.getApepat()%></td>
                     <td><%=comp.getApemat()%></td>
                     <td><%=comp.getNumdoc()%></td>
                     <td><%=comp.getNum_asiento()%></td>
-                    
-                        <form action="../U01_Controlador" method="post">
-                        <input type="hidden" name="accion" value="eliminar-pasaje">
-                        <input type="hidden" name="comprobante_id" value="<%=comp.getComprobante_id()%>">
-                        <td>
+
+                <form action="../U01_Controlador" method="post">
+                    <input type="hidden" name="accion" value="eliminar-pasaje">
+                    <input type="hidden" name="comprobante_id" value="<%=comp.getComprobante_id()%>">
+                    <input type="hidden" name="persona_id" value="<%=comp.getUsuario_id()%>">
+                    <input type="hidden" name="itinerario_id" value="<%=comp.getItinerario_id()%>">
+                    <input type="hidden" name="num_asiento" value="<%=comp.getNum_asiento()%>">   
+                    <td>
                         <input type="submit" name="submit" value="eliminar">    
-                        </td>
-                        </form>
-                    
+                    </td>
+                </form>
+
                 </tr>
-                <% }%>
+                <%}%>
             </table>
             <div>
-                <input type="button" value="Pagar todos" class="pagar-todos">
+                <form action="../U01_Controlador" method="post">
+                    <input type="hidden" name="cuenta_id" value="<%=cuenta_id%>">
+                    <input type="hidden" name="accion" value="pagar-pasajes">
+                    <input type="submit" name="submit" value="Pagar" class="pagar">
+                </form>
             </div>
+                <%}%>
         </section>
 
     </body>
