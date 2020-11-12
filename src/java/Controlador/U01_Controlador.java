@@ -140,6 +140,9 @@ public class U01_Controlador extends HttpServlet {
             List<U01_Ruta> list = rutaDao.consultar_ruta(origen, destino, fecha);
             //request.setAttribute("rutas", list);
             sesion.setAttribute("rutas", list);
+            sesion.setAttribute("origen", origen);
+            sesion.setAttribute("destino", destino);
+            sesion.setAttribute("fecha", fecha);
             response.sendRedirect("Vistas/u01-comprarPasaje.jsp");   
         }
         
@@ -239,6 +242,41 @@ public class U01_Controlador extends HttpServlet {
             System.out.println("cuenta_id: "+cuenta_id);
             compDao.pagar(cuenta_id);
             
+            response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
+        }
+        
+        else if(accion.equalsIgnoreCase("editarDatos")){
+            String usuario_id = request.getParameter("usuario_id");
+            String nombres = request.getParameter("nombre");
+            String apepat = request.getParameter("apepat");
+            String apemat = request.getParameter("apemat");
+            String sexo = request.getParameter("sexo");
+            int telefono = Integer.parseInt(request.getParameter("telef"));
+            int edad = Integer.parseInt(request.getParameter("edad"));
+            String numdoc = request.getParameter("numdoc");
+            String tipo_doc = request.getParameter("tipo-doc");
+            
+            System.out.println("usuario_id: "+usuario_id);
+            System.out.println("nombres: "+nombres);
+            System.out.println("apemat: "+apemat);
+            System.out.println("apepat: "+apepat);
+            System.out.println("tipo-doc: "+tipo_doc);
+            System.out.println("numdoc: "+numdoc);
+            System.out.println("edad: "+edad);
+            System.out.println("sexo: "+sexo);
+            System.out.println("telefono: "+telefono);
+            
+            comp.setUsuario_id(usuario_id);
+            comp.setNombre(nombres);
+            comp.setApemat(apemat);
+            comp.setApepat(apepat);
+            comp.setSexo(sexo);
+            comp.setTelefono(telefono);
+            comp.setEdad(edad);
+            comp.setNumdoc(numdoc);
+            comp.setTipo_doc(tipo_doc);
+            
+            compDao.editarDatos(comp);
             response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
         }
         

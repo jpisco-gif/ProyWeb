@@ -32,6 +32,10 @@
 .info-rutas table{
     margin: 0 auto;
 }
+.mensaje p{
+    margin: 1em 0; 
+    text-align: center;
+}
 
 
 /* ----------asientos---------- */

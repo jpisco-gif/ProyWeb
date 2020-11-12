@@ -1,8 +1,13 @@
 <%
-    int itinerario_id = Integer.parseInt(request.getParameter("val2"));
-    int nom_asiento = Integer.parseInt(request.getParameter("val"));
-    double precio = Double.parseDouble(request.getParameter("val3"));
-    int cuenta_id = Integer.parseInt(request.getParameter("val4"));   
+    int usuario_id = Integer.parseInt(request.getParameter("val"));
+    String nombres = request.getParameter("val2");
+    String apepat = request.getParameter("val3");
+    String apemat = request.getParameter("val4");
+    String sexo = request.getParameter("val5");
+    int telefono = Integer.parseInt(request.getParameter("val6"));
+    int edad = Integer.parseInt(request.getParameter("val7"));
+    int numdoc = Integer.parseInt(request.getParameter("val8"));
+    
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -18,13 +23,12 @@
             <h3>Ingrese sus datos</h3>
             <div class="muestra-form">
                 <form action="../U01_Controlador" method="post">
-                    itinerario: <%=itinerario_id%>
-                    numero de asiento: <%=nom_asiento%>
                     <table class="formulario">
                         <tr>
                             <td class="izq">Tipo de documento: </td>
                             <td>
                                 <select name="tipo-doc" id="tipo-doc" class="select">
+                                    <option value="">Seleccione</option>
                                     <option value="1">DNI</option>
                                     <option value="3">Carnet de extranjería</option>
                                     <option value="2">Pasaporte</option>
@@ -36,7 +40,7 @@
                                 <label for="numdoc">Número de documento: </label>
                             </td>
                             <td>
-                                <input type="text" class="input" name="numdoc" id="numdoc" placeholder="Ingrese su numero de documento">
+                                <input type="text" class="input" name="numdoc" id="numdoc" value='<%=numdoc%>'>
                             </td>
                         </tr>
                         <tr>
@@ -44,7 +48,7 @@
                                 <label for="nombre">Nombre: </label>
                             </td>
                             <td>
-                                <input type="text" class="input" name="nombre" id="nombre" placeholder="Ingrese sus nombres">
+                                <input type="text" class="input" name="nombre" id="nombre" value='<%=nombres%>'>
                             </td>
                         </tr>
                         <tr>
@@ -52,7 +56,7 @@
                                 <label for="apepat">Apellido paterno: </label>
                             </td>
                             <td>
-                                <input type="text" class="input" name="apepat" id="apepat" placeholder="Ingrese su apellido paterno">
+                                <input type="text" class="input" name="apepat" id="apepat" value='<%=apepat%>'>
                             </td>
                         </tr>
                         <tr>
@@ -60,7 +64,7 @@
                                 <label for="apemat">Apellido materno: </label>
                             </td>
                             <td>
-                                <input type="text" class="input" name="apemat" id="apemat" placeholder="Ingrese su apellido materno">
+                                <input type="text" class="input" name="apemat" id="apemat" value="<%=apemat%>">
                             </td>
                         </tr>
                         <tr>
@@ -68,7 +72,7 @@
                                 <label for="edad">Edad: </label>
                             </td>
                             <td>
-                                <input type="text" class="input" name="edad" id="edad" placeholder="Ingrese su edad">
+                                <input type="text" class="input" name="edad" id="edad" value="<%=edad%>">
                             </td>
                         </tr>
                         <tr>
@@ -88,19 +92,15 @@
                                 <label for="telef">Telefono</label>
                             </td>
                             <td>
-                                <input type="tel" class="input" placeholder="Ingrese su telefono" name="telef" id="telef">
+                                <input type="tel" class="input" value="<%=telefono%>" name="telef">
+                                <input type="hidden" name="accion" value="editarDatos">
+                                <input type="hidden" name="usuario_id" value="<%=usuario_id%>">
                             </td>
-                        </tr>
-                                <input type="hidden" name="itinerario_id" value="<%=itinerario_id%>">
-                                <input type="hidden" name="nom_asiento" value="<%=nom_asiento%>">
-                                <input type="hidden" name="cuenta_id" value="<%=cuenta_id%>">
-                                <input type="hidden" name="precio" value="<%=precio%>">
-                                <input type="hidden" name="estado_pago" value="0">
-                                <input type="hidden" name="accion" value="guardarPasaje">
+                        </tr>                       
                     </table>
                     <div class="submit">
                         <p>
-                            <input type="submit" name="accion" value="Agregar">
+                            <input type="submit" name="accion" value="Aceptar">
                         </p>
                     </div>
                 </form>

@@ -66,7 +66,7 @@ U01_Comprobante comp = new U01_Comprobante();
     public List mostrar_pasaje(int cuenta_id) {
         ArrayList<U01_Comprobante> list = new ArrayList<>();
                 
-        String sql = "select t1.persona_id, nombres, apellido_paterno, apellido_materno, cod_documento, \n"
+        String sql = "select t1.persona_id, nombres, apellido_paterno, apellido_materno, sexo, telefono, edad, documento_id, cod_documento, \n"
                 + "t3.nom_asiento, t2.comprobante_id, t2.itinerario_id from personas t1 \n"
                 + "inner join comprobantes t2 on t1.persona_id = t2.persona_id \n"
                 +"inner join asientos t3 on t2.asiento_id = t3.asiento_id\n"
@@ -82,7 +82,10 @@ U01_Comprobante comp = new U01_Comprobante();
                 comp.setUsuario_id(rs.getString("t1.persona_id"));
                 comp.setNombre(rs.getString("nombres"));
                 comp.setApepat(rs.getString("apellido_paterno"));
-                comp.setApemat(rs.getString("apellido_materno")); 
+                comp.setApemat(rs.getString("apellido_materno"));
+                comp.setSexo(rs.getString("sexo"));
+                comp.setTelefono(rs.getInt("telefono"));
+                comp.setEdad(rs.getInt("edad"));
                 comp.setNumdoc(rs.getString("cod_documento"));
                 comp.setNum_asiento(rs.getInt("t3.nom_asiento"));
                 comp.setComprobante_id(rs.getInt("t2.comprobante_id"));
@@ -126,6 +129,25 @@ U01_Comprobante comp = new U01_Comprobante();
             ps.executeUpdate();
         }catch(Exception e){
             
+        }
+    }
+    
+    @Override
+    public void editarDatos(U01_Comprobante comp){
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement("update personas set nombres = ?, apellido_paterno = ?, apellido_materno = ?, sexo = ?, telefono = ?, edad = ?, documento_id = ?, cod_documento = ? where persona_id = ?");
+            ps.setString(1, comp.getNombre());
+            ps.setString(2, comp.getApepat());
+            ps.setString(3, comp.getApemat());
+            ps.setString(4, comp.getSexo());
+            ps.setInt(5, comp.getTelefono());
+            ps.setInt(6, comp.getEdad());
+            ps.setString(7, comp.getTipo_doc());
+            ps.setString(8, comp.getNumdoc());
+            ps.setString(9, comp.getUsuario_id());
+            ps.executeUpdate();
+        } catch (Exception e) {
         }
     }
 }

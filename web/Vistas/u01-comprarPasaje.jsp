@@ -65,19 +65,25 @@
                 <%
                     U01_RutasDao dao3 = new U01_RutasDao();
                     List<U01_Ruta> list3 = dao3.terminales();
-                    
-                    List<U01_Ruta> list4 = (List<U01_Ruta>)session.getAttribute("rutas");
+
+                    int origen = (Integer) session.getAttribute("origen");
+                    int destino = (Integer) session.getAttribute("destino");
                 %>
                 <form method="post" action="../U01_Controlador" class="labels-formulario">
                     <div>
                         <label>Origen</label>
                         <select name="origen">
-                            <option value="<%=list4.get(0).getId_origen()%>"><%=list4.get(0).getOrigen()%></option>
+                            <option value=''>Seleccione</option>
+
                             <%
+                                String aux = "";
                                 Iterator<U01_Ruta> iter_origen = list3.iterator();
                                 U01_Ruta ruta_origen = null;
                                 while (iter_origen.hasNext()) {
                                     ruta_origen = iter_origen.next();
+                                    //if(origen == ruta_origen.getId_origen()){
+                                    //    aux = "selected";
+                                    //}
                             %>
 
                             <option value="<%=ruta_origen.getId_origen()%>"><%=ruta_origen.getOrigen()%></option>  
@@ -87,20 +93,28 @@
                     <div>
                         <label>Destino</label>
                         <select name="destino">
-                            <option value="<%=list4.get(0).getId_destino()%>"><%=list4.get(0).getDestino()%></option>
+                            <option value=''>Seleccione</option>
                             <%
+                                String aux2 = "";
                                 Iterator<U01_Ruta> iter_destino = list3.iterator();
                                 U01_Ruta ruta_destino = null;
                                 while (iter_destino.hasNext()) {
                                     ruta_destino = iter_destino.next();
+                                    //if(destino == 3){
+                                    //    aux2 = "selected";
+                                    //}
+                                    //else{
+                                    //    aux2 = "";
+                                    //}
+
                             %>
-                            <option value="<%=ruta_destino.getId_origen()%>"><%=ruta_destino.getOrigen()%></option>  
+                            <option value="<%=ruta_destino.getId_origen()%>" <%=aux2%>><%=ruta_destino.getOrigen()%></option>  
                             <%}%>
                         </select>
                     </div>
                     <div>
                         <label>Fecha</label>
-                        <input type="date" name="fecha" value='<%=list4.get(0).getFecha()%>'>
+                        <input type="date" name="fecha" value=''>
                     </div>
 
                     <div class="">
@@ -110,6 +124,13 @@
                 </form>
             </div>
         </section>
+        <%
+            List<U01_Ruta> list = (List<U01_Ruta>) session.getAttribute("rutas");
+            Iterator<U01_Ruta> iter = list.iterator();
+            U01_Ruta ruta = null;
+            int aux3 = list.size();
+            if (aux3 != 0) {
+        %>              
         <section class="info-rutas">
             <h3>Horarios disponibles</h3>
             <table border="1">
@@ -130,9 +151,6 @@
                 <%
                     //U01_RutasDao dao = new U01_RutasDao();
                     //List<U01_Ruta> list = dao.consultar_ruta(1,5,"2020-10-10");
-                    List<U01_Ruta> list = (List<U01_Ruta>)session.getAttribute("rutas");
-                    Iterator<U01_Ruta> iter = list.iterator();
-                    U01_Ruta ruta = null;
                     while (iter.hasNext()) {
                         ruta = iter.next();
                 %>
@@ -156,6 +174,11 @@
                 <% }%>
             </table>
         </section>
+        <% } else {%>
+        <section class='mensaje'>
+            <p>No hay salidas disponibles para la fecha seleccionada</p>
+        </section>
+        <% }%>
         <section class="asiento-form">
             <div id="contenido">
 
@@ -167,8 +190,8 @@
         <%
             U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
             List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
-            int i = list2.get(0).getItinerario_id();
-            if (i != 0) {
+            int aux4 = list2.size();
+            if (aux4 != 0) {
         %>
         <section class="info-rutas">
             <h3>Sus viajes pendientes</h3>
@@ -207,6 +230,10 @@
                         <input type="submit" name="submit" value="eliminar">    
                     </td>
                 </form>
+                <td>
+                    <%--<a class="btnAsiento"  name="btnAsiento" onclick="editarDatos(<%=comp.getUsuario_id()%>,'<%=comp.getNombre()%>','<%=comp.getApepat()%>','<%=comp.getApemat()%>','<%=comp.getSexo()%>',<%=comp.getTelefono()%>,<%=comp.getEdad()%>,<%=comp.getNumdoc()%>)"><input type="button" value="Editar mis datos"></a>--%>
+                    <a class="btnAsiento"  name="btnAsiento" onclick="editarDatos(<%=comp.getUsuario_id()%>,'<%=comp.getNombre()%>','<%=comp.getApepat()%>','<%=comp.getApemat()%>','<%=comp.getSexo()%>',<%=comp.getTelefono()%>,<%=comp.getEdad()%>,<%=comp.getNumdoc()%>)"><input type="button" value="Editar mis datos"></a>
+                </td>
 
                 </tr>
                 <%}%>
@@ -218,9 +245,11 @@
                     <input type="submit" name="submit" value="Pagar" class="pagar">
                 </form>
             </div>
-            <%}%>
         </section>
-
+        <%}%>
+        <section id='contenido3'>
+            
+        </section>
     </body>
     <script>
 
@@ -236,6 +265,13 @@
             $.post("u01-ingresarDatos.jsp", {val: val, val2: val2, val3: val3, val4: val4})
                     .done(function (data) {
                         $('#contenido2').html(data);
+//                console.log(data);
+                    });
+        }
+        function editarDatos(val, val2, val3, val4, val5, val6, val7, val8){
+            $.post("u01-editarDatos.jsp", {val:val, val2:val2, val3:val3, val4:val4, val5:val5, val6:val6, val7:val7, val8:val8})
+                    .done(function (data) {
+                        $('#contenido3').html(data);
 //                console.log(data);
                     });
         }
