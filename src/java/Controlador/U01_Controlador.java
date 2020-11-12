@@ -35,7 +35,7 @@ import javax.servlet.http.HttpSession;
 public class U01_Controlador extends HttpServlet {
 //-------pasajero------------
     String guardar_pasajero = "vista/u01-compraPasajes.jsp";
-    String mostrar_rutas = "/vista/u01-mostrarRutas.jsp";
+
     String comprar_pasajes = "/Vistas/u01-comprarPasaje.jsp";
     
     U01_Pasajero pasajero = new U01_Pasajero();
@@ -124,21 +124,23 @@ public class U01_Controlador extends HttpServlet {
         
         else if(accion.equalsIgnoreCase("consultar-rutas")){
             
-            String origen = request.getParameter("origen");
-            String destino = request.getParameter("destino");
+            int origen = Integer.parseInt(request.getParameter("origen"));
+            int destino = Integer.parseInt(request.getParameter("destino"));
             String fecha = request.getParameter("fecha");
             
             System.out.println("origen: "+origen);
             System.out.println("destino: "+destino);
             System.out.println("fecha: "+fecha);
             
-            ruta.setOrigen(origen);
-            ruta.setDestino(destino);
+            
+            ruta.setId_origen(origen);
+            ruta.setId_destino(destino);
             ruta.setFecha(fecha);
             
-            rutaDao.consultar_ruta(origen, destino, fecha);
-
-            acceso = mostrar_rutas;    
+            List<U01_Ruta> list = rutaDao.consultar_ruta(origen, destino, fecha);
+            //request.setAttribute("rutas", list);
+            sesion.setAttribute("rutas", list);
+            response.sendRedirect("Vistas/u01-comprarPasaje.jsp");   
         }
         
         else if(accion.equalsIgnoreCase("guardarPasaje")){
@@ -187,8 +189,9 @@ public class U01_Controlador extends HttpServlet {
             comp.setEstado_pago(estado_pago);
             compDao.guardar_pasaje(comp);
             
-            acceso = comprar_pasajes;
             response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
+            //acceso = comprar_pasajes;
+            
         }
         
         else if(accion.equalsIgnoreCase("login")){
@@ -209,7 +212,7 @@ public class U01_Controlador extends HttpServlet {
             System.out.println("cuenta2: "+cuenta_id2);
             sesion.setAttribute("cuenta_id", cuenta_id2);
             if(rol_id2 == 1){
-                response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
+                response.sendRedirect("Vistas/U04-index.jsp");
             }
             else if(rol_id2 == 2){
                 response.sendRedirect("Vistas/u01-consultarRuta.jsp");

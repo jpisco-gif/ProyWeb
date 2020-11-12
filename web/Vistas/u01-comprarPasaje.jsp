@@ -1,6 +1,8 @@
+<%@page import="java.util.ArrayList"%>
 <%
     int cuenta_id = (Integer) session.getAttribute("cuenta_id");
 %>
+<%@page import="Controlador.U01_Controlador"%>
 <%@page import="Modelo.U01_Comprobante"%>
 <%@page import="ModeloDao.U01_ComprobanteDao"%>
 <%@page import="Modelo.U01_Ruta"%>
@@ -58,6 +60,56 @@
                 </nav>
             </div>
         </header>
+        <section class="ingresar-datos">
+            <div class="muestra-form">
+                <%
+                    U01_RutasDao dao3 = new U01_RutasDao();
+                    List<U01_Ruta> list3 = dao3.terminales();
+                    
+                    List<U01_Ruta> list4 = (List<U01_Ruta>)session.getAttribute("rutas");
+                %>
+                <form method="post" action="../U01_Controlador" class="labels-formulario">
+                    <div>
+                        <label>Origen</label>
+                        <select name="origen">
+                            <option value="<%=list4.get(0).getId_origen()%>"><%=list4.get(0).getOrigen()%></option>
+                            <%
+                                Iterator<U01_Ruta> iter_origen = list3.iterator();
+                                U01_Ruta ruta_origen = null;
+                                while (iter_origen.hasNext()) {
+                                    ruta_origen = iter_origen.next();
+                            %>
+
+                            <option value="<%=ruta_origen.getId_origen()%>"><%=ruta_origen.getOrigen()%></option>  
+                            <%}%>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Destino</label>
+                        <select name="destino">
+                            <option value="<%=list4.get(0).getId_destino()%>"><%=list4.get(0).getDestino()%></option>
+                            <%
+                                Iterator<U01_Ruta> iter_destino = list3.iterator();
+                                U01_Ruta ruta_destino = null;
+                                while (iter_destino.hasNext()) {
+                                    ruta_destino = iter_destino.next();
+                            %>
+                            <option value="<%=ruta_destino.getId_origen()%>"><%=ruta_destino.getOrigen()%></option>  
+                            <%}%>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Fecha</label>
+                        <input type="date" name="fecha" value='<%=list4.get(0).getFecha()%>'>
+                    </div>
+
+                    <div class="">
+                        <input type="hidden" name="accion" value="consultar-rutas">
+                        <input type="submit" name="submit" value="Buscar">
+                    </div>
+                </form>
+            </div>
+        </section>
         <section class="info-rutas">
             <h3>Horarios disponibles</h3>
             <table border="1">
@@ -76,8 +128,9 @@
                     <td>Asientos</td>
                 </tr>
                 <%
-                    U01_RutasDao dao = new U01_RutasDao();
-                    List<U01_Ruta> list = dao.consultar_todos();
+                    //U01_RutasDao dao = new U01_RutasDao();
+                    //List<U01_Ruta> list = dao.consultar_ruta(1,5,"2020-10-10");
+                    List<U01_Ruta> list = (List<U01_Ruta>)session.getAttribute("rutas");
                     Iterator<U01_Ruta> iter = list.iterator();
                     U01_Ruta ruta = null;
                     while (iter.hasNext()) {
@@ -115,7 +168,7 @@
             U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
             List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
             int i = list2.get(0).getItinerario_id();
-            if(i != 0){
+            if (i != 0) {
         %>
         <section class="info-rutas">
             <h3>Sus viajes pendientes</h3>
@@ -134,7 +187,7 @@
                     Iterator<U01_Comprobante> iter2 = list2.iterator();
                     U01_Comprobante comp = null;
                     while (iter2.hasNext()) {
-                        comp = iter2.next();                      
+                        comp = iter2.next();
                 %>
                 <tr>
                     <td><%=comp.getUsuario_id()%></td>
@@ -165,7 +218,7 @@
                     <input type="submit" name="submit" value="Pagar" class="pagar">
                 </form>
             </div>
-                <%}%>
+            <%}%>
         </section>
 
     </body>

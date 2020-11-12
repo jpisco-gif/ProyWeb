@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="ModeloDao.U01_RutasDao"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="Modelo.U01_Ruta"%>
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
@@ -67,10 +71,10 @@
                 <li><img src="../Imagenes/huancayo.jpg" alt="" class="banner__img"></li>
             </ul>
 
-            <div class="contenedor">
+            <%--<div class="contenedor">
                 <h2 class="banner__titulo">La mejor seguridad de buses del Peru</h2>
                 <p class="banner__txt">Bioseguridad y protocolo</p>
-                <form action="" method="post">
+                <form action="../U01_Controlador" method="post">
                     <label> Origen: </label>   
                     <select name="origen">
                         <option value="">Seleccione</option>
@@ -100,7 +104,55 @@
 
 
                 </form>
-            </div>   
+            </div>   --%>
+            <div class="muestra-form">
+                <%
+                    U01_RutasDao dao3 = new U01_RutasDao();
+                    List<U01_Ruta> list3 = dao3.terminales();
+                    
+                %>
+                <form method="post" action="../U01_Controlador" class="labels-formulario">
+                    <div>
+                        <label>Origen</label>
+                        <select name="origen">
+                            <option value="">Seleccione</option>
+                            <%
+                                Iterator<U01_Ruta> iter_origen = list3.iterator();
+                                U01_Ruta ruta_origen = null;
+                                while (iter_origen.hasNext()) {
+                                    ruta_origen = iter_origen.next();
+                            %>
+
+                            <option value="<%=ruta_origen.getId_origen()%>"><%=ruta_origen.getOrigen()%></option>  
+                            <%}%>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Destino</label>
+                        <select name="destino">
+                            <option value="">Seleccione</option>
+                            <%
+                                Iterator<U01_Ruta> iter_destino = list3.iterator();
+                                U01_Ruta ruta_destino = null;
+                                while (iter_destino.hasNext()) {
+                                    ruta_destino = iter_destino.next();
+                            %>
+
+                            <option value="<%=ruta_destino.getId_origen()%>"><%=ruta_destino.getOrigen()%></option>  
+                            <%}%>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Fecha</label>
+                        <input type="date" name="fecha">
+                    </div>
+
+                    <div class="">
+                        <input type="hidden" name="accion" value="consultar-rutas">
+                        <input type="submit" name="submit" value="Buscar rutas">
+                    </div>
+                </form>
+            </div>
         </div>
 
 

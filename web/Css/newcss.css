@@ -91,6 +91,9 @@
 }
 /* ------formularios------ */
 
+.muestra-form form{
+    margin: 0 auto;
+}
 .ingresar-datos h3{
     text-align: center;
     padding: 2em 0;
@@ -105,10 +108,7 @@
 .formulario{
     width: 100%;
 }
-form{
-    margin: 0 auto;
-    width: 70%;
-}
+
 .izq{
     width: 150px;
 }
@@ -138,6 +138,9 @@ td{
 }
 .pagar{
     margin: 1em 0;
+}
+.labels-formulario{
+    display: flex;
 }
 /*###################u02##########################*/
 /*###################u03##########################*/

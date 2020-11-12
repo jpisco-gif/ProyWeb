@@ -13,6 +13,7 @@ import java.util.List;
  * @author V330
  */
 public interface U01_CRUD_RUTA {
-     public List consultar_ruta(String origen, String destino, String fecha);
+     public List consultar_ruta(int origen, int destino, String fecha);
      public List consultar_todos();
+     public List terminales();
 }
