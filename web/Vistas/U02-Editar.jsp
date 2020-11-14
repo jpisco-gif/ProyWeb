@@ -43,7 +43,7 @@
                     </tr>
                 </tbody>
             </table>
-                    <a href="Controlador?accion=listar">Regresar</a>
+                    <a href="U02_Controlador?accion=listar"> Regresar </a>
         </form> 
     </body>
 </html>

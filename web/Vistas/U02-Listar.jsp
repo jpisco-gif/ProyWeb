@@ -20,6 +20,7 @@
                         <th>COSTO DE LA RUTA</th>
                         <th>DURACION DEL VIAJE</th>
                         <th>DESCRIPCION DEL VIAJE</th>
+                        <th colspan="2">ESTADO DE VIAJE</th>
                         
                     </tr>
                 </thead>
@@ -39,6 +40,8 @@
                         <td><%=per.getCosto()%></td>
                         <td><%=per.getDuracion()%></td>
                         <td><%=per.getDescripcion()%></td>
+                        <td><a href="../U02_Controlador?accion=editar&ruta_id=<%=per.getRuta()%> " > Editar</a></td>
+                        <td><a href="U02_Controlador?accion=eliminar&id=<%=per.getRuta()%>" >Eliminar</a> </td> 
                         
                     </tr>
                     <% }%>
