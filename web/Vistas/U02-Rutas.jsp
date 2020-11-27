@@ -40,7 +40,7 @@
                       <section class="reporte-grafico">
                         <p>Viajes</p>
                         <br></br>
-                        <iframe name="detalle" id="detalle" src="U02-Listar.jsp" width="620" height="400" frameborder="0" scrolling="yes"></iframe> 
+                        <iframe name="detalle" id="detalle" src="U02-Listar.jsp" width="670" height="400" frameborder="0" scrolling="yes"></iframe> 
                         
                       </section>
                     </main>

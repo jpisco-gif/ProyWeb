@@ -41,6 +41,9 @@
                         <td> DESCRIPCION </td>
                         <td> <input type="text" name="txtDescripcion" value="<%=en.getDescripcion()%>"/> </td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> <input type="submit" value="Actualizar" name="accion" /> </td>
+                    </tr>
                 </tbody>
             </table>
                     <a href="U02_Controlador?accion=listar"> Regresar </a>

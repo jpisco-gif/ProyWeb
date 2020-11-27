@@ -41,7 +41,7 @@
                         <td><%=per.getDuracion()%></td>
                         <td><%=per.getDescripcion()%></td>
                         <td><a href="../U02_Controlador?accion=editar&ruta_id=<%=per.getRuta()%> " > Editar</a></td>
-                        <td><a href="U02_Controlador?accion=eliminar&id=<%=per.getRuta()%>" >Eliminar</a> </td> 
+                        <td><a href="U02_Controlador?accion=eliminar&ruta_id=<%=per.getRuta()%>" >Eliminar</a> </td> 
                         
                     </tr>
                     <% }%>
