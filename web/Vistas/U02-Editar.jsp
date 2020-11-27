@@ -9,8 +9,10 @@
     </head>
     <body>
         <% 
+        HttpSession sesion = request.getSession();
         U02_RutasDao end=new U02_RutasDao();
-        int ruta_id=Integer.parseInt((String)request.getAttribute("iden"));
+        //int ruta_id=Integer.parseInt((String)request.getAttribute("iden"));
+        int ruta_id = (Integer)sesion.getAttribute("iden");
         U02_Ruta en=(U02_Ruta)end.list(ruta_id);
         %>
         <form action="Controlador">
@@ -46,7 +48,7 @@
                     </tr>
                 </tbody>
             </table>
-                    <a href="U02_Controlador?accion=listar"> Regresar </a>
+                    <a href="U02-Listar.jsp"> Regresar </a>
         </form> 
     </body>
 </html>

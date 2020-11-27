@@ -16,6 +16,16 @@
     list-style: none;
 }
 
+/*--------------formulario-viajes------------------*/
+.tabla{
+    width: 70%;
+    
+}
+.cabecera-tabla{
+    background-color: red;
+    color: white;
+}
+
 /*###################u01##########################*/
 /*-------- seccion datos --------*/
 .datos{
@@ -39,6 +49,24 @@
 
 
 /* ----------asientos---------- */
+.asiento-ocupado{
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+    margin: 0 5px;
+}
+.asiento-disponible{
+    background-color: green;
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+    margin: 0 5px;
+}
+.leyenda{
+    display: flex;
+    justify-content: center;
+}
 .ver-asientos{
     background-color: white;
 }

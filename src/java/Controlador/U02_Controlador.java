@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -66,6 +67,7 @@ U02_RutasDao dao=new U02_RutasDao();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession sesion = request.getSession();
        String acceso = "";
         String accion = request.getParameter("accion");
         if (accion.equalsIgnoreCase("listar")) {
@@ -91,7 +93,9 @@ U02_RutasDao dao=new U02_RutasDao();
             acceso = listar;
 
         } else if (accion.equalsIgnoreCase("editar")) {
-            request.setAttribute("iden", request.getParameter("ruta_id"));
+            //request.setAttribute("iden", request.getParameter("ruta_id"));
+            int ruta_id = Integer.parseInt(request.getParameter("ruta_id"));
+            sesion.setAttribute("iden", ruta_id);
             acceso = edit;
             
         } else if (accion.equalsIgnoreCase("Actualizar")) {
@@ -112,8 +116,9 @@ U02_RutasDao dao=new U02_RutasDao();
             acceso = listar;
         }
        
-       RequestDispatcher vista=request.getRequestDispatcher(acceso);
-       vista.forward(request,response);
+//       RequestDispatcher vista=request.getRequestDispatcher(acceso);
+//       vista.forward(request,response);
+       response.sendRedirect(acceso);
     }
 
     /**

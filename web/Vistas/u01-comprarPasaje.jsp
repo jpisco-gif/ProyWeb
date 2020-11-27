@@ -54,7 +54,7 @@
 
                             }
                         %> 
-                        <li>id de la cuenta: <%=cuenta_id%></li>
+                      <!--  <li>id de la cuenta: <%=cuenta_id%></li>-->
 
                     </ul>
                 </nav>
@@ -133,18 +133,18 @@
         %>              
         <section class="info-rutas">
             <h3>Horarios disponibles</h3>
-            <table border="1">
-                <tr>
-                    <td>Cod. itinerario</td>
+            <table class="tabla">
+                <tr class="cabecera-tabla">
+<!--                    <td>Cod. itinerario</td>
                     <td>id origen</td>
-                    <td>id destino</td>
+                    <td>id destino</td>-->
                     <td>Origen</td>
                     <td>Destino</td>
-                    <td>P. embarque</td>
-                    <td>P. llegada</td>
+<!--                    <td>P. embarque</td>
+                    <td>P. llegada</td>-->
                     <td>Duración</td>
                     <td>Fecha</td>
-                    <td>Hora</td>
+                    <td>Hora de salida</td>
                     <td>Precio</td>
                     <td>Asientos</td>
                 </tr>
@@ -154,18 +154,18 @@
                     while (iter.hasNext()) {
                         ruta = iter.next();
                 %>
-                <tr>
-                    <td><%=ruta.getItinerarios_id()%></td>
+                <tr class="contenido-tabla">
+                    <!--<td><%=ruta.getItinerarios_id()%></td>
                     <td><%=ruta.getId_origen()%></td>
-                    <td><%=ruta.getId_destino()%></td>
+                    <td><%=ruta.getId_destino()%></td>-->
                     <td><%=ruta.getOrigen()%></td>
                     <td><%=ruta.getDestino()%></td>
-                    <td><%=ruta.getPuerta_embarque()%></td>
-                    <td><%=ruta.getPuerta_llegada()%></td>
-                    <td><%=ruta.getDuracion()%></td>
+                   <!-- <td><%=ruta.getPuerta_embarque()%></td>
+                    <td><%=ruta.getPuerta_llegada()%></td>-->
+                    <td><%=ruta.getDuracion()%> horas</td>
                     <td><%=ruta.getFecha()%></td>
                     <td><%=ruta.getHora()%></td>
-                    <td><%=ruta.getPrecio()%></td>
+                    <td>S./ <%=ruta.getPrecio()%></td>
                     <td>
                         <a class="btnAsiento"  name="btnAsiento" onclick="EscoAsiento(<%=ruta.getItinerarios_id()%>,<%=ruta.getPrecio()%>,<%=cuenta_id%>)"><input type="button" value="Ver asientos"></a>
 
