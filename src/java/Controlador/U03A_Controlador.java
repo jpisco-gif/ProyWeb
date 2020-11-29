@@ -77,8 +77,7 @@ public class U03A_Controlador extends HttpServlet {
             sesion.setAttribute("iden", request.getParameter("id"));
             acceso = editEn;
         } else if (action.equalsIgnoreCase("Actualizar")) {
-            String xid = request.getParameter("txtId");
-            int id = Integer.parseInt(xid);
+            int id = Integer.parseInt(request.getParameter("txtId"));
             String Enom = request.getParameter("txtNomE");
             String Eape = request.getParameter("txtApeE");
             int Edni = Integer.parseInt(request.getParameter("txtDniE"));
@@ -95,6 +94,10 @@ public class U03A_Controlador extends HttpServlet {
             en.setRecoge_dni(Rdni);
             en.setLugar_recojo(lugar);
             end.edit(en);
+            acceso = listarEn;
+        } else if(action.equalsIgnoreCase("eliminarEn")){
+            int id = Integer.parseInt(request.getParameter("id"));
+            end.delete(id);
             acceso = listarEn;
         }
        // RequestDispatcher vista=request.getRequestDispatcher(acceso);

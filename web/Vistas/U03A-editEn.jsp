@@ -1,8 +1,6 @@
-<%-- 
-    Document   : U03A_editEn
-    Created on : 06/11/2020, 12:28:50 AM
-    Author     : V330
---%>
+<%
+int id = Integer.parseInt(request.getParameter("val"));
+%>
 
 <%@page import="Modelo.U03A_Encomienda"%>
 <%@page import="ModeloDao.U03A_EncomiendaDao"%>
@@ -17,12 +15,12 @@
         <%
         HttpSession sesion = request.getSession();
         U03A_EncomiendaDao end=new U03A_EncomiendaDao();
-        int id=(Integer)sesion.getAttribute("iden");
+        
         System.out.println(id);
         U03A_Encomienda en=(U03A_Encomienda)end.list(id);
         %>
         <h1>Editando </h1>
-        <form action="U03A_Controlador">
+        <form action="../U03A_Controlador">
                 <table border="1">
                     <tbody>
                         <tbody>
@@ -57,7 +55,7 @@
                         </tr>
                     </tbody>                        
                 </table>
-                            <a href="U03A_Controlador?accion=listarEn">Regresar</a>
+                            <a href="U03A-listarEn.jsp">Regresar</a>
             </form> 
     </body>
 </html>

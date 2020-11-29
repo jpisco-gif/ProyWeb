@@ -14,7 +14,7 @@
     <body>
         <h1>Agregar Nueva Encomienda</h1>
         <div>
-            <form action="U03A_Controlador">
+            <form action="../U03A_Controlador">
                 <table border="1">
                     <tbody>
                         <tr>

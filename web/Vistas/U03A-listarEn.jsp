@@ -14,11 +14,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <script type="text/javascript" src="../js/jquery.js"></script>
     </head>
     <body>
         <h1>Encomiendas</h1>
-        <h1><a href="U03A_Controlador?accion=addEn">Agregar nueva encomienda</a></h1>
-        <table border="1" class="user">
+        <h1><a href="../U03A_Controlador?accion=addEn">Agregar nueva encomienda</a></h1>
+        <div id="contenido">
+            <table border="1" class="user">
                 <thead>
                     <tr>                            
                         <th>ID</th>
@@ -33,13 +35,13 @@
                     </tr>
                 </thead>
                 <%
-                    U03A_EncomiendaDao dao=new U03A_EncomiendaDao();
-                    List<U03A_Encomienda> list=dao.listar();
-                    Iterator<U03A_Encomienda> iter=list.iterator();
-                    U03A_Encomienda en=null;
-                    while (iter.hasNext()) {                            
-                            en=iter.next();
-                        
+                    U03A_EncomiendaDao dao = new U03A_EncomiendaDao();
+                    List<U03A_Encomienda> list = dao.listar();
+                    Iterator<U03A_Encomienda> iter = list.iterator();
+                    U03A_Encomienda en = null;
+                    while (iter.hasNext()) {
+                        en = iter.next();
+
                 %>
                 <tbody>
                     <tr>
@@ -52,13 +54,14 @@
                         <td><%=en.getRecoge_ape()%></td>
                         <td><%=en.getRecoge_dni()%></td>
                         <td><%=en.getLugar_recojo()%></td>
-                        <td><a href="../U03A_Controlador?accion=editarEn&id=<%=en.getId()%> " >editar</a> </td>
-                        <td><a href="U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" >Eliminar</a> </td>                            
+                        <td><a onclick="editarDatos(<%=en.getId()%>)"><input type="button" value="Editar mis datos"></a></td>
+                        <td><a href="../U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" >Eliminar</a> </td>                            
                     </tr>
-                <%}%>
+                    <%}%>
                 </tbody>
             </table>
-                <script type="text/javascript">
+        </div>
+        <script type="text/javascript">
             function mensaje(e) {
                 if (confirm("¿Estás seguro que deseas eliminiar el registro?")) {
                     return true;
@@ -68,4 +71,13 @@
             }
         </script>
     </body>
+    <script>
+        function editarDatos(val) {
+            $.post("U03A-editEn.jsp", {val: val})
+                    .done(function (data) {
+                        $('#contenido').html(data);
+                        //                console.log(data);
+                    });
+        }
+    </script>
 </html>
