@@ -13,7 +13,7 @@
     <head> 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0" >
-        <link rel="stylesheet" href="../../../css/estilo1.css">
+        <link rel="stylesheet" href="../Css/newcss.css">
         <title>Llama Bus</title>
         <link href="https://file.myfontastic.com/t5tNwfwUapz4yDzK3B6sfe/icons.css" rel="stylesheet">
     </head>
@@ -33,10 +33,10 @@
 
                                 HttpSession sesion = request.getSession();
                                 String usuario;
-                                String contraseña;
-                                if (sesion.getAttribute("usuario") != null && sesion.getAttribute("contraseña") != null) {
+                                
+                                if (sesion.getAttribute("usuario") != null) {
                                     usuario = sesion.getAttribute("usuario").toString();
-                                    contraseña = sesion.getAttribute("contraseña").toString();
+                                    
                                    out.println("<li class='menu__item'>");
                                     out.println("<a class='menu__link' href='../Vistas/u04-logout.jsp'>Logout</a>");
                                     out.println("</li>"); 
@@ -62,6 +62,7 @@
                 </nav>
             </div>
         </header>
+                            
         <div class="banner">
             <ul>
                 <li><img src="../Imagenes/arequipa.jpg" alt="" class="banner__img"></li>
@@ -105,6 +106,33 @@
 
                 </form>
             </div>   --%>
+            
+        </div>
+
+
+    </div>  
+    <main class="main">
+        <div class="contenedor">
+            <section class="info">
+                <article class="info__columna">
+                    <img src="../Imagenes/carro.png" alt="" class="info__img">
+                    <h2 class="info__titulo">!No esperes! </h2>
+                    <p class="info__txt">Lo que Necesitas saber para viajar con toda seguridad.</p>
+                    <p class="infor__txt">!Informate Aqui!</p>
+                </article>
+                <article class="info__columna">
+                    <img src="../Imagenes/reconocer.png" alt="" class="info__img">
+                    <h2 class="info__titulo">!Excelente!</h2>
+                    <p class="info__txt">La excelencia de la calidad con todos los protocolos</p>
+                    <p class="infor__txt">!CLIC Aqui!</p>
+                </article>
+                <article class="info__columna">
+                    <img src="../Imagenes/compra.png" alt="" class="info__img">
+                    <h2 class="info__titulo">!Aprovecha!</h2>
+                    <p class="info__txt">Descarga la app muy pronto y con descuentos</p>
+                    <p class="infor__txt">!Conoce mas Aqui!</p>
+                </article>
+            </section>
             <div class="muestra-form">
                 <%
                     U01_RutasDao dao3 = new U01_RutasDao();
@@ -153,32 +181,6 @@
                     </div>
                 </form>
             </div>
-        </div>
-
-
-    </div>  
-    <main class="main">
-        <div class="contenedor">
-            <section class="info">
-                <article class="info__columna">
-                    <img src="../Imagenes/carro.png" alt="" class="info__img">
-                    <h2 class="info__titulo">!No esperes! </h2>
-                    <p class="info__txt">Lo que Necesitas saber para viajar con toda seguridad.</p>
-                    <p class="infor__txt">!Informate Aqui!</p>
-                </article>
-                <article class="info__columna">
-                    <img src="../Imagenes/reconocer.png" alt="" class="info__img">
-                    <h2 class="info__titulo">!Excelente!</h2>
-                    <p class="info__txt">La excelencia de la calidad con todos los protocolos</p>
-                    <p class="infor__txt">!CLIC Aqui!</p>
-                </article>
-                <article class="info__columna">
-                    <img src="../Imagenes/compra.png" alt="" class="info__img">
-                    <h2 class="info__titulo">!Aprovecha!</h2>
-                    <p class="info__txt">Descarga la app muy pronto y con descuentos</p>
-                    <p class="infor__txt">!Conoce mas Aqui!</p>
-                </article>
-            </section>
             <section class="regiones">
                 <h2 class="section__titulo">Nuestros adelantos</h2>
                 <div class="regiones__columna">

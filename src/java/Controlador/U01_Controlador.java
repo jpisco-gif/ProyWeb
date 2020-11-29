@@ -45,6 +45,7 @@ public class U01_Controlador extends HttpServlet {
     U01_Comprobante comp = new U01_Comprobante();
     U01_ComprobanteDao compDao = new U01_ComprobanteDao();
     U04_Cuenta cuenta = new U04_Cuenta();
+    U04_Cuenta cuenta2= new U04_Cuenta();
     U01_CuentaDao cuentaDao = new U01_CuentaDao();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -201,6 +202,7 @@ public class U01_Controlador extends HttpServlet {
             String usuario = request.getParameter("usuario");
             String contraseña = request.getParameter("contraseña");
             
+            if (usuario!=null) {
             System.out.println("usuario: "+usuario);
             System.out.println("contraseña: "+contraseña);
             
@@ -222,7 +224,11 @@ public class U01_Controlador extends HttpServlet {
             }
             else if(rol_id2 == 3){
                 response.sendRedirect("Vistas/U05-G-index.jsp");
-            }     
+            }
+            } 
+                
+            
+            
         }
         
         else if(accion.equalsIgnoreCase("eliminar-pasaje")){

@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import java.sql.Date;
+
 /**
  *
  * @author V330
@@ -19,6 +21,56 @@ public class U04_Cuenta {
     private String fullname;
     private int edad;
     private String mensaje;
+    private int intento_fallido;
+    private int log_id;
+    private int estado;
+    private Date tiempo_inicio;
+    private Date tiempo_fin;
+
+    public Date getTiempo_inicio() {
+        return tiempo_inicio;
+    }
+
+    public void setTiempo_inicio(Date tiempo_inicio) {
+        this.tiempo_inicio = tiempo_inicio;
+    }
+
+    public Date getTiempo_fin() {
+        return tiempo_fin;
+    }
+
+    public void setTiempo_fin(Date tiempo_fin) {
+        this.tiempo_fin = tiempo_fin;
+    }
+
+    
+    
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
+
+    public int getIntento_fallido() {
+        return intento_fallido;
+    }
+
+    public void setIntento_fallido(int intento_fallido) {
+        this.intento_fallido = intento_fallido;
+    }
+
+    public int getLog_id() {
+        return log_id;
+    }
+
+    public void setLog_id(int log_id) {
+        this.log_id = log_id;
+    }
+    
+    
 
     public int getCuenta_id() {
         return cuenta_id;
