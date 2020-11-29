@@ -23,12 +23,14 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "U02_Controlador", urlPatterns = {"/U02_Controlador"})
 public class U02_Controlador extends HttpServlet {
-String listar="Vistas/U02-Listar";
-String add="Vistas/U02-Add.jsp";
-String edit="Vistas/U02-Editar.jsp";
-String eliminar = "Vistas/U02-Eliminar.jsp";
-U02_Ruta p=new U02_Ruta();
-U02_RutasDao dao=new U02_RutasDao();
+
+    String listar = "Vistas/U02-Rutas.jsp";
+    String add = "Vistas/U02-Add.jsp";
+    String edit = "Vistas/U02-Editar.jsp";
+    String eliminar = "Vistas/U02-Eliminar.jsp";
+    U02_Ruta p = new U02_Ruta();
+    U02_RutasDao dao = new U02_RutasDao();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -46,7 +48,7 @@ U02_RutasDao dao=new U02_RutasDao();
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet U02_Controlador</title>");            
+            out.println("<title>Servlet U02_Controlador</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet U02_Controlador at " + request.getContextPath() + "</h1>");
@@ -68,15 +70,15 @@ U02_RutasDao dao=new U02_RutasDao();
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion = request.getSession();
-       String acceso = "";
+        String acceso = "";
         String accion = request.getParameter("accion");
         if (accion.equalsIgnoreCase("listar")) {
             acceso = listar;
-            
-        }else if (accion.equalsIgnoreCase("add")) {
+
+        } else if (accion.equalsIgnoreCase("add")) {
             acceso = add;
 
-        }else if (accion.equalsIgnoreCase("Agregar")) {
+        } else if (accion.equalsIgnoreCase("Agregar")) {
             int ruta = Integer.parseInt(request.getParameter("txtruta"));
             int embarque = Integer.parseInt(request.getParameter("txtEmbarque"));
             String llegada = request.getParameter("txtLlegada");
@@ -97,7 +99,7 @@ U02_RutasDao dao=new U02_RutasDao();
             int ruta_id = Integer.parseInt(request.getParameter("ruta_id"));
             sesion.setAttribute("iden", ruta_id);
             acceso = edit;
-            
+
         } else if (accion.equalsIgnoreCase("Actualizar")) {
             String xruta = request.getParameter("txtruta");
             int ruta_id = Integer.parseInt(xruta);
@@ -115,10 +117,15 @@ U02_RutasDao dao=new U02_RutasDao();
             dao.edit(p);
             acceso = listar;
         }
-       
+        else if(accion.equalsIgnoreCase("eliminar")){
+            int ruta_id = Integer.parseInt(request.getParameter("ruta_id"));
+            dao.eliminar(ruta_id);
+            acceso = listar;
+        }
+
 //       RequestDispatcher vista=request.getRequestDispatcher(acceso);
 //       vista.forward(request,response);
-       response.sendRedirect(acceso);
+        response.sendRedirect(acceso);
     }
 
     /**
@@ -132,14 +139,27 @@ U02_RutasDao dao=new U02_RutasDao();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
+        String acceso = "";
+        String accion = request.getParameter("accion");
+        if (accion.equalsIgnoreCase("Actualizar")) {
+            int ruta_id = Integer.parseInt(request.getParameter("txtruta"));
+            int embarque = Integer.parseInt(request.getParameter("txtEmbarque"));
+            String llegada = request.getParameter("txtLlegada");
+            double costo = Double.parseDouble(request.getParameter("txtCosto"));
+            int duracion = Integer.parseInt(request.getParameter("txtduracion"));
+            String descripcion = request.getParameter("txtDescripcion");
+            p.setRuta(ruta_id);
+            p.setEmbarque(embarque);
+            p.setLlegada(Integer.parseInt(llegada));
+            p.setCosto(costo);
+            p.setDuracion(duracion);
+            p.setDescripcion(descripcion);
+            dao.edit(p);
+            acceso = listar;
+        }
+        response.sendRedirect(acceso);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

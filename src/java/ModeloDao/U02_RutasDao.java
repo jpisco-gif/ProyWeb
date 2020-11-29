@@ -93,7 +93,8 @@ U02_Ruta p=new U02_Ruta();
 
     @Override
     public boolean edit(U02_Ruta per) {
-        String sql="update encomiendas set embarque_id='"+per.getEmbarque()+"',llegada_id='"+per.getLlegada()+"',costo_ruta='"+per.getCosto()+"',duracion='"+per.getDuracion()+"',descripcion='"+per.getDescripcion()+"'where ruta_id="+per.getRuta();
+        String sql="update rutas set embarque_id='"+per.getEmbarque()+"',llegada_id='"+per.getLlegada()+"',costo_ruta='"+per.getCosto()+"',duracion='"+per.getDuracion()+"',descripcion='"+per.getDescripcion()+"'where ruta_id="+per.getRuta();
+        String sql1 = "update";
         try {
             con=cn.getConnection();
             ps=con.prepareStatement(sql);

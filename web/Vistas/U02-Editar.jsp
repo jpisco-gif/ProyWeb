@@ -8,14 +8,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% 
-        HttpSession sesion = request.getSession();
-        U02_RutasDao end=new U02_RutasDao();
-        //int ruta_id=Integer.parseInt((String)request.getAttribute("iden"));
-        int ruta_id = (Integer)sesion.getAttribute("iden");
-        U02_Ruta en=(U02_Ruta)end.list(ruta_id);
+        <%
+            HttpSession sesion = request.getSession();
+            U02_RutasDao end = new U02_RutasDao();
+            //int ruta_id=Integer.parseInt((String)request.getAttribute("iden"));
+            //int ruta_id = (Integer)sesion.getAttribute("iden");
+            int ruta_id = Integer.parseInt(request.getParameter("val"));
+            U02_Ruta en = (U02_Ruta) end.list(ruta_id);
         %>
-        <form action="Controlador">
+        <form action="../U02_Controlador" method="post">
             <table border="2">
                 <thead>
                     <tr>
@@ -44,11 +45,13 @@
                         <td> <input type="text" name="txtDescripcion" value="<%=en.getDescripcion()%>"/> </td>
                     </tr>
                     <tr>
-                        <td colspan="2"> <input type="submit" value="Actualizar" name="accion" /> </td>
-                    </tr>
+                        <input type="hidden" name="txtruta" value="<%=ruta_id%>"/>
+                        <td> <input type="submit" value="Actualizar" name="accion" /> </td>
+                        <td><a href="U02-Rutas.jsp"><input type="button" value="Cancelar"></a></td>
+                </tr>
                 </tbody>
             </table>
-                    <a href="U02-Listar.jsp"> Regresar </a>
+
         </form> 
     </body>
 </html>
