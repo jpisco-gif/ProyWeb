@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0" >
     <title>Llama Bus</title>
-    <link rel="stylesheet" href="../../../css/estilo1.css">
+    <link rel="stylesheet" href="../Css/newcss.css">
     <link href="https://file.myfontastic.com/t5tNwfwUapz4yDzK3B6sfe/icons.css" rel="stylesheet">
 <title>Iniciar Sesion</title>
 </head>
