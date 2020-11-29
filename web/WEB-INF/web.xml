@@ -24,6 +24,22 @@
         <servlet-name>U02_Controlador</servlet-name>
         <url-pattern>/U02_Controlador</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>U04_Controlador_Register</servlet-name>
+        <servlet-class>Controlador.U04_Controlador_Register</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>U04_Controlador_Register</servlet-name>
+        <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>U04_Logout</servlet-name>
+        <servlet-class>Servlet.U04_Logout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>U04_Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
