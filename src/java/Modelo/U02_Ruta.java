@@ -70,4 +70,8 @@ public class U02_Ruta {
         this.descripcion = descripcion;
     }
 
+    public void setCosto(String costo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

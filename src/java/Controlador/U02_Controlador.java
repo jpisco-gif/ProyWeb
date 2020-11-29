@@ -26,7 +26,7 @@ public class U02_Controlador extends HttpServlet {
 String listar="Vistas/U02-Listar";
 String add="Vistas/U02-Add.jsp";
 String edit="Vistas/U02-Editar.jsp";
-String eliminar = "Vistas/U02_Eliminar.jsp";
+String eliminar = "Vistas/U02-Eliminar.jsp";
 U02_Ruta p=new U02_Ruta();
 U02_RutasDao dao=new U02_RutasDao();
     /**
