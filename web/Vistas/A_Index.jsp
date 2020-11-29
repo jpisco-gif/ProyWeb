@@ -38,7 +38,7 @@
                 --><main>    
                     <section class="reporte-grafico">
                             <h1> HOLA ADMINISTRADOR :D</h1>
-                         
+                            <!-- <iframe name="blanco" id="blanco" width="600" height="500"></iframe> -->
                             
                     </section>
                 </main>

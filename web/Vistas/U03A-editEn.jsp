@@ -15,8 +15,10 @@
     </head>
     <body>
         <%
+        HttpSession sesion = request.getSession();
         U03A_EncomiendaDao end=new U03A_EncomiendaDao();
-        int id=Integer.parseInt((String)request.getAttribute("iden"));
+        int id=(Integer)sesion.getAttribute("iden");
+        System.out.println(id);
         U03A_Encomienda en=(U03A_Encomienda)end.list(id);
         %>
         <h1>Editando </h1>

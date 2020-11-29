@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "U03A_Controlador", urlPatterns = {"/U03A_Controlador"})
 public class U03A_Controlador extends HttpServlet {
@@ -42,18 +43,11 @@ public class U03A_Controlador extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession sesion = request.getSession();
         String acceso = "";
         String action = request.getParameter("accion");
         if (action.equalsIgnoreCase("listarEn")) {
@@ -78,7 +72,9 @@ public class U03A_Controlador extends HttpServlet {
             end.add(en);
             acceso = listarEn;
         } else if (action.equalsIgnoreCase("editarEn")) {
-            request.setAttribute("iden", request.getParameter("id"));
+            //request.setAttribute("iden", request.getParameter("id"));
+            //int ruta_id = Integer.parseInt(request.getParameter("id"));
+            sesion.setAttribute("iden", request.getParameter("id"));
             acceso = editEn;
         } else if (action.equalsIgnoreCase("Actualizar")) {
             String xid = request.getParameter("txtId");
@@ -101,8 +97,9 @@ public class U03A_Controlador extends HttpServlet {
             end.edit(en);
             acceso = listarEn;
         }
-        RequestDispatcher vista=request.getRequestDispatcher(acceso);
-       vista.forward(request,response);
+       // RequestDispatcher vista=request.getRequestDispatcher(acceso);
+       //vista.forward(request,response);
+       response.sendRedirect(acceso);
     }
 
     /**
