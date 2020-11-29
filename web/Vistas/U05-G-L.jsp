@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../U05-Gerencia/U05-estilos.css">
+        <link rel="stylesheet" href="../Css/prueba.css">
         <title>Listado General</title>
     </head>
     <body>
