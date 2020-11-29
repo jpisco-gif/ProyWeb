@@ -1,3 +1,166 @@
+
+
+/*--------------formulario-viajes------------------*/
+.tabla{
+    width: 70%;
+    
+}
+.cabecera-tabla{
+    background-color: red;
+    color: white;
+}
+
+/*###################u01##########################*/
+/*-------- seccion datos --------*/
+.datos{
+    display: flex;
+    width: 100%;
+}
+.info-rutas{
+    text-align: center;
+    margin-bottom: 2em;
+}
+.info-rutas h3{
+    margin: 2em 0;
+}
+.info-rutas table{
+    margin: 0 auto;
+}
+.mensaje p{
+    margin: 1em 0; 
+    text-align: center;
+}
+
+
+/* ----------asientos---------- */
+.asiento-ocupado{
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+    margin: 0 5px;
+}
+.asiento-disponible{
+    background-color: green;
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+    margin: 0 5px;
+}
+.leyenda{
+    display: flex;
+    justify-content: center;
+}
+.ver-asientos{
+    background-color: white;
+}
+.ver-asientos h3{
+    text-align: center;
+    padding: 2em 0;
+}
+.bus{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 0;
+
+}
+.grupo{
+    width: 30%;
+    background-image: url("../Imagenes/bus.svg");
+    background-size: cover;
+}
+.piso{
+    text-align: center;
+    margin: 1em 0;
+    color: white;
+}
+.asientos{
+    display: flex;
+    justify-content: space-evenly;
+}
+.asiento{
+    margin: 15px 8px;
+    padding: 2px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    background-color: yellow;
+}
+.libre{
+    margin: 15px 8px;
+    padding: 2px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+.ocupado{
+    margin: 15px 8px;
+    padding: 2px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+/* ------formularios------ */
+
+.muestra-form form{
+    margin: 0 auto;
+}
+.ingresar-datos h3{
+    text-align: center;
+    padding: 2em 0;
+    background-color: white;
+}
+.muestra-form{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.formulario{
+    width: 100%;
+}
+
+.izq{
+    width: 150px;
+}
+.input, .select{
+    height: 30px;
+}
+td{
+    padding: 5px;
+}
+.submit{
+    width: 100%;
+    margin: 2em 0;
+    text-align: center;
+}
+.submit input{
+    width: 50%;
+}
+
+.asiento-form{
+    display: flex;
+}
+#contenido{
+    width: 50%;
+}
+#contenido2{
+    width: 50%;
+}
+.pagar{
+    margin: 1em 0;
+}
+.labels-formulario{
+    display: flex;
+}
+/*###################u02##########################*/
+/*###################u03##########################*/
+/*###################u04##########################*/
 *{
     box-sizing: border-box;
 }
@@ -499,167 +662,5 @@ button{float:inline-end;
   font-family:  sans-serif;
   cursor:pointer;
 } 
-
-/*--------------formulario-viajes------------------*/
-.tabla{
-    width: 70%;
-    
-}
-.cabecera-tabla{
-    background-color: red;
-    color: white;
-}
-
-/*###################u01##########################*/
-/*-------- seccion datos --------*/
-.datos{
-    display: flex;
-    width: 100%;
-}
-.info-rutas{
-    text-align: center;
-    margin-bottom: 2em;
-}
-.info-rutas h3{
-    margin: 2em 0;
-}
-.info-rutas table{
-    margin: 0 auto;
-}
-.mensaje p{
-    margin: 1em 0; 
-    text-align: center;
-}
-
-
-/* ----------asientos---------- */
-.asiento-ocupado{
-    background-color: red;
-    border-radius: 50%;
-    color: white;
-    padding: 2px;
-    margin: 0 5px;
-}
-.asiento-disponible{
-    background-color: green;
-    border-radius: 50%;
-    color: white;
-    padding: 2px;
-    margin: 0 5px;
-}
-.leyenda{
-    display: flex;
-    justify-content: center;
-}
-.ver-asientos{
-    background-color: white;
-}
-.ver-asientos h3{
-    text-align: center;
-    padding: 2em 0;
-}
-.bus{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding: 2em 0;
-
-}
-.grupo{
-    width: 30%;
-    background-image: url("../Imagenes/bus.svg");
-    background-size: cover;
-}
-.piso{
-    text-align: center;
-    margin: 1em 0;
-    color: white;
-}
-.asientos{
-    display: flex;
-    justify-content: space-evenly;
-}
-.asiento{
-    margin: 15px 8px;
-    padding: 2px;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    background-color: yellow;
-}
-.libre{
-    margin: 15px 8px;
-    padding: 2px;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    background-color: green;
-    color: white;
-}
-.ocupado{
-    margin: 15px 8px;
-    padding: 2px;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    background-color: red;
-    color: white;
-}
-/* ------formularios------ */
-
-.muestra-form form{
-    margin: 0 auto;
-}
-.ingresar-datos h3{
-    text-align: center;
-    padding: 2em 0;
-    background-color: white;
-}
-.muestra-form{
-    background-color: white;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-.formulario{
-    width: 100%;
-}
-
-.izq{
-    width: 150px;
-}
-.input, .select{
-    height: 30px;
-}
-td{
-    padding: 5px;
-}
-.submit{
-    width: 100%;
-    margin: 2em 0;
-    text-align: center;
-}
-.submit input{
-    width: 50%;
-}
-
-.asiento-form{
-    display: flex;
-}
-#contenido{
-    width: 50%;
-}
-#contenido2{
-    width: 50%;
-}
-.pagar{
-    margin: 1em 0;
-}
-.labels-formulario{
-    display: flex;
-}
-/*###################u02##########################*/
-/*###################u03##########################*/
-/*###################u04##########################*/
 /*###################u05##########################*/
 
