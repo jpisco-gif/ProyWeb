@@ -7,11 +7,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../Css/prueba.css">
+        <link rel="stylesheet" href="../Css/newcss.css">
         <title>Listado General</title>
     </head>
     <body>
-        <div>
+        
+        
+        
+        
+                                
+                              
+                              
+                           
+            <div>
             <h1>Administradores</h1>
             <a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a>
             <table border="1">
@@ -76,6 +84,6 @@
             </table>
 
             
-        </div>
+        </div>    
     </body>
 </html>

@@ -12,7 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Cuentas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="U05-estilos.css">
+  <link rel="stylesheet" href="../Css/newcss.css">
 </head>
 <body>
       
@@ -34,7 +34,17 @@
                         </li>
                         <li class="Home"><a href="U05-G-index.jsp">Home</a></li>
                         <li class="Reuniones"><a href="U05-G-cuentas.jsp">Cuentas</a></li>
-                        <li class="Finanzas"><a href="U05-G-Ventas.jsp">Ventas</a></li>
+                        
+                        
+                        <div class="dropdown">
+                        <button class="dropbtn">Ventas</button>
+                        <div class="dropdown-content">
+                        <a href="../U05_Controlador_Ventas_Mes?accion=listar">Venta por Mes</a>
+                        <a href="../U05_Controlador_Ventas_Ruta?accion=listar">Venta por Ruta</a>
+                        <a href="../U05_Controlador_Ventas_Clase?accion=listar">Venta por clase</a>
+                        </div>
+                        </div>
+                        
                         <li class="Personal"><a href="#">Cerrar sesion</a></li>
                       </ul>
                     </nav><!--  

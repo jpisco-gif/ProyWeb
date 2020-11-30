@@ -56,8 +56,7 @@ public class U05_Controlador_Ventas_Ruta extends HttpServlet {
         acceso=listar;
        }
        
-       RequestDispatcher vista=request.getRequestDispatcher(acceso);
-       vista.forward(request,response);
+         response.sendRedirect(acceso);
     }
 
     /**

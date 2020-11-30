@@ -55,13 +55,11 @@
                             <div class="finanzas_parrafo">
                                 
                               
-                              <p><a href="../U05_Controlador_Ventas_Mes?accion=listar" target="iframe_a">Ventas Por mes</a></p>
-                            
-                              <p><a href="../U05_Controlador_Ventas_Ruta?accion=listar" target="iframe_a">Ventas Por Ruta</a></p>
                               
-                              <p><a href="../U05_Controlador_Ventas_Clase?accion=listar" target="iframe_a">Ventas Por Clase</a></p>
                   
                               <iframe src="U05-blanco.jsp" name="iframe_a" height="400px" width="1200px" title="Iframe Example"></iframe>
+                              <iframe src="U05-G-VLC-grafico.jsp" name="iframe_b" height="400px" width="1200px" title="Iframe Example"></iframe>
+                              
                   
                             
                                 
