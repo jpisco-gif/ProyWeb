@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>
-            <a href="U05_Controlador_Admi?accion=listar">Listar Administradores</a>     
+            <a href="U05_Controlador_Rendimiento?accion=listar">Listar Rendimiento</a>     
         </div>
     </body>
 </html>
