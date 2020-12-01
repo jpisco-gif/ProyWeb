@@ -160,6 +160,47 @@ td{
 }
 /*###################u02##########################*/
 /*###################u03##########################*/
+:root {
+    --primary: #EB343A;
+    --light: #ffffff;
+    --grey: #efefef;
+}
+.admin{
+    overflow: hidden;
+    font-family: "Mulish",sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+}
+a:hover {
+    text-decoration: none;
+}
+.bg-primary{
+    background-color: var(--primary) !important;
+}
+#u3sidebar{
+    min-height: 100vh;
+}
+#u3sidebar .u3logo{
+    padding: .875rem 1.25rem;
+}    
+#u3sidebar .u3menu{
+    width: 18rem;
+    font-size: 1.25rem;
+}
+.btn-search{
+    right: 5px;
+}
+.avatar{
+    display: inline-block;
+    max-width: 30px;
+}
+#content{
+    overflow: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+
+
 /*###################u04##########################*/
 *{
     box-sizing: border-box;
