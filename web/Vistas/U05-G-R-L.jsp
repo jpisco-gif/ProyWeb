@@ -21,7 +21,7 @@
                            
             <div>
             <h1>Rendimiento en Terminales</h1>
-            <a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a>
+            <a href="U05_Controlador_Rendimiento?accion=add">Agregar Nuevo></a>
             <table border="1">
                 <thead>
                     

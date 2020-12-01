@@ -71,7 +71,22 @@ public class U05_RendimientoDao implements U05_CRUD_Rendimiento {
 
     @Override
     public boolean add(U05_Rendimiento per) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+      try {
+            con=cn.getConnection();
+            ps=con.prepareStatement("INSERT INTO rendimiento (terminal_id,puntuacion,incidencias,fecha) VALUES	(?,?,?,(SELECT DATE(NOW())));");
+            
+            ps.setInt(1, per.getTerminal_id());
+            ps.setInt(2, per.getPuntuacion());
+            ps.setInt(3, per.getIncidencias());
+            
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+        }
+        return false;   
+        
+        
     }
 
     @Override
