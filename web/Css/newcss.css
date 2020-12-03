@@ -165,7 +165,7 @@ td{
     --light: #ffffff;
     --grey: #efefef;
 }
-.admin{
+/*.admin{
     overflow: hidden;
     font-family: "Mulish",sans-serif;
     font-weight: 300;
@@ -175,8 +175,8 @@ a:hover {
     text-decoration: none;
 }
 .bg-primary{
-    background-color: var(--primary) !important;
-}
+    background-color:var(--primary) !important;
+}*/
 #u3sidebar{
     min-height: 100vh;
 }
