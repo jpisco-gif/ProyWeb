@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end top -->
+            <!-- end tops -->
         </header>
     
  <div align="center">
