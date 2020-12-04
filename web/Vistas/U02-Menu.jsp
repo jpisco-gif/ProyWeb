@@ -20,7 +20,7 @@
                 <div class="navbar-inner">
                     <div class="container">
                         <div class="logo">
-                            <a class="brand" href="Index.jsp"><img src="img/logo2.png" alt=""></a>
+                            <a class="brand" href="Index.jsp"><img src="../img/logo2.png" alt=""></a>
                         </div>
                         <div class="navigation">
                             <nav>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end top -->
+            <!-- end tops -->
         </header>
 
         <!-- section featured -->

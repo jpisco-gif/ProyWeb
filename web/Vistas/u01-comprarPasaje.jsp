@@ -24,9 +24,8 @@
 
         <title>Comprar pasaje</title>
     </head>
-    <body>
+    <body class="bodys">
         <jsp:include page="U02-Menu.jsp"></jsp:include>
-        <br></br>
         <br></br>
         <br></br>
         <section class="ingresar-datos">
