@@ -1,13 +1,14 @@
-<%-- 
-    Document   : U02-Menu
-    Created on : 03-dic-2020, 22:48:18
-    Author     : Manuel
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
+<!doctype html>
+<html lang="en">
+
+    <head class="head">
+        <meta charset="utf-8">
+        <title>Llama bus</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
         <link href="../Css/animate.css" rel="stylesheet">
         <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
         <link href="../font/stylesheet.css" rel="stylesheet">
@@ -23,9 +24,11 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
         <link rel="shortcut icon" href="../ico/favicon.ico">
+
     </head>
+
     <body class="body">
-    <header>
+        <header>
 
             <!-- start top -->
             <div id="topnav" class="navbar navbar-fixed-top default">
@@ -37,12 +40,12 @@
                         <div class="navigation">
                             <nav>
                                 <ul class="nav pull-right">
-                                    <li class="current"><a href="U04-login.jsp">Inicio</a></li>
+                                    <li class="current"><a href="#featured">Inicio</a></li>
                                     <li><a href="#about">Nosotros</a></li>
                                     <li><a href="#services">Servicios</a></li>
                                     <li><a href="#works">Compra de Pasajes</a></li>
                                     <li><a href="#contact">Contactos</a></li>
-                                    <li class="dropdown"><a href="#">Login</a></li>
+                                    <li class="dropdown"><a href="U04-login.jsp">Login</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -52,5 +55,38 @@
             </div>
             <!-- end top -->
         </header>
+
+        <!-- section featured -->
+
+        <!-- end featured -->
+
+        <!-- Section about -->
+        
+
+        <!-- Javascript Library Files -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/jquery.easing.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery.lettering.js"></script>
+        <script src="../js/parallax/jquery.parallax-1.1.3.js"></script>
+        <script src="../js/nagging-menu.js"></script>
+        <script src="../js/sequence.jquery-min.js"></script>
+        <script src="../js/sequencejs-options.sliding-horizontal-parallax.js"></script>
+        <script src="../js/portfolio/jquery.quicksand.js"></script>
+        <script src="../js/portfolio/setting.js"></script>
+        <script src="../js/jquery.scrollTo.js"></script>
+        <script src="../js/jquery.nav.js"></script>
+        <script src="../js/modernizr.custom.js"></script>
+        <script src="../js/prettyPhoto/jquery.prettyPhoto.js"></script>
+        <script src="../js/prettyPhoto/setting.js"></script>
+        <script src="../js/jquery.flexslider.js"></script>
+
+        <!-- Contact Form JavaScript File -->
+        <script src="../contactform/contactform.js"></script>
+
+        <!-- Template Custom Javascript File -->
+        <script src="../js/custom.js"></script>
+
     </body>
+
 </html>

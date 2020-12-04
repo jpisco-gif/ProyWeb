@@ -1,23 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"      
  pageEncoding="ISO-8859-1"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0" >
-    <title>Llama Bus</title>
-    <link href="../Css/animate.css" rel="stylesheet">
-    <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../Benjamin/Vistas/css/bootstrap.css" rel="stylesheet">
-    <link href="../Benjamin/Vistas/css/flexslider.css" rel="stylesheet">
-    <link href="../Benjamin/Vistas/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" media="screen" href="../Benjamin/Vistas/css/sequencejs.css">
-    <link href="../Benjamin/Vistas/css/style.css" rel="stylesheet">
-        <link href="../Benjamin/Vistas/css/animate.css" rel="stylesheet">
-    <link href="https://file.myfontastic.com/t5tNwfwUapz4yDzK3B6sfe/icons.css" rel="stylesheet">
-<title>Iniciar Sesion</title>
-</head>
+<!doctype html>
+<html lang="en">
+
+    <head class="head">
+        <meta charset="utf-8">
+        <title>Llama bus</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link href="../Css/animate.css" rel="stylesheet">
+        <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../font/stylesheet.css" rel="stylesheet">
+        <link href="../Css/bootstrap.css" rel="stylesheet">
+        <link href="../Css/flexslider.css" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="../Css/sequencejs.css">
+        <link href="../Css/style.css" rel="stylesheet">
+        <link href="../color/default.css" rel="stylesheet">
+
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../ico/favicon.ico">
+
+    </head>
+
     <body class="body">
         <header>
 
@@ -31,7 +42,12 @@
                         <div class="navigation">
                             <nav>
                                 <ul class="nav pull-right">
-                                    <li class="current"><a href="../Benjamin/Vistas/Index.jsp">Inicio</a></li>
+                                    <li class="current"><a href="#featured">Inicio</a></li>
+                                    <li><a href="#about">Nosotros</a></li>
+                                    <li><a href="#services">Servicios</a></li>
+                                    <li><a href="#works">Compra de Pasajes</a></li>
+                                    <li><a href="#contact">Contactos</a></li>
+                                    <li class="dropdown"><a href="U04-login.jsp">Login</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -39,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end tops -->
+            <!-- end top -->
         </header>
     
  <div align="center">
