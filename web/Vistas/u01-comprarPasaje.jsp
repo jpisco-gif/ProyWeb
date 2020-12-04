@@ -20,45 +20,7 @@
         <title>Comprar pasaje</title>
     </head>
     <body>
-        <header class="header">
-            <div class="contenedor">
-                <h1 class="logo">Llama bus</h1>
-                <span class="icon-menu" id="btn-menu"></span>
-                <nav class="nav" id="nav">
-                    <ul class="menu">
-                        <li class="menu__item"><a class="menu__link elect" href="#">Inicio</a></li>
-                        <li class="menu__item"><a class="menu__link" href="U04-Servicio.jsp">servicios</a></li>
-                        <li class="menu__item"><a class="menu__link" href="U04-Nosotros.jsp">Nosotros</a></li>
-                        <li class="menu__item"><a class="menu__link" href="U04-AtencioAlCliente.jsp">Atencion al cliente</a></li>
-                        <li class="menu__item"><a class="menu__link" href="u01-comprarPasaje.jsp">compra de pasaje</a></li>
-
-                        <%
-                            HttpSession sesion = request.getSession();
-                            String usuario;
-                            String contraseña;
-                            if (sesion.getAttribute("usuario") != null && sesion.getAttribute("contraseña") != null) {
-                                usuario = sesion.getAttribute("usuario").toString();
-                                contraseña = sesion.getAttribute("contraseña").toString();
-                                out.println("<li class='menu__item'>");
-                                out.println("<a class='menu__link' href='../Vistas/u04-logout.jsp'>Logout</a>");
-                                out.println("</li>");
-
-                            } else {
-                                out.println("<li class='menu__item'>");
-                                out.println("<a class='menu__link' href='../Vistas/U04-login.jsp'>Login</a>");
-                                out.println("</li>");
-
-                            }
-                            {
-
-                            }
-                        %> 
-                      <!--  <li>id de la cuenta: <%=cuenta_id%></li>-->
-
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <jsp:include page="U02-Menu.jsp"></jsp:include>
         <section class="ingresar-datos">
             <div class="muestra-form">
                 <%
