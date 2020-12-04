@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0" >
     <title>Llama Bus</title>
-    <link href="../Benjamin/Vistas/css/animate.css" rel="stylesheet">
-    <link href="../Benjamin/Vistas/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../Css/animate.css" rel="stylesheet">
+    <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
     <link href="../Benjamin/Vistas/css/bootstrap.css" rel="stylesheet">
     <link href="../Benjamin/Vistas/css/flexslider.css" rel="stylesheet">
     <link href="../Benjamin/Vistas/css/font-awesome.css" rel="stylesheet">

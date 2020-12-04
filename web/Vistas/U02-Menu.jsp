@@ -8,22 +8,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="font/stylesheet.css" rel="stylesheet">
-        <link href="css/animate.css" rel="stylesheet">
-        <link href="css/flexslider.css" rel="stylesheet">
-        <link rel="stylesheet" media="screen" href="css/sequencejs.css">
-        <link href="css/style.css" rel="stylesheet">
-        <link href="color/default.css" rel="stylesheet">
+        <link href="../Css/animate.css" rel="stylesheet">
+        <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../font/stylesheet.css" rel="stylesheet">
+        <link href="../Css/bootstrap.css" rel="stylesheet">
+        <link href="../Css/flexslider.css" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="../Css/sequencejs.css">
+        <link href="../Css/style.css" rel="stylesheet">
+        <link href="../color/default.css" rel="stylesheet">
 
         <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-        <link rel="shortcut icon" href="ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../ico/favicon.ico">
     </head>
     <body class="body">
     <header>
