@@ -202,7 +202,7 @@ public class U01_Controlador extends HttpServlet {
             String usuario = request.getParameter("usuario");
             String contraseña = request.getParameter("contraseña");
             
-            if (usuario!=null) {
+            
             System.out.println("usuario: "+usuario);
             System.out.println("contraseña: "+contraseña);
             
@@ -225,7 +225,8 @@ public class U01_Controlador extends HttpServlet {
             else if(rol_id2 == 3){
                 response.sendRedirect("Vistas/U05-G-index.jsp");
             }
-            } 
+            
+            
                 
             
             
