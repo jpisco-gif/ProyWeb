@@ -15,12 +15,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../Css/newcss.css">
+        <link href="../Css/bootstrap.css" rel="stylesheet">
+        <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../Css/flexslider.css" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="../Css/sequencejs.css">
+        <link href="../Css/style.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
 
         <title>Comprar pasaje</title>
     </head>
     <body>
         <jsp:include page="U02-Menu.jsp"></jsp:include>
+        <br></br>
+        <br></br>
+        <br></br>
         <section class="ingresar-datos">
             <div class="muestra-form">
                 <%
