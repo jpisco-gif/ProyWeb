@@ -74,35 +74,45 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-9">
-                                    
                                     <section class="reporte-grafico">
                         <div class="head_title">
-                          <h1>CUENTAS</h1>
+                          <h1>BIENVENIDO</h1>
 
                         
                         
                         </div>
 
-                        <div class="finanzas">
-                          
-                          <div class="finanzas_texto">
-                            <div class="finanzas_titulo"><h3>Administradores</h3><hr></div>
-                            <div class="finanzas_parrafo">
-                                
-                              
-                              <p><a href="../U05_Controlador_Admi?accion=listar" target="iframe_a">Actualizar Lista</a></p>  
-                  
-                              <iframe src="U05-blanco.jsp" name="iframe_a" height="400px" width="1200px" title="Iframe Example"></iframe>
-                  
-                            
-                                
-                                
-                              
+                        <div class="bienvenida3">
+                            <div class="bienvenida_imagen"><img src="../Imagenes/U05-personal.svg" alt="Personal"></div>
+                          <div class="bienvenida_texto">
+                            <div class="bienvenida_titulo"><h3>Cuentas</h3><hr></div>
+                            <div class="bienvenida_parrafo"><br><br><p>En ese apartado podras ver y crear cuentas de administradores</p></div>
+                          </div>
+                        </div>
 
-                              
-                            
-                            
-                            </div>
+                        <br>
+                        <br>
+                        <br>
+
+                        <div class="bienvenida">
+                            <div class="bienvenida_imagen"><img src="../Imagenes/U05-ruta.png" alt="Llama"></div>
+                          <div class="bienvenida_texto">
+                            <div class="bienvenida_titulo"><h3>Rutas</h3><hr></div>
+                            <div class="bienvenida_parrafo"><br><br><p>En ese apartado podras ver y crear rutas</p></div>
+                          </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+
+                        
+
+                        <div class="bienvenida2">
+                            <div class="bienvenida_imagen"><img src="../Imagenes/U05-finanzas.png" alt="finanzas"></div>
+                          <div class="bienvenida_texto">
+                            <div class="bienvenida_titulo"><h3>Finanzas</h3><hr></div>
+                            <div class="bienvenida_parrafo"><br><br><p>En ese apartado podras ver los estados financieros , las ventas , las ganancias y perdidas</p></div>
                           </div>
                         </div>
 
@@ -112,8 +122,9 @@
 
                         
 
+                        
+
                       </section>
-                                    
                                 </div>
                             </div>
                         </div>

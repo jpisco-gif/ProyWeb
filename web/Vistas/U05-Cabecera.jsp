@@ -1,12 +1,12 @@
 <%-- 
-    Document   : A_Index
-    Created on : 06/11/2020, 12:29:49 AM
+    Document   : U02-Cabecera
+    Created on : 04/12/2020, 01:03:04 AM
     Author     : V330
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">    
+<html>
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -18,7 +18,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
         <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
-        <title>Gerencia</title>
+        <title>Administración</title>
     </head>
     <body class="admin">
         <div class="d-flex" >
@@ -41,7 +41,7 @@
                         </div>
                     
                     <a href="#" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-person mr-2 lead"></i>Perfil</a>
-                    <a href="#" class="d-block text-light p-3 font-weight-bold">Tablero</a>                    
+                    <a href="#" class="d-block text-light p-3 font-weight-bold">Tablero</a>                     
                 </div>
             </div>
             <div class="w-100">
@@ -69,71 +69,5 @@
                         </ul>
                     </div>
                 </nav>
-                <div id="content">
-                    <section>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    
-                                    <section class="reporte-grafico">
-                        <div class="head_title">
-                          <h1>CUENTAS</h1>
-
-                        
-                        
-                        </div>
-
-                        <div class="finanzas">
-                          
-                          <div class="finanzas_texto">
-                            <div class="finanzas_titulo"><h3>Administradores</h3><hr></div>
-                            <div class="finanzas_parrafo">
-                                
-                              
-                              <p><a href="../U05_Controlador_Admi?accion=listar" target="iframe_a">Actualizar Lista</a></p>  
-                  
-                              <iframe src="U05-blanco.jsp" name="iframe_a" height="400px" width="1200px" title="Iframe Example"></iframe>
-                  
-                            
-                                
-                                
-                              
-
-                              
-                            
-                            
-                            </div>
-                          </div>
-                        </div>
-
-                        
-
-                        
-
-                        
-
-                      </section>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </section>
-                </div>
-            </div>
-            <div class="dropdown-divider"></div>
-        </div>
-
-        <!-- Optional JavaScript; choose one of the two! -->
-
-        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-        <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-        -->
-    </body>
+                
 </html>
