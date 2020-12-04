@@ -160,11 +160,11 @@ td{
 }
 /*###################u02##########################*/
 /*###################u03##########################*/
-:root {
+/*:root {
     --primary: #EB343A;
     --light: #ffffff;
     --grey: #efefef;
-}
+}*/
 /*.admin{
     overflow: hidden;
     font-family: "Mulish",sans-serif;
