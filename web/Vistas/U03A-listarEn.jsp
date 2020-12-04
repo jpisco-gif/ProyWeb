@@ -26,49 +26,12 @@
         <script type="text/javascript" src="../js/jquery.js"></script>
     </head>
     <body>
-        <div class="d-flex" >
-            <div id="u3sidebar" class="bg-primary">
-                <div class="u3logo">
-                    <a href="A_Index.jsp"><img src="../Imagenes/logo2.svg" width="250"></a>
-                </div>
-                <div class="u3menu">
-                    <a href="U03A_Controlador?accion=listar" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-apps mr-2 lead"></i>Usuarios</a>
-                    <a href="#" class="d-block text-light p-3 font-weight-bold"> <i class="icon ion-md-bus"></i> Viajes</a>
-                    <a href="U03A-listarEn.jsp" class="d-block text-light p-3 font-weight-bold"> <i class="icon ion-md-briefcase"></i> Encomiendas</a>
-                    <a href="#" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-person mr-2 lead"></i>Perfil</a>
-                    <a href="#" class="d-block text-light p-3 font-weight-bold">Tablero</a>                    
-                </div>
-            </div>
-            <div class="w-100">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <form class="form-inline position-relative my-2 d-inline-block">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn btn-search position-absolute" type="submit" ><i class="icon ion-md-search"></i></button>
-                    </form>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">                            
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../Imagenes/U05-finanzas.png" class="img-fluid rounded-circle avatar mr-2" > Nombre de administrador
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Mi perfil</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Cerrar Sesion</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <div id="content">
-                    <section>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-20">
+         <jsp:include page="U03-Cabecera.jsp"></jsp:include>
+        <div id="content">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9">
                                     <h1>Encomiendas</h1>
                                     <h1><a href="../U03A_Controlador?accion=addEn">Agregar nueva encomienda</a></h1>
                                     

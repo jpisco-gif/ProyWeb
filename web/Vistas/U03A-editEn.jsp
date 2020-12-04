@@ -19,6 +19,12 @@ int id = Integer.parseInt(request.getParameter("val"));
         System.out.println(id);
         U03A_Encomienda en=(U03A_Encomienda)end.list(id);
         %>
+        <jsp:include page="U03-Cabecera.jsp"></jsp:include>
+        <div id="content">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9">
         <h1>Editando </h1>
         <form action="../U03A_Controlador">
                 <table border="1">
@@ -57,5 +63,13 @@ int id = Integer.parseInt(request.getParameter("val"));
                 </table>
                             <a href="U03A-listarEn.jsp">Regresar</a>
             </form> 
+                            </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            <div class="dropdown-divider"></div>
+        </div>
     </body>
 </html>
