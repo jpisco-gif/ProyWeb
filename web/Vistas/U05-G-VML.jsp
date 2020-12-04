@@ -1,54 +1,34 @@
+<%-- 
+    Document   : A_Index
+    Created on : 06/11/2020, 12:29:49 AM
+    Author     : V330
+--%>
+
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page import="Modelo.U05_Ventas_Mes"%>
 <%@page import="ModeloDao.U05_Ventas_MesDao"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">    
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="stylesheet" href="../Css/newcss.css">
-        <title>Listado General</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
+        <title>Gerencia</title>
     </head>
-    <body>
-        
-        
-        <!--Contenedor-->
-          <div class="contenedor informe">
-            <!--headermain-->
-              <div class="headermain">
-                <!--Header-->
-                  <header>
-                    <a href="index.html" class="logo"><img src="U02.png" alt="" /></a>
-                      <!--logo-->
-                  </header>
-  
-                  <!--Nav-->
-                    <nav class="menu-lateral">
-                      <ul>
-                        <li class="reporte">
-                          <h4>Gerencia</h4>
-                        </li>
-                        <li class="Home"><a href="U05-G-index.jsp">Home</a></li>
-                        <li class="Reuniones"><a href="U05-G-cuentas.jsp">Cuentas</a></li>
-                        <li class="Reuniones"><a href="U05-G-Terminales.jsp">Terminales</a></li>
-                        
-                        
-                        <div class="dropdown">
-                        <button class="dropbtn">Ventas</button>
-                        <div class="dropdown-content">
-                        <a href="../U05_Controlador_Ventas_Mes?accion=listar">Venta por Mes</a>
-                        <a href="../U05_Controlador_Ventas_Ruta?accion=listar">Venta por Ruta</a>
-                        <a href="../U05_Controlador_Ventas_Clase?accion=listar">Venta por clase</a>
-                        </div>
-                        </div>
-                        
-                        <li class="Personal"><a href="#">Cerrar sesion</a></li>
-                      </ul>
-                    </nav><!--  
-                      Main
-                    --><main>    
-                      <section class="reporte-grafico">
+    <body class="admin">
+         <jsp:include page="U05-Cabecera.jsp"></jsp:include>
+        <div id="content">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            
+                            
+                            <section class="reporte-grafico">
                        
 
                         <div class="finanzas">
@@ -62,7 +42,7 @@
                             <div>
         
          
-                            <table border="1">
+                            <table id="customers" border="1">
                             <thead>
                     
                             <tr>
@@ -118,35 +98,23 @@
                         
 
                       </section>
-                    </main>
-                    <div class="stickyfooter">
-                     
-                    </div>
-              </div><!--headermain-->
-                <!--Footer-->
-              <footer>
-    
-              </footer>
-          </div><!--Contenedor-->
+                            
+                            
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </section>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+        </div>
+
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
         
     </body>
 </html>
+

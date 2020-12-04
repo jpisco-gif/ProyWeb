@@ -7,7 +7,30 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../Css/newcss.css">
+        <style>
+        #customers {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #2b2b3b;
+          color: white;
+        }
+        </style>  
         <title>Listado General</title>
     </head>
     <body>
@@ -20,10 +43,9 @@
                               
                            
             <div>
-            <h1>Rendimiento en Terminales</h1>
             <a href="U05_Controlador_Rendimiento?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>
             
-            <table border="1">
+            <table id="customers" border="1">
                 <thead>
                     
                     <tr>

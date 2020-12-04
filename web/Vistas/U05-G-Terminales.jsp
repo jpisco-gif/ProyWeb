@@ -1,56 +1,29 @@
 <%-- 
-    Document   : U05-cuentas
-    Created on : 26/10/2020, 12:20:37 AM
-    Author     : Anthony Morales
+    Document   : A_Index
+    Created on : 06/11/2020, 12:29:49 AM
+    Author     : V330
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Cuentas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../Css/newcss.css">
-</head>
-<body>
-      
-        <!--Contenedor-->
-          <div class="contenedor informe">
-            <!--headermain-->
-              <div class="headermain">
-                <!--Header-->
-                  <header>
-                    <a href="index.html" class="logo"><img src="U02.png" alt="" /></a>
-                      <!--logo-->
-                  </header>
-  
-                  <!--Nav-->
-                    <nav class="menu-lateral">
-                      <ul>
-                        <li class="reporte">
-                          <h4>Gerencia</h4>
-                        </li>
-                        <li class="Home"><a href="U05-G-index.jsp">Home</a></li>
-                        <li class="Reuniones"><a href="U05-G-cuentas.jsp">Cuentas</a></li>
-                        
-                        
-                        <div class="dropdown">
-                        <button class="dropbtn">Ventas</button>
-                        <div class="dropdown-content">
-                        <a href="../U05_Controlador_Ventas_Mes?accion=listar">Venta por Mes</a>
-                        <a href="../U05_Controlador_Ventas_Ruta?accion=listar">Venta por Ruta</a>
-                        <a href="../U05_Controlador_Ventas_Clase?accion=listar">Venta por clase</a>
-                        </div>
-                        </div>
-                        
-                        <li class="Personal"><a href="#">Cerrar sesion</a></li>
-                      </ul>
-                    </nav><!--  
-                      Main
-                    --><main>    
-                      <section class="reporte-grafico">
+<html lang="en">    
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
+        <title>Gerencia</title>
+    </head>
+    <body class="admin">
+         <jsp:include page="U05-Cabecera.jsp"></jsp:include>
+        <div id="content">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            
+                            
+                             <section class="reporte-grafico">
                         <div class="head_title">
                           <h1>TERMINALES</h1>
 
@@ -67,7 +40,7 @@
                               
                               <p><a href="../U05_Controlador_Rendimiento?accion=listar" target="iframe_a">Actualizar Lista</a></p>  
                   
-                              <iframe src="U05-blanco.jsp" name="iframe_a" height="400px" width="1200px" title="Iframe Example"></iframe>
+                              <iframe src="U05-blanco.jsp" name="iframe_a" height="400px" width="1000px" title="Iframe Example"></iframe>
                   
                             
                                 
@@ -88,15 +61,23 @@
                         
 
                       </section>
-                    </main>
-                    <div class="stickyfooter">
-                     
-                    </div>
-              </div><!--headermain-->
-                <!--Footer-->
-              <footer>
-    
-              </footer>
-          </div><!--Contenedor-->
-</body>
+                            
+                            
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </section>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+        </div>
+
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+        
+    </body>
 </html>
+

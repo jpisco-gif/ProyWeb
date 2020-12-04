@@ -7,10 +7,34 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../Css/newcss.css">
+        <style>
+        #customers {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #2b2b3b;
+          color: white;
+        }
+        </style>        
+        
         <title>Listado General</title>
     </head>
-    <body>
+    <body onload="javascript:window.print()">
         
         
         
@@ -20,28 +44,28 @@
                               
                            
             <div>
-            <h1>Administradores</h1>
             <a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>
-            <table border="1">
+            <table id="customers" border="1">
                 <thead>
                     
                     <tr>
-                        <th>cuenta_id</th>
-                        <th>rol_id</th>
+                        
                         <th>usuario</th>
                         <th>contraseña</th>
                         <th>email</th>
                         
-                        <th>persona_id</th>
+                        
                         <th>nombres</th>
                         <th>apellido_paterno</th>
                         <th>apellido_materno</th>
                         <th>sexo</th>
                         <th>telefono</th>
                         <th>edad</th>
-                        <th>documento_id</th>
+                       
                         <th>cod_documento</th>
-                        <th>modificar</th>
+                        <th>modificar_cuenta</th>
+                        <th>modificar_informacion_personal</th>
+                        
                     </tr>
                     
                 </thead>
@@ -56,27 +80,24 @@
                 %>
                 <tbody>
                     <tr>
-                        <td><%=per.getCuenta_id() %></td>
-                        <td><%=per.getRol_id() %></td>
+                        
                         <td><%=per.getUsuario() %></td>
                         <td><%=per.getContraseña() %></td>
                         <td><%=per.getEmail() %></td>
  
-                        <td><%=per.getPersona_id() %></td>
+                        
                         <td><%=per.getNombres() %></td>
                         <td><%=per.getApellido_paterno() %></td>
                         <td><%=per.getApellido_materno() %></td>
                         <td><%=per.getSexo() %></td>
                         <td><%=per.getTelefono() %></td>
                         <td><%=per.getEdad() %></td>
-                        <td><%=per.getDocumento_id() %></td>
+                        
                         <td><%=per.getCod_documento() %></td>
                         <td>
                             <a href="U05_Controlador_Admi?accion=editar&cuenta_id=<%=per.getCuenta_id()%>">Editar Cuenta</a>
-                            <a href="U05_Controlador_Admi?accion=editar2&cuenta_id=<%=per.getCuenta_id()%>">Editar Informacion personal</a>
-                            <a>Remove</a>
-                            
                         </td>
+                        <td><a href="U05_Controlador_Admi?accion=editar2&cuenta_id=<%=per.getCuenta_id()%>">Editar Informacion personal</a></td>
                     </tr>
                     <% } %>
                 </tbody>
