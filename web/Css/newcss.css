@@ -749,3 +749,98 @@ button{float:inline-end;
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+
+/*=================
+  -Bienvenida 1-
+===================*/
+
+.head_title {
+  float: center;
+  text-align: center;
+  background-color:  rgb(110,60,50);
+  color:white;
+  font-weight: bold;
+  padding: 15px;
+
+}
+
+/*=================
+  -Bienvenida 1-
+===================*/
+
+.bienvenida_imagen {
+  float: left;
+
+}
+
+
+.bienvenida_imagen img{
+  width:180px;
+  height:180px;
+}
+
+
+.bienvenida_titulo {
+margin: auto;
+padding: 25px;
+padding-left: 250px;
+font-weight: bold;
+}
+
+.bienvenida_parrafo {
+  margin: auto;
+  padding-left: 225px;
+  }
+
+  /*=================
+  -FINANZAS -
+===================*/
+
+.finanzas_imagen {
+  float: left;
+  padding-left: 50px;
+
+}
+
+.finanzas_imagen2 {
+  float: center;
+  padding-left: 280px;
+
+}
+
+.finanzas_imagen3 {
+  float: center;
+  padding-left: 510px;
+}
+
+
+.finanzas_imagen img{
+  width:180px;
+  height:180px;
+}
+
+.finanzas_imagen2 img{
+  width:180px;
+  height:180px;
+}
+
+.finanzas_imagen3 img{
+  width:180px;
+  height:180px;
+}
+
+
+.finanzas_titulo {
+margin: auto;
+padding: 25px;
+padding-left: 50px;
+font-weight: bold;
+}
+
+.finanzas_parrafo {
+  margin: auto;
+  padding-left: 50px;
+  }
+
+
