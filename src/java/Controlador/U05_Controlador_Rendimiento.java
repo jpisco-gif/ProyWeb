@@ -17,6 +17,7 @@ public class U05_Controlador_Rendimiento extends HttpServlet {
 
     String listar="Vistas/U05-G-R-L.jsp";
     String add="Vistas/U05-G-A-R.jsp";
+    String edit="Vistas/U05-G-R-E.jsp";
     U05_Rendimiento p=new U05_Rendimiento();
     U05_RendimientoDao dao=new U05_RendimientoDao();
     
@@ -122,6 +123,85 @@ public class U05_Controlador_Rendimiento extends HttpServlet {
        dao.add(p);
        acceso=listar;      
                
+       }
+       
+       
+        else if(accion.equalsIgnoreCase("editar")){
+         
+           request.setAttribute("rendimiento_idper", request.getParameter("rendimiento_id"));
+           
+        
+       acceso=edit;
+       }
+       
+       else if(accion.equalsIgnoreCase("Actualizar")){
+           
+           
+           
+          
+       String xCuenta_id=request.getParameter("txtRendimiento_id");
+       int cuenta_id=Integer.parseInt(xCuenta_id);    
+       p.setRendimiento_id(cuenta_id);
+       
+       
+       
+       int terminal_id = 0;    
+       
+       
+       String terminal=request.getParameter("txtTerminal_id");
+       
+       switch(terminal) 
+        { 
+            case "Lima": 
+                terminal_id=1;
+                break; 
+            case "Ica": 
+                terminal_id=2;
+                break; 
+            case "Arequipa": 
+                terminal_id=3;
+                break; 
+            case "Cusco": 
+                terminal_id=4; 
+                break;
+            case "Huancayo": 
+                terminal_id=5; 
+                break;     
+                
+                
+            default: 
+                System.out.println("HAY UN PROBLEMA!!! SWITCH TERMINAL FUNCIONA MAL"); 
+        } 
+       
+       
+       if(terminal_id==0){System.out.println("HAY UN PROBLEMA!!! SWITCH TERMINAL , valor terminal_id=0 !!!"); }
+       
+       
+       int satisfaccion=Integer.parseInt(request.getParameter("txtSatisfaccion"));
+       int atencion=Integer.parseInt(request.getParameter("txtAtencion"));
+       int capacitacion=Integer.parseInt(request.getParameter("txtCapacitacion"));
+       int limpieza=Integer.parseInt(request.getParameter("txtLimpieza"));
+       int incidencias=Integer.parseInt(request.getParameter("txtIncidencias"));
+       
+       int puntuacion=0;
+       puntuacion=satisfaccion+atencion+capacitacion+limpieza;
+       
+       if(puntuacion==0){System.out.println("HAY UN PROBLEMA!!! valor puntuacion =0 !!!"); }
+       
+       p.setTerminal_id(terminal_id);
+       p.setCiudad(terminal);
+       
+       
+       p.setPuntuacion(puntuacion);
+       p.setIncidencias(incidencias);        
+       
+       p.setMes("VALOR TEMPORAL");   
+       
+       
+       
+     
+       dao.edit(p);
+       acceso=listar;
        }
         
         

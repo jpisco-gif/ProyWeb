@@ -21,7 +21,8 @@
                            
             <div>
             <h1>Rendimiento en Terminales</h1>
-            <a href="U05_Controlador_Rendimiento?accion=add">Agregar Nuevo></a>
+            <a href="U05_Controlador_Rendimiento?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>
+            
             <table border="1">
                 <thead>
                     
@@ -54,7 +55,7 @@
                         <td><%=per.getIncidencias() %></td>
                         <td><%=per.getMes() %></td>
                         <td>
-                            <a href="U05_Controlador_Admi?accion=editar&cuenta_id=<%=per.getRendimiento_id()%>">Editar Cuenta</a> 
+                            <a href="U05_Controlador_Rendimiento?accion=editar&rendimiento_id=<%=per.getRendimiento_id()%>">Editar Rendimiento</a> 
                         </td>
                     </tr>
                     <% } %>

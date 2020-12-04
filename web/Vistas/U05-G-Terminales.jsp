@@ -1,18 +1,21 @@
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.List"%>
-<%@page import="Modelo.U05_Ventas_Mes"%>
-<%@page import="ModeloDao.U05_Ventas_MesDao"%>
+<%-- 
+    Document   : U05-cuentas
+    Created on : 26/10/2020, 12:20:37 AM
+    Author     : Anthony Morales
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="stylesheet" href="../Css/newcss.css">
-        <title>Listado General</title>
-    </head>
-    <body>
-        
-        
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cuentas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../Css/newcss.css">
+</head>
+<body>
+      
         <!--Contenedor-->
           <div class="contenedor informe">
             <!--headermain-->
@@ -31,7 +34,6 @@
                         </li>
                         <li class="Home"><a href="U05-G-index.jsp">Home</a></li>
                         <li class="Reuniones"><a href="U05-G-cuentas.jsp">Cuentas</a></li>
-                        <li class="Reuniones"><a href="U05-G-Terminales.jsp">Terminales</a></li>
                         
                         
                         <div class="dropdown">
@@ -49,55 +51,23 @@
                       Main
                     --><main>    
                       <section class="reporte-grafico">
-                       
+                        <div class="head_title">
+                          <h1>TERMINALES</h1>
+
+                        
+                        
+                        </div>
 
                         <div class="finanzas">
                           
                           <div class="finanzas_texto">
-                            <div class="finanzas_titulo"><h1>Ventas por Mes</h1><hr></div>
+                            <div class="finanzas_titulo"><h3>Rendimiento</h3><hr></div>
                             <div class="finanzas_parrafo">
                                 
                               
-                              
-                            <div>
-        
-         
-                            <table border="1">
-                            <thead>
-                    
-                            <tr>
-                            <th>Mes</th>
-                            <th>Ventas</th>
-                            </tr>
-                    
-                            </thead>
-                            <%
-                            U05_Ventas_MesDao dao=new U05_Ventas_MesDao();
-                            List<U05_Ventas_Mes> list=dao.listar();
-                            Iterator<U05_Ventas_Mes> iter=list.iterator();
-                            U05_Ventas_Mes per=null;
-                            while(iter.hasNext())
-                                {
-                                per=iter.next();
-                            %>
-                            <tbody>
-                            <tr>
-                            <td><%=per.getMes() %></td>
-                            <td><%=per.getVentas() %></td>
-                            </tr>
-                            <% } %>
-                            </tbody>
-                
-                            </table>
-
-            
-                            </div>
-                              
-                                
-                                
-                                
-                            <iframe src="U05-G-VML-grafico.jsp" name="iframe_b" height="400px" width="1200px" title="Iframe Example"></iframe>
-                              
+                              <p><a href="../U05_Controlador_Rendimiento?accion=listar" target="iframe_a">Actualizar Lista</a></p>  
+                  
+                              <iframe src="U05-blanco.jsp" name="iframe_a" height="400px" width="1200px" title="Iframe Example"></iframe>
                   
                             
                                 
@@ -128,25 +98,5 @@
     
               </footer>
           </div><!--Contenedor-->
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    </body>
+</body>
 </html>

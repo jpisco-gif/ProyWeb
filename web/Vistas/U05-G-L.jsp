@@ -21,7 +21,7 @@
                            
             <div>
             <h1>Administradores</h1>
-            <a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a>
+            <a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>
             <table border="1">
                 <thead>
                     
