@@ -17,7 +17,6 @@
 
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="css/prettyPhoto.css" rel="stylesheet">
         <link href="font/stylesheet.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/flexslider.css" rel="stylesheet">
@@ -52,7 +51,7 @@
                                     <li><a href="#services">Servicios</a></li>
                                     <li><a href="#works">Compra de Pasajes</a></li>
                                     <li><a href="#contact">Contactos</a></li>
-                                    <li class="dropdown"><a href="#">Login</a></li>
+                                    <li class="dropdown"><a href="../../Vistas/U04-login.jsp">Login</a></li>
                                 </ul>
                             </nav>
                         </div>
