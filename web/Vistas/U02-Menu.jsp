@@ -15,7 +15,7 @@
 
     <body class="body">
         <header>
-            <!-- start top -->
+            <!-- start tops -->
             <div id="topnav" class="navbar navbar-fixed-top default">
                 <div class="navbar-inner">
                     <div class="container">
