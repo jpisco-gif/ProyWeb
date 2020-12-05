@@ -231,9 +231,14 @@ public class U01_Controlador extends HttpServlet {
             String contraseñaReal = "";
             List<U04_Cuenta> list = cuentaDao.login(cuenta);
             if(list.size() != 0){
-                usuarioReal = list.get(0).getUsuario();
-                cuenta_id = list.get(0).getCuenta_id();
-                contraseñaReal = list.get(0).getContraseña();
+                
+                try {
+                    usuarioReal = list.get(0).getUsuario();
+                    cuenta_id = list.get(0).getCuenta_id();
+                    contraseñaReal = list.get(0).getContraseña();
+                } catch (Exception e) {
+                    response.sendRedirect("Vistas/U04-login.jsp");
+                }
                 System.out.println("usuario real: "+usuarioReal);
                 System.out.println("cuenta_id: "+cuenta_id);
                 System.out.println("contraseña real: "+contraseñaReal);
@@ -241,8 +246,13 @@ public class U01_Controlador extends HttpServlet {
             else{
                 List<U04_Cuenta> list2 = cuentaDao.login_fallido(usuario);
                 cuentaDao.login_fallido(usuario);
-                cuenta_id = list2.get(0).getCuenta_id();
-                intento_fallido = list2.get(0).getIntento_fallido();
+                try {
+                    cuenta_id = list2.get(0).getCuenta_id();
+                    intento_fallido = list2.get(0).getIntento_fallido();
+                } catch (Exception e) {
+                    response.sendRedirect("Vistas/U04-login.jsp");
+                }
+                
                 System.out.println("cuenta_id fallido: "+cuenta_id);
                 System.out.println("intento fallido: "+intento_fallido);
             }
