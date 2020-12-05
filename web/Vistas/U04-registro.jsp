@@ -17,7 +17,7 @@
         <link href="../color/default.css" rel="stylesheet">
         <style>
             body{
-                background-image: url(../img/bg/bg-1.jpg);
+                background-image: url(../Imagenes/bg/bg-1.jpg);
             }
         </style>
 

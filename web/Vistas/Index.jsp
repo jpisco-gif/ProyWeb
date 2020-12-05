@@ -18,9 +18,6 @@
 <!doctype html>
 <html lang="en">
 
-
-
-
     <head class="head">
         <meta charset="utf-8">
         <title>Llama bus</title>
@@ -56,8 +53,8 @@
 
                 <!-- sequence slider -->
                 <div id="sequence-theme">
-                    <img class="prev" src="../img/bt-prev.png" alt="Previous">
-                    <img class="next" src="../img/bt-next.png" alt="Next">
+                    <img class="prev" src="../Imagenes/bt-prev.png" alt="Previous">
+                    <img class="next" src="../Imagenes/bt-next.png" alt="Next">
                     <div class="container">
                         <div class="row">
                             <div class="span12">
@@ -69,7 +66,7 @@
                                             </div>
                                             <h4 class="subtitle">HUANCAYO/ICA/LIMA</h4>
                                             <div class="bottomup">
-                                                <img src="../img/slider/parallax/cuzco.jpg" alt="">
+                                                <img src="../Imagenes/slider/parallax/cuzco.jpg" alt="">
                                             </div>
                                         </li>
                                         <li class="animate-in">
@@ -78,7 +75,7 @@
                                             </div>
                                             <h4 class="subtitle">VIAJES PARA LIMA, AREQUIPA E ICA HASTA S/.29.00</h4>
                                             <div class="lefttop">
-                                                <img src="../img/slider/parallax/Ancash.jpg" alt="">
+                                                <img src="../Imagenes/slider/parallax/Ancash.jpg" alt="">
                                             </div>
                                         </li>
                                         <li class="animate-in">
@@ -87,7 +84,7 @@
                                             </div>
                                             <h4 class="subtitle"></h4>
                                             <div class="righttop">
-                                                <img src="../img/slider/parallax/bio.png" alt="">
+                                                <img src="../Imagenes/slider/parallax/bio.png" alt="">
                                             </div>
                                         </li>
                                     </ul>
@@ -318,7 +315,7 @@
                         <div class="aligncenter">
                             <div class="logo">
                                 <a class="brand" href="Index.jsp">
-                                    <img src="../img/logo2.png" alt="">
+                                    <img src="../Imagenes/logo2.png" alt="">
                                 </a>
                             </div>
                             <p>DERECHOS DE AUTOR DE LLAMA BUS</p>
