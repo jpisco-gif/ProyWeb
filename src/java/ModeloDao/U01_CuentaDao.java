@@ -123,4 +123,18 @@ public class U01_CuentaDao implements U01_CRUD_CUENTA{
             
         }
    }
+   
+   public void logout(int cuenta_id, int log_id){
+       String sql = "update logeos set hora_fin = time(now()), dia_fin = date(now()) where cuenta_id = ? and log_id = ?";
+       try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, cuenta_id);
+            ps.setInt(2, log_id);
+            
+            ps.executeUpdate();
+        }catch(Exception e){
+            
+        }
+   }
 }

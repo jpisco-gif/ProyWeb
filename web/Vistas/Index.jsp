@@ -1,8 +1,14 @@
-<%-- 
-    Document   : Index
-    Created on : 29-nov-2020, 19:27:18
-    Author     : 51954
---%>
+<%
+    int cuenta_id = 0;
+    String usuario = "";
+    try {
+        cuenta_id = (Integer) session.getAttribute("cuenta_id");
+        usuario = String.valueOf(session.getAttribute("usuario"));
+    } catch (Exception e) {
+        cuenta_id = 0;
+        usuario = null;
+    }
+%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>

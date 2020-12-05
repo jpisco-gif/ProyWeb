@@ -45,8 +45,6 @@
 
     <body class="body">
         <header>
-            <p><%=cuenta_id%></p><br>
-            <p><%=log_id%></p>
             <!-- start top -->
             <jsp:include page="U02-Menu.jsp"></jsp:include>
             <br>

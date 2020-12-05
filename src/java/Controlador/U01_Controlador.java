@@ -73,6 +73,20 @@ public class U01_Controlador extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession sesion = request.getSession();
+        String accion = request.getParameter("accion");
+        if(accion.equalsIgnoreCase("logout")){
+            int cuenta_id = Integer.parseInt(request.getParameter("cuenta_id"));
+            int log_id = Integer.parseInt(request.getParameter("log_id"));
+            cuentaDao.logout(cuenta_id, log_id);
+            sesion.invalidate();
+            response.sendRedirect("Vistas/Index.jsp");
+        }
+    }
+    
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -235,6 +249,7 @@ public class U01_Controlador extends HttpServlet {
                 System.out.println("entra al caso 1");
                 int rol_id2 = list.get(0).getRol_id();
                 int cuenta_id2 = list.get(0).getCuenta_id();
+                String usuario2 = list.get(0).getUsuario();
                 int estado = 1;
                 System.out.println("usuario2: " + rol_id2);
                 System.out.println("cuenta2: " + cuenta_id2);
@@ -242,6 +257,7 @@ public class U01_Controlador extends HttpServlet {
                 System.out.println("contraseña: "+contraseña);
                 
                 sesion.setAttribute("cuenta_id", cuenta_id2);
+                sesion.setAttribute("usuario", usuario2);
                 
                 cuentaDao.logeos(cuenta_id2, estado, contraseña);
                 List<U04_Cuenta> list3 = cuentaDao.consulta_log(cuenta_id2);
@@ -250,7 +266,7 @@ public class U01_Controlador extends HttpServlet {
                 
                 
                 if (rol_id2 == 1) {
-                    response.sendRedirect("Vistas/U04-index.jsp");
+                    response.sendRedirect("Vistas/Index.jsp");
                 } else if (rol_id2 == 2) {
                     response.sendRedirect("Vistas/u01-consultarRuta.jsp");
                 } else if (rol_id2 == 3) {
