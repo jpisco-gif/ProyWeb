@@ -8,15 +8,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:include page="U03-Cabecera.jsp"></jsp:include>
-        <div id="content">
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <h1>loremsfsdf</h1>
-                            <p>lffffffffffffffffffffffffffffffffffffdssdf</p>         
-                            <h1>Agregar Nueva Encomienda</h1>
+       
+        <div id="customers">
+                     
+                            <h1>Editando</h1>
         <%
             HttpSession sesion = request.getSession();
             U02_RutasDao end = new U02_RutasDao();
@@ -62,20 +57,11 @@
             </table>
 
         </form>
-                        <div id="content">
-                    <section>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <h1>loremsfsdf</h1>
-                                    <p>lffffffffffffffffffffffffffffffffffffdssdf</p>
-                                </div>
-                            </div>
-                        </div>
                         
-                    </section>
+                        
+                  
                 </div>
-            </div>
+           
             <div class="dropdown-divider"></div>
         </div>
 

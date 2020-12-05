@@ -15,6 +15,11 @@
         <link rel="stylesheet" media="screen" href="../Css/sequencejs.css">
         <link href="../Css/style.css" rel="stylesheet">
         <link href="../color/default.css" rel="stylesheet">
+        <style>
+            body{
+                background-image: url(../img/bg/bg-1.jpg);
+            }
+        </style>
 
 
         <title>Iniciar Sesion</title>

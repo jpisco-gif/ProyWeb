@@ -27,12 +27,11 @@
                     <a href="A_Index.jsp">  <img src="../Imagenes/logo2.svg" width="250"></a>
                 </div>
                 <div class="u3menu">
-                    <a href="U03A_Controlador?accion=listar" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-apps mr-2 lead"></i>Usuarios</a>
-                    <a href="U02-Listar.jsp" class="d-block text-light p-3 font-weight-bold"> <i class="icon ion-md-bus"></i> Viajes</a>
-                    <a href="U02-Rutas.jsp" class="d-block text-light p-3 font-weight-bold">Rutas</a> 
-                    <a href="U03A-listarEn.jsp" class="d-block text-light p-3 font-weight-bold"> <i class="icon ion-md-briefcase"></i> Encomiendas</a>
-                    <a href="#" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-person mr-2 lead"></i>Perfil</a>
-                    <a href="#" class="d-block text-light p-3 font-weight-bold">Tablero</a>                    
+                    <a href="U02-Listar.jsp" class="d-block text-light p-5 font-weight-bold"> <i class="icon ion-md-bus mr-3"></i>Viajes</a>
+                    <a href="U02-Rutas.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-send mr-3"></i>Rutas</a> 
+                    <a href="U03A-listarEn.jsp" class="d-block text-light p-5 font-weight-bold"> <i class="icon ion-md-briefcase mr-3"></i>Encomiendas</a>
+                    <a href="#" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-person mr-3 lead"></i>Perfil</a>
+                                
                 </div>
             </div>
             <div class="w-100">

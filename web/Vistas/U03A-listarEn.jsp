@@ -31,11 +31,11 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-9">
+                        <div class="col-lg-10">
                                     <h1>Encomiendas</h1>
                                     <h1><a href="../U03A_Controlador?accion=addEn">Agregar nueva encomienda</a></h1>
                                     
-                                        <table border="1" class="user">
+                                        <table border="1" class="user" id="customers">
                                             <thead>
                                                 <tr>                            
                                                     <th>ID</th>
@@ -75,25 +75,7 @@
                                                 <%}%>
                                             </tbody>
                                         </table>
-                                    <script type="text/javascript">
-                                        function mensaje(e) {
-                                            if (confirm("¿Estás seguro que deseas eliminiar el registro?")) {
-                                                return true;
-                                            } else {
-                                                return false; //cancela el evento por defecto de ir a la pagina
-                                            }
-                                        }
-                                    </script>
-                                    </body>
-                                    <script>
-                                        function editarDatos(val) {
-                                            $.post("U03A-editEn.jsp", {val: val})
-                                                    .done(function (data) {
-                                                        $('#contenido').html(data);
-                                                        //                console.log(data);
-                                                    });
-                                        }
-                                    </script>
+                                   
 
                                 </div>
                             </div>
@@ -104,5 +86,24 @@
             </div>
             <div class="dropdown-divider"></div>
         </div>
-
+</body> 
+<script type="text/javascript">
+                                        function mensaje(e) {
+                                            if (confirm("¿Estás seguro que deseas eliminiar el registro?")) {
+                                                return true;
+                                            } else {
+                                                return false; //cancela el evento por defecto de ir a la pagina
+                                            }
+                                        }
+                                    </script>
+                                    
+                                    <script>
+                                        function editarDatos(val) {
+                                            $.post("U03A-editEn.jsp", {val: val})
+                                                    .done(function (data) {
+                                                        $('#content').html(data);
+                                                        //                console.log(data);
+                                                    });
+                                        }
+                                    </script>
 </html>
