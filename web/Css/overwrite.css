@@ -241,7 +241,7 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-	padding: 20px 10px 20px 10px;
+	
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;

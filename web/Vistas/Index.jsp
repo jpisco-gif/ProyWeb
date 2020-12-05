@@ -100,19 +100,17 @@
             </section>
             <!-- end featured -->
 
-            <section class="section gray-bg">
-                <div class="containers">
-                    <div class="muestra-form"> 
+            <section class="contenedor-form">
                     <%
                         U01_RutasDao dao3 = new U01_RutasDao();
                         List<U01_Ruta> list3 = dao3.terminales();
 
                     %>
-                    <form method="post" action="../U01_Controlador" class="labels-formulario"> 
-                        <div class="itemss">
+                    <form method="post" action="../U01_Controlador" class="formulario"> 
+                        <div class="">
                             <label>Origen</label>
-                            <select name="origen">
-                                <option value="">Seleccione</option>
+                            <select name="origen" class="ruta">
+                                <option value="">Origen</option>
                                 <%                                Iterator<U01_Ruta> iter_origen = list3.iterator();
                                     U01_Ruta ruta_origen = null;
                                     while (iter_origen.hasNext()) {
@@ -123,10 +121,10 @@
                                 <%}%>
                             </select>
                         </div>
-                        <div class="itemss">
+                        <div class="">
                             <label>Destino</label>
-                            <select name="destino">
-                                <option value="">Seleccione</option>
+                            <select name="destino" class="ruta">
+                                <option value="">Destino</option>
                                 <%
                                     Iterator<U01_Ruta> iter_destino = list3.iterator();
                                     U01_Ruta ruta_destino = null;
@@ -138,18 +136,16 @@
                                 <%}%>
                             </select>
                         </div>
-                        <div class="itemss">
+                        <div class="">
                             <label>Fecha</label>
                             <input type="date" name="fecha">
                         </div>
 
-                        <div class="itemss">
+                        <div class="">
                             <input type="hidden" name="accion" value="consultar-rutas"><br></br>
-                            <input type="submit" name="submit" value="Buscar rutas">
+                            <input type="submit" name="submit" value="Buscar rutas" class="buscar-ruta">
                         </div>
                     </form>
-                </div>
-            </div>
 
         </section>
 
