@@ -6,6 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../js/jquery.js"></script>
         <title>Modificacion de Registros</title>
     </head>
     <body>
@@ -15,7 +16,8 @@
        U05_Admi p=(U05_Admi)dao.list(cuenta_id);
        %>
        <h1>Modificar Cuenta de Administrador</h1>
-       <form action="U05_Controlador_Admi">
+       <div id="contenido">
+       <form action="../U05_Controlador_Admi">
            <table border="1">
                     <tbody>
                         <tr>
@@ -41,8 +43,22 @@
                         
                     </tbody>
                 </table>
-                            <a href="U05_Controlador_Admi?accion=listar">Regresar</a>
+                            <a href="U05-G-cuentas.jsp"><input type="button" value="Regresar"></a>
        </form>
-        
+       </div> 
     </body>
+    
+    <script>
+          function regresar() {
+            $.post("U05-G-cuentas.jsp", {val: val})
+                    .done(function (data) {
+                        $('#contenido').html(data);
+//                console.log(data);
+                    });
+        }
+        
+       
+    </script>
+    
+    
 </html>

@@ -44,7 +44,6 @@
                               
                            
             <div>
-            <a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>
             <table id="customers" border="1">
                 <thead>
                     
@@ -63,8 +62,7 @@
                         <th>edad</th>
                        
                         <th>cod_documento</th>
-                        <th>modificar_cuenta</th>
-                        <th>modificar_informacion_personal</th>
+                        
                         
                     </tr>
                     
@@ -94,10 +92,7 @@
                         <td><%=per.getEdad() %></td>
                         
                         <td><%=per.getCod_documento() %></td>
-                        <td>
-                            <a href="U05_Controlador_Admi?accion=editar&cuenta_id=<%=per.getCuenta_id()%>">Editar Cuenta</a>
-                        </td>
-                        <td><a href="U05_Controlador_Admi?accion=editar2&cuenta_id=<%=per.getCuenta_id()%>">Editar Informacion personal</a></td>
+                       
                     </tr>
                     <% } %>
                 </tbody>
@@ -107,4 +102,7 @@
             
         </div>    
     </body>
+    
+    
+    
 </html>

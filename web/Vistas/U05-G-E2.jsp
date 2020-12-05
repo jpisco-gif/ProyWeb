@@ -15,7 +15,7 @@
        U05_Admi p=(U05_Admi)dao.list(cuenta_id);
        %>
        <h1>Modificar Cuenta de Administrador</h1>
-       <form action="U05_Controlador_Admi">
+       <form action="../U05_Controlador_Admi">
            <table border="1">
                     <tbody>
                        
@@ -55,7 +55,7 @@
                         
                     </tbody>
                 </table>
-                            <a href="U05_Controlador_Admi?accion=listar">Regresar</a>
+                            <a href="U05-G-cuentas.jsp"><input type="button" value="Regresar"></a>
        </form>
         
     </body>

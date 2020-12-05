@@ -14,7 +14,7 @@
     <body>
         <div>
             <h1>Agregar Administrador</h1>
-            <form action="U05_Controlador_Admi">
+            <form action="../U05_Controlador_Admi">
                 <table border="1">
                     <tbody>
                         <tr>
@@ -37,7 +37,7 @@
                     </tbody>
                 </table>
 
-                <a href="U05_Controlador_Admi?accion=listar">Regresar</a>
+                <a href="U05-G-cuentas.jsp"><input type="button" value="Regresar"></a>
                 
                 
             </form>

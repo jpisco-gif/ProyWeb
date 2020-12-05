@@ -16,7 +16,7 @@
         <h4>Califique del 1 al 10 los primeros 4 Items </h4>
         <h4>En el Item "incidencias" reporte la cantidad de quejas ,accidentes o incidentes que ha tenido la terminal seleccionada</h4>
         
-        <form name="formulario_rendimiento" action="U05_Controlador_Rendimiento">
+        <form name="formulario_rendimiento" action="../U05_Controlador_Rendimiento">
             
             <table border="1">
                 <thead>
@@ -106,7 +106,7 @@
                 </tbody>
             </table>
 
-            <a href="U05_Controlador_Rendimiento?accion=listar">Regresar</a>
+            <a href="U05-G-Terminales.jsp"><input type="button" value="Regresar"></a>
             
         </form>
         

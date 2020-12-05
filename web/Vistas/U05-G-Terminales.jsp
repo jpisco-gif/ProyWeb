@@ -22,8 +22,8 @@
     </head>
     <body class="admin">
         <jsp:include page="U05-Cabecera.jsp"></jsp:include>
-        <div id="content">
-            <section>
+        <div id="contenido" >
+            <section >
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-9">
@@ -45,7 +45,7 @@
 
 <div>
                                         <h1>Rendimiento en Terminales</h1>
-                                        <a href="U05_Controlador_Rendimiento?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>
+                                         <a href="#" onclick="añadirRendimiento()"><input type="button" value="Agregar nuevo"></a> <a href="U05-G-R-L.jsp"><input type="button" value="Imprimir"></a>
 
                                         <table border="1">
                                             <thead>
@@ -78,7 +78,7 @@
                                                     <td><%=per.getIncidencias()%></td>
                                                     <td><%=per.getMes()%></td>
                                                     <td>
-                                                        <!--<a href="U05_Controlador_Rendimiento?accion=editar&rendimiento_id=<%=per.getRendimiento_id()%>">Editar Rendimiento</a>-->
+                                                       
                                                         <a href="#" onclick="editarRendimiento(<%=per.getRendimiento_id()%>)"><input type="button" value="Editar rendimiento"></a>
                                                     </td>
                                                 </tr>
@@ -114,15 +114,23 @@
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 
 
 </body>
 <script>
 
         function editarRendimiento(val) {
-            $.post("U05-G-E1.jsp", {val: val})
+            $.post("U05-G-R-E.jsp", {val: val})
+                    .done(function (data) {
+                        $('#contenido').html(data);
+//                console.log(data);
+                    });
+        }
+        
+        
+        function añadirRendimiento() {
+            $.post("U05-G-A-R.jsp", {val: val})
                     .done(function (data) {
                         $('#contenido').html(data);
 //                console.log(data);

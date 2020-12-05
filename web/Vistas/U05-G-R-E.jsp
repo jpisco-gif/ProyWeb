@@ -129,7 +129,7 @@
                 </tbody>
             </table>
 
-            <a href="U05_Controlador_Rendimiento?accion=listar">Regresar</a>
+            <a href="U05-G-Terminales.jsp"><input type="button" value="Regresar"></a>
             
         </form>
         
