@@ -45,7 +45,6 @@
                                     <li class="current"><a href="Index.jsp">Inicio</a></li>
                                     <li><a href="#about">Nosotros</a></li>
                                     <li><a href="#services">Servicios</a></li>
-                                    <li><a href="u01-comprarPasaje.jsp">Compra de Pasajes</a></li>
                                     <li><a href="#contact">Contactos</a></li>
                                     <% if(usuario == null){
                                         %>
@@ -58,7 +57,6 @@
                                         <%
                                             }
                                         %>
-                                      
                                 </ul>
                             </nav>
                         </div>

@@ -156,7 +156,14 @@ td{
     margin: 1em 0;
 }
 .labels-formulario{
-    display: flex;
+   display: flex;  
+}
+.itemss{
+    margin: 2px 1em 0 auto ;
+}
+
+.containers{
+   border: 1px solid red ;
 }
 /*###################u02##########################*/
 /*###################u03##########################*/
@@ -222,7 +229,7 @@ a:hover {
 .login-form {
   box-sizing:border-box;
   padding-top:15px;
-	padding-bottom:10%;
+  padding-bottom:10%;
   margin:5% auto;
   text-align:center;
   

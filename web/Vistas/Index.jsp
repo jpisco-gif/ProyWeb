@@ -28,6 +28,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
+        <link href="../Css/newcss.css" rel="stylesheet">
         <link href="../Css/animate.css" rel="stylesheet">
         <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
         <link href="../font/stylesheet.css" rel="stylesheet">
@@ -90,61 +91,67 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <div class="muestra-form">
-                                    <%
-                                        U01_RutasDao dao3 = new U01_RutasDao();
-                                        List<U01_Ruta> list3 = dao3.terminales();
-
-                                    %>
-                                    <form method="post" action="../U01_Controlador" class="labels-formulario">
-                                        <div>
-                                            <label>Origen</label>
-                                            <select name="origen">
-                                                <option value="">Seleccione</option>
-                                                <%                                Iterator<U01_Ruta> iter_origen = list3.iterator();
-                                                    U01_Ruta ruta_origen = null;
-                                                    while (iter_origen.hasNext()) {
-                                                        ruta_origen = iter_origen.next();
-                                                %>
-
-                                                <option value="<%=ruta_origen.getId_origen()%>"><%=ruta_origen.getOrigen()%></option>  
-                                                <%}%>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label>Destino</label>
-                                            <select name="destino">
-                                                <option value="">Seleccione</option>
-                                                <%
-                                                    Iterator<U01_Ruta> iter_destino = list3.iterator();
-                                                    U01_Ruta ruta_destino = null;
-                                                    while (iter_destino.hasNext()) {
-                                                        ruta_destino = iter_destino.next();
-                                                %>
-
-                                                <option value="<%=ruta_destino.getId_origen()%>"><%=ruta_destino.getOrigen()%></option>  
-                                                <%}%>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label>Fecha</label>
-                                            <input type="date" name="fecha">
-                                        </div>
-
-                                        <div class="">
-                                            <input type="hidden" name="accion" value="consultar-rutas">
-                                            <input type="submit" name="submit" value="Buscar rutas">
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- end sequence slider -->
+            </section>
+            <!-- end featured -->
+
+            <section class="section gray-bg">
+                <div class="containers">
+                    <div class="muestra-form"> 
+                    <%
+                        U01_RutasDao dao3 = new U01_RutasDao();
+                        List<U01_Ruta> list3 = dao3.terminales();
+
+                    %>
+                    <form method="post" action="../U01_Controlador" class="labels-formulario"> 
+                        <div class="itemss">
+                            <label>Origen</label>
+                            <select name="origen">
+                                <option value="">Seleccione</option>
+                                <%                                Iterator<U01_Ruta> iter_origen = list3.iterator();
+                                    U01_Ruta ruta_origen = null;
+                                    while (iter_origen.hasNext()) {
+                                        ruta_origen = iter_origen.next();
+                                %>
+
+                                <option value="<%=ruta_origen.getId_origen()%>"><%=ruta_origen.getOrigen()%></option>  
+                                <%}%>
+                            </select>
+                        </div>
+                        <div class="itemss">
+                            <label>Destino</label>
+                            <select name="destino">
+                                <option value="">Seleccione</option>
+                                <%
+                                    Iterator<U01_Ruta> iter_destino = list3.iterator();
+                                    U01_Ruta ruta_destino = null;
+                                    while (iter_destino.hasNext()) {
+                                        ruta_destino = iter_destino.next();
+                                %>
+
+                                <option value="<%=ruta_destino.getId_origen()%>"><%=ruta_destino.getOrigen()%></option>  
+                                <%}%>
+                            </select>
+                        </div>
+                        <div class="itemss">
+                            <label>Fecha</label>
+                            <input type="date" name="fecha">
+                        </div>
+
+                        <div class="itemss">
+                            <input type="hidden" name="accion" value="consultar-rutas">
+                            <input type="submit" name="submit" value="Buscar rutas">
+                        </div>
+                    </form>
+                </div>
             </div>
-            <!-- end sequence slider -->
+
         </section>
-        <!-- end featured -->
 
         <!-- Section about -->
         <section id="about" class="section">
@@ -168,7 +175,7 @@
                                 Somos una empresa que lleva 30 años brindando servicios de calidad a través de modernas flotas de buses para satisfacer a nuestros clientes. Además brindamos servicios con los estandares mas altos de seguridad y un servicio a bordo de primera, tenemos como finalidad dar un viaje a nuestros clientes con nuestros altos protocolos de seguridad.
                             </p>
                             <div class="righttop">
-                                <img src="../img/slider/parallax/bio.png" alt="">
+                                <img src="../Imagenes/huancayo.jpg" alt="">
                             </div>
                         </div>
                     </div>
