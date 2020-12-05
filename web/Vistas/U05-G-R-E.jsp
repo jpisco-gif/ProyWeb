@@ -21,7 +21,7 @@
        
       
        U05_RendimientoDao dao=new U05_RendimientoDao();
-       int rendimiento_id=Integer.parseInt((String)request.getAttribute("rendimiento_idper"));
+       int rendimiento_id=Integer.parseInt(request.getParameter("val"));
        
        System.out.print(rendimiento_id);
        

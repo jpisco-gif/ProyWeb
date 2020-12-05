@@ -11,7 +11,7 @@
     <body>
        <% 
        U05_AdmiDao dao=new U05_AdmiDao();
-       int cuenta_id=Integer.parseInt((String)request.getAttribute("cuenta_idper"));
+       int cuenta_id=Integer.parseInt(request.getParameter("val"));
        U05_Admi p=(U05_Admi)dao.list(cuenta_id);
        %>
        <h1>Modificar Cuenta de Administrador</h1>
