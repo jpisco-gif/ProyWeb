@@ -5,6 +5,22 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    int cuenta_id = 0;
+    int log_id = 0;
+    String usuario = "";
+    try {
+        cuenta_id = (Integer) session.getAttribute("cuenta_id");
+        log_id = (Integer) session.getAttribute("log_id");
+        usuario = String.valueOf(session.getAttribute("usuario"));
+    } catch (Exception e) {
+        cuenta_id = 0;
+        log_id = 0;
+        usuario = null;
+    }
+
+
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,8 +44,9 @@
                 </div>
                 <div class="u3menu">
                     <a href="U02-Listar.jsp" class="d-block text-light p-5 font-weight-bold"> <i class="icon ion-md-bus mr-3"></i>Viajes</a>
-                    <a href="U02-Rutas.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-send mr-3"></i>Rutas</a> 
+                    <a href="U02-Rutas.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-pin mr-3"></i>Rutas</a> 
                     <a href="U03A-listarEn.jsp" class="d-block text-light p-5 font-weight-bold"> <i class="icon ion-md-briefcase mr-3"></i>Encomiendas</a>
+                    <a href="u01-comprarPasaje.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-cart mr-3 lead"></i>Venta Pasaje</a>
                     <a href="#" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-person mr-3 lead"></i>Perfil</a>
                                 
                 </div>
@@ -47,13 +64,13 @@
                         <ul class="navbar-nav ml-auto">                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../Imagenes/U05-finanzas.png" class="img-fluid rounded-circle avatar mr-2" > Nombre de administrador
+                                    <img src="../Imagenes/admin.svg" class="img-fluid rounded-circle avatar mr-2" > <%=usuario %>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Action</a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                                    <a class="dropdown-item" href="../U01_Controlador?accion=logout&cuenta_id=<%=cuenta_id%>&log_id=<%=log_id%>">Cerrar Sesion</a>
                                 </div>
                             </li>
                         </ul>
