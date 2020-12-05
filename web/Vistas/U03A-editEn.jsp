@@ -19,7 +19,6 @@ int id = Integer.parseInt(request.getParameter("val"));
         System.out.println(id);
         U03A_Encomienda en=(U03A_Encomienda)end.list(id);
         %>
-        <jsp:include page="U03-Cabecera.jsp"></jsp:include>
         <div id="content">
             <section>
                 <div class="container">

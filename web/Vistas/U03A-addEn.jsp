@@ -12,6 +12,12 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="U03-Cabecera.jsp"></jsp:include>
+        <div id="contenido">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10">
         <h1>Agregar Nueva Encomienda</h1>
         <div>
             <form action="../U03A_Controlador">
@@ -48,6 +54,15 @@
                     </tbody>
                 </table>
             </form>
+        </div>
+        </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
         </div>
     </body>
 </html>
