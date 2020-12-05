@@ -38,7 +38,7 @@
                     int destino = (Integer) session.getAttribute("destino");
                 %>
                 <form method="post" action="../U01_Controlador" class="labels-formulario">
-                    <div>
+                    <div class="itemss">
                         <label>Origen</label>
                         <select name="origen">
                             <option value=''>Seleccione</option>
@@ -58,7 +58,7 @@
                             <%}%>
                         </select>
                     </div>
-                    <div>
+                    <div class="itemss">
                         <label>Destino</label>
                         <select name="destino">
                             <option value=''>Seleccione</option>
@@ -80,12 +80,12 @@
                             <%}%>
                         </select>
                     </div>
-                    <div>
+                    <div class="itemss">
                         <label>Fecha</label>
                         <input type="date" name="fecha" value=''>
                     </div>
 
-                    <div class="">
+                    <div class="itemss">
                         <input type="hidden" name="accion" value="consultar-rutas">
                         <input type="submit" name="submit" value="Buscar">
                     </div>

@@ -116,10 +116,11 @@
     background-color: white;
 }
 .muestra-form{
-    background-color: white;
+    background-color: #F8D7AE ;
     width: 100%;
     display: flex;
     align-items: center;
+    
 }
 .formulario{
     width: 100%;
@@ -163,7 +164,8 @@ td{
 }
 
 .containers{
-   border: 1px solid red ;
+   border: 5px solid #F8D7AE ;
+   background: #F8D7AE;
 }
 /*###################u02##########################*/
 /*###################u03##########################*/

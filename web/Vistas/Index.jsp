@@ -144,7 +144,7 @@
                         </div>
 
                         <div class="itemss">
-                            <input type="hidden" name="accion" value="consultar-rutas">
+                            <input type="hidden" name="accion" value="consultar-rutas"><br></br>
                             <input type="submit" name="submit" value="Buscar rutas">
                         </div>
                     </form>
