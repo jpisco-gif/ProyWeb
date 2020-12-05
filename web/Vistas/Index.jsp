@@ -40,8 +40,6 @@
         
         <jsp:include page="U02-Menu.jsp"></jsp:include>
 
-
-
         <!-- section featured -->
         <section id="featured">
 
@@ -74,9 +72,9 @@
                                     </li>
                                     <li class="animate-in">
                                         <div class="info letter-container">
-                                            <h2 class="fade">CUMPLIMOS CON LOS PROTOCOLOS</h2>
+                                            <h2 class="fade">CUMPLIMOS LOS PROTOCOLOS </h2>
                                         </div>
-                                        <h4 class="subtitle">PARA QUE PUEDAS VIAJAR SEGURO Y TRANQUILO .</h4>
+                                        <h4 class="subtitle"></h4>
                                         <div class="righttop">
                                             <img src="../img/slider/parallax/bio.png" alt="">
                                         </div>

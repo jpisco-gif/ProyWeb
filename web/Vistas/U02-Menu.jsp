@@ -28,7 +28,7 @@
                                     <li class="current"><a href="Index.jsp">Inicio</a></li>
                                     <li><a href="#about">Nosotros</a></li>
                                     <li><a href="#services">Servicios</a></li>
-                                    <li><a href="#works">Compra de Pasajes</a></li>
+                                    <li><a href="u01-comprarPasaje.jsp">Compra de Pasajes</a></li>
                                     <li><a href="#contact">Contactos</a></li>
                                     <li class="dropdown"><a href="U04-login.jsp">Login</a></li>
                                 </ul>
@@ -41,14 +41,7 @@
             <!-- end tops -->
         </header>
 
-        <!-- section featured -->
 
-        <!-- end featured -->
-
-        <!-- Section about -->
-        
-
-        <!-- Javascript Library Files -->
 
 
     </body>
