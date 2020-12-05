@@ -92,6 +92,7 @@ public class U01_Controlador extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion = request.getSession();
+        PrintWriter out= response.getWriter();
         String acceso = "";
         String accion = request.getParameter("accion");
         
@@ -213,6 +214,7 @@ public class U01_Controlador extends HttpServlet {
         }
         
         else if (accion.equalsIgnoreCase("login")) {
+            
             String usuario = request.getParameter("usuario");
             String contraseña = request.getParameter("contraseña");
             System.out.println("usuario: "+usuario);
@@ -266,11 +268,20 @@ public class U01_Controlador extends HttpServlet {
                 
                 
                 if (rol_id2 == 1) {
-                    response.sendRedirect("Vistas/Index.jsp");
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Bienvenido al perfil de usuario');");
+                    out.println("location='Vistas/Index.jsp';");
+                    out.println("</script>");             
                 } else if (rol_id2 == 2) {
-                    response.sendRedirect("Vistas/u01-consultarRuta.jsp");
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Bienvenido al perfil de administrador');");
+                    out.println("location='Vistas/A_Index.jsp';");
+                    out.println("</script>");                
                 } else if (rol_id2 == 3) {
-                    response.sendRedirect("Vistas/U05-G-index.jsp");
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Bienvenido al perfil de Gerente');");
+                    out.println("location='Vistas/U05-G-index.jsp';");
+                    out.println("</script>");                    
                 }
                 
             //---------------------caso2-----------------------------
@@ -287,11 +298,17 @@ public class U01_Controlador extends HttpServlet {
                 System.out.println("estado: "+estado);
                 
                 cuentaDao.intento_fallido(cuenta_id, estado, intento_fallido, contraseña);
-                response.sendRedirect("Vistas/U04-login.jsp");
+                out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Error al ingresar contraseña o usuario, verifique que esten correctos ');");
+                    out.println("location='Vistas/U04-login.jsp';");
+                    out.println("</script>");                
                 }
                 //mas de 3 intentos fallidos
                 else{
-                    response.sendRedirect("Vistas/U04-login.jsp");
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Lo sentimos, Intentos maximos hechos, espere a que se desbloquee su cuenta ');");
+                    out.println("location='Vistas/U04-login.jsp';");
+                    out.println("</script>");  
                 }
             }
         }
