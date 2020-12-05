@@ -111,7 +111,8 @@
                             <label>Origen</label>
                             <select name="origen" class="ruta">
                                 <option value="">Origen</option>
-                                <%                                Iterator<U01_Ruta> iter_origen = list3.iterator();
+                                <%                                
+                                    Iterator<U01_Ruta> iter_origen = list3.iterator();
                                     U01_Ruta ruta_origen = null;
                                     while (iter_origen.hasNext()) {
                                         ruta_origen = iter_origen.next();
