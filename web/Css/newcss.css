@@ -670,6 +670,7 @@ button{float:inline-end;
   .login {
   margin:0 auto;
   max-width:500px;
+  //background-image: url(../img/bg/fondo.jpg);
 }
 .login-header {
   color:red;

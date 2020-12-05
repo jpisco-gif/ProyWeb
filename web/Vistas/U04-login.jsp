@@ -1,19 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"      
- pageEncoding="ISO-8859-1"%>
+         pageEncoding="ISO-8859-1"%>
 
 <%
     int cuenta_id = 0;
     int log_id = 0;
     try {
-            cuenta_id = (Integer) session.getAttribute("cuenta_id");
-            log_id = (Integer) session.getAttribute("log_id");
-        } catch (Exception e) {
-            cuenta_id = 0;
-            log_id = 0;
-        }
-    
-    
-  
+        cuenta_id = (Integer) session.getAttribute("cuenta_id");
+        log_id = (Integer) session.getAttribute("log_id");
+    } catch (Exception e) {
+        cuenta_id = 0;
+        log_id = 0;
+    }
+
+
 %>
 
 <!doctype html>
@@ -49,50 +48,28 @@
             <p><%=cuenta_id%></p><br>
             <p><%=log_id%></p>
             <!-- start top -->
-            <div id="topnav" class="navbar navbar-fixed-top default">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <div class="logo">
-                            <a class="brand" href="Index.jsp"><img src="img/logo2.png" alt=""></a>
-                        </div>
-                        <div class="navigation">
-                            <nav>
-                                <ul class="nav pull-right">
-                                    <li class="current"><a href="#featured">Inicio</a></li>
-                                    <li><a href="#about">Nosotros</a></li>
-                                    <li><a href="#services">Servicios</a></li>
-                                    <li><a href="#works">Compra de Pasajes</a></li>
-                                    <li><a href="#contact">Contactos</a></li>
-                                    <li class="dropdown"><a href="U04-login.jsp">Login</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!--/.nav-collapse -->
+            <jsp:include page="U02-Menu.jsp"></jsp:include>
+            <br>
+
+            <div align="center">
+                <div class="login">
+                    <div class="login-header">
+                        <h1>Iniciar Sesion</h1>
                     </div>
+                    <form action="../U01_Controlador" method="post">
+                        <div class="login-form">
+                            <label>Usuario:</label>
+                            <input type="text" name="usuario" />
+                            <label>Contraseña:</label>
+                            <input type="password" name="contraseña" />  
+                            <input type="hidden" name="accion" value="login"/><br>
+                            <input type="submit" value="Ingresar" />
+                        </div>
+                        
+                    </form>
+                    <br>
+                    No tiene una cuenta... <a href="U04-registro.jsp">Registrarme</a>
                 </div>
             </div>
-            <!-- end topS -->
-        </header>
-    
- <div align="center">
-     <div class="login">
-     <div class="login-header">
-  <h1>Iniciar Sesion</h1>
-  </div>
-  <form action="../U01_Controlador" method="post">
-       <div class="login-form">
-     <label>usuario:</label>
-     <input type="text" name="usuario" />
-     <label>contraseña:</label>
-     <input type="password" name="contraseña" />  
-     <input type="hidden" name="accion" value="login"/>
-     <input type="submit" value="Ingresar" />
-       
-   
-  </form>
-        <br>
-        no tiene una cuenta... <a href="U04-registro.jsp">Registrarme</a>
-</div>
- </div>
-</body>
+    </body>
 </html>
