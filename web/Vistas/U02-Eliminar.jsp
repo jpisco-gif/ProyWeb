@@ -12,7 +12,7 @@
         U02_RutasDao end=new U02_RutasDao();
         int ruta_id=Integer.parseInt((String)request.getAttribute("idel"));
         end.eliminar(ruta_id);
-        request.getRequestDispatcher("U02-Listar.jsp").forward(request, response);
+        request.getRequestDispatcher("U02-Rutas.jsp").forward(request, response);
         %>
             
     </body>

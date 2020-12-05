@@ -51,8 +51,8 @@
                                             <td><%=per.getRuta()%></td>
                                             <td><%=per.getEmbarque()%></td>
                                             <td><%=per.getLlegada()%></td>
-                                            <td><%=per.getCosto()%></td>
-                                            <td><%=per.getDuracion()%></td>
+                                            <td>S/. <%=per.getCosto()%></td>
+                                            <td><%=per.getDuracion()%> horas</td>
                                             <td><%=per.getDescripcion()%></td>
                                             <td><a onclick="editarDatos(<%=per.getRuta()%>)"><input type="button" value="Editar"></a></td>
 
@@ -85,7 +85,7 @@
                 });
     }
 </script>
-.<script type="text/javascript">
+<script type="text/javascript">
                                         function mensaje(e) {
                                             if (confirm("¿Estás seguro que deseas eliminiar el registro?")) {
                                                 return true;

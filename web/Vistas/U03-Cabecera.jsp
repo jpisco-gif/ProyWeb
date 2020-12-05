@@ -45,7 +45,7 @@
                 <div class="u3menu">                    
                     <a href="U02-Rutas.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-pin mr-3"></i>Rutas</a> 
                     <a href="U03A-listarEn.jsp" class="d-block text-light p-5 font-weight-bold"> <i class="icon ion-md-briefcase mr-3"></i>Encomiendas</a>
-                    <a href="u01-comprarPasaje.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-cart mr-3 lead"></i>Venta Pasaje</a>
+                    <a href="U03-Vender.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-cart mr-3 lead"></i>Venta Pasaje</a>
                     <a href="#" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-person mr-3 lead"></i>Perfil</a>
                                 
                 </div>
