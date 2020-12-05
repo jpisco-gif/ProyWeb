@@ -5,6 +5,22 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    int cuenta_id = 0;
+    int log_id = 0;
+    String usuario = "";
+    try {
+        cuenta_id = (Integer) session.getAttribute("cuenta_id");
+        log_id = (Integer) session.getAttribute("log_id");
+        usuario = String.valueOf(session.getAttribute("usuario"));
+    } catch (Exception e) {
+        cuenta_id = 0;
+        log_id = 0;
+        usuario = null;
+    }
+
+
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -63,7 +79,7 @@
                                     <a class="dropdown-item" href="#">Action</a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                                    <a class="dropdown-item" href="../U01_Controlador?accion=logout&cuenta_id=<%=cuenta_id%>&log_id=<%=log_id%>">Cerrar Sesion</a>
                                 </div>
                             </li>
                         </ul>
