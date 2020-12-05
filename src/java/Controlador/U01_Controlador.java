@@ -198,40 +198,87 @@ public class U01_Controlador extends HttpServlet {
             
         }
         
-        else if(accion.equalsIgnoreCase("login")){
+        else if (accion.equalsIgnoreCase("login")) {
             String usuario = request.getParameter("usuario");
             String contraseña = request.getParameter("contraseña");
-            
-            
             System.out.println("usuario: "+usuario);
             System.out.println("contraseña: "+contraseña);
-            
+            int intento_fallido = 0;
+            int cuenta_id = 0;
+            int log_id = 0;
+
             cuenta.setUsuario(usuario);
             cuenta.setContraseña(contraseña);
-            //cuentaDao.login(cuenta);
+            cuentaDao.login(cuenta);
             
+            String usuarioReal = "";
+            String contraseñaReal = "";
             List<U04_Cuenta> list = cuentaDao.login(cuenta);
-            int rol_id2 = list.get(0).getRol_id();
-            int cuenta_id2 = list.get(0).getCuenta_id();
-            System.out.println("usuario2: "+rol_id2);
-            System.out.println("cuenta2: "+cuenta_id2);
-            sesion.setAttribute("cuenta_id", cuenta_id2);
-            if(rol_id2 == 1){
-                response.sendRedirect("Vistas/U04-index.jsp");
+            if(list.size() != 0){
+                usuarioReal = list.get(0).getUsuario();
+                cuenta_id = list.get(0).getCuenta_id();
+                contraseñaReal = list.get(0).getContraseña();
+                System.out.println("usuario real: "+usuarioReal);
+                System.out.println("cuenta_id: "+cuenta_id);
+                System.out.println("contraseña real: "+contraseñaReal);
             }
-            else if(rol_id2 == 2){
-                response.sendRedirect("Vistas/u01-consultarRuta.jsp");
+            else{
+                List<U04_Cuenta> list2 = cuentaDao.login_fallido(usuario);
+                cuentaDao.login_fallido(usuario);
+                cuenta_id = list2.get(0).getCuenta_id();
+                intento_fallido = list2.get(0).getIntento_fallido();
+                System.out.println("cuenta_id fallido: "+cuenta_id);
+                System.out.println("intento fallido: "+intento_fallido);
             }
-            else if(rol_id2 == 3){
-                response.sendRedirect("Vistas/U05-G-index.jsp");
-            }
-            
-            
+            //---------------------caso1--------------------------
+            if (usuario.equalsIgnoreCase(usuarioReal) && contraseña.equalsIgnoreCase(contraseñaReal)) {
+                System.out.println("entra al caso 1");
+                int rol_id2 = list.get(0).getRol_id();
+                int cuenta_id2 = list.get(0).getCuenta_id();
+                int estado = 1;
+                System.out.println("usuario2: " + rol_id2);
+                System.out.println("cuenta2: " + cuenta_id2);
+                System.out.println("estado: "+estado);
+                System.out.println("contraseña: "+contraseña);
                 
-            
-            
+                sesion.setAttribute("cuenta_id", cuenta_id2);
+                
+                cuentaDao.logeos(cuenta_id2, estado, contraseña);
+                List<U04_Cuenta> list3 = cuentaDao.consulta_log(cuenta_id2);
+                log_id = list3.get(0).getCuenta_id();
+                sesion.setAttribute("log_id", log_id);
+                
+                
+                if (rol_id2 == 1) {
+                    response.sendRedirect("Vistas/U04-index.jsp");
+                } else if (rol_id2 == 2) {
+                    response.sendRedirect("Vistas/u01-consultarRuta.jsp");
+                } else if (rol_id2 == 3) {
+                    response.sendRedirect("Vistas/U05-G-index.jsp");
+                }
+                
+            //---------------------caso2-----------------------------
+            }else if(contraseñaReal == ""){
+                //menos de 3 intentos fallidos
+                if(intento_fallido <= 2){
+                System.out.println("entro al caso 2");
+                int estado = 0;
+                System.out.println("intento fallido: "+intento_fallido);
+                intento_fallido += 1;
+                System.out.println("nuevo intento fallido: "+intento_fallido);
+                System.out.println("cuenta id: "+cuenta_id);
+                System.out.println("contraseña: "+contraseña);
+                System.out.println("estado: "+estado);
+                
+                cuentaDao.intento_fallido(cuenta_id, estado, intento_fallido, contraseña);
+                response.sendRedirect("Vistas/U04-login.jsp");
+                }
+                //mas de 3 intentos fallidos
+                else{
+                    response.sendRedirect("Vistas/U04-login.jsp");
+                }
+            }
         }
-        
         else if(accion.equalsIgnoreCase("eliminar-pasaje")){
             int comprobante_id = Integer.parseInt(request.getParameter("comprobante_id"));
             int persona_id = Integer.parseInt(request.getParameter("persona_id"));

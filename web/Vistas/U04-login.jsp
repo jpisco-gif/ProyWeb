@@ -1,6 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"      
  pageEncoding="ISO-8859-1"%>
 
+<%
+    int cuenta_id = 0;
+    int log_id = 0;
+    try {
+            cuenta_id = (Integer) session.getAttribute("cuenta_id");
+            log_id = (Integer) session.getAttribute("log_id");
+        } catch (Exception e) {
+            cuenta_id = 0;
+            log_id = 0;
+        }
+    
+    
+  
+%>
+
 <!doctype html>
 <html lang="en">
 
@@ -31,7 +46,8 @@
 
     <body class="body">
         <header>
-
+            <p><%=cuenta_id%></p><br>
+            <p><%=log_id%></p>
             <!-- start top -->
             <div id="topnav" class="navbar navbar-fixed-top default">
                 <div class="navbar-inner">
