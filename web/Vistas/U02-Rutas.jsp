@@ -22,8 +22,13 @@
                     <div class="container">
                         <div class="row" id="customers">
                             <div class="col-lg-10">
+                                <div class="col-lg-3">
                                 <h1>Viajes</h1>
-                                <a href="U02-Add.jsp" class="font-weight-bold ">Agregar nueva ruta <i class="icon ion-md-pin mr-2"></i></a>                                
+                                <a href="U02-Add.jsp" class="font-weight-bold ">Agregar nueva ruta <i class="icon ion-md-pin mr-2"></i></a>             
+                            </div>                                  
+                                 <div class="col-lg-3 d-flex">
+                                     <button class="btn btn-info w-50 align-self-end"><a href="U03-Imp-ru.jsp">Imprimir</a></button>
+                            </div>
                                 <div id="mostrar-datos">
                                     <table border="1">
                                         <thead>
