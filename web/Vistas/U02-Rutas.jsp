@@ -22,8 +22,8 @@
                     <div class="container">
                         <div class="row" id="customers">
                             <div class="col-lg-10">
-                                <a href="U02-Add.jsp">Agregar una nueva ruta</a>
-                                <p>Viajes</p>
+                                <h1>Viajes</h1>
+                                <a href="U02-Add.jsp" class="font-weight-bold ">Agregar nueva ruta <i class="icon ion-md-pin mr-2"></i></a>                                
                                 <div id="mostrar-datos">
                                     <table border="1">
                                         <thead>
@@ -56,7 +56,7 @@
                                             <td><%=per.getDescripcion()%></td>
                                             <td><a onclick="editarDatos(<%=per.getRuta()%>)"><input type="button" value="Editar"></a></td>
 
-                                            <td><a href="../U02_Controlador?accion=eliminar&ruta_id=<%=per.getRuta()%>" ><input type="button" value="Eliminar"></a> </td> 
+                                            <td><a href="../U02_Controlador?accion=eliminar&ruta_id=<%=per.getRuta()%>" onclick="return mensaje();" ><input type="button" value="Eliminar"></a> </td> 
 
                                         </tr>
                                         <% }%>
@@ -85,6 +85,15 @@
                 });
     }
 </script>
+.<script type="text/javascript">
+                                        function mensaje(e) {
+                                            if (confirm("¿Estás seguro que deseas eliminiar el registro?")) {
+                                                return true;
+                                            } else {
+                                                return false; //cancela el evento por defecto de ir a la pagina
+                                            }
+                                        }
+                                    </script>
 </body>
 </html>
 
