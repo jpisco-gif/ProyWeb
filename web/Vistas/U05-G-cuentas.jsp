@@ -21,7 +21,7 @@
     </head>
     <body class="admin">
          <jsp:include page="U05-Cabecera.jsp"></jsp:include>
-        <div id="content">
+        <div id="contenido">
             <section>
                 <div class="container">
                     <div class="row">
@@ -44,7 +44,8 @@
                                 
                              <div>
                                         <h1>Administradores</h1>
-                                        <a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>
+                                        <!--<a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>-->
+                                        <a href="#" onclick="agregarNuevo()"><input type="button" value="Agregar nuevo"></a>
                                         <table border="1">
                                             <thead>
 
@@ -146,6 +147,13 @@
         
         function editarInfo(val) {
             $.post("U05-G-E2.jsp", {val: val})
+                    .done(function (data) {
+                        $('#contenido').html(data);
+//                console.log(data);
+                    });
+        }
+        function agregarNuevo() {
+            $.post("U05-G-A1.jsp", {})
                     .done(function (data) {
                         $('#contenido').html(data);
 //                console.log(data);
