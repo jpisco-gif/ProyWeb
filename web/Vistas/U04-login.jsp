@@ -40,10 +40,15 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
         <link rel="shortcut icon" href="../ico/favicon.ico">
+        <style>
+            body{
+                background-image: url(../img/bg/bg-1.jpg);
+            }
+        </style>
 
     </head>
 
-    <body class="body">
+    <body class="bodysd" >
         <header>
             <p><%=cuenta_id%></p><br>
             <p><%=log_id%></p>
