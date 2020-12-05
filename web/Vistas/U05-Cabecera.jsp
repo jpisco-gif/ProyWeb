@@ -24,7 +24,7 @@
         <div class="d-flex" >
             <div id="u3sidebar" class="bg-primary">
                 <div class="u3logo">
-                    <a href="A_Index.jsp">  <img src="../Imagenes/logo2.svg" width="250"></a>
+                    <a href="U05-G-index.jsp">  <img src="../Imagenes/logo2.svg" width="250"></a>
                 </div>
                 <div class="u3menu">
                     <a href="U05-G-cuentas.jsp" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-apps mr-2 lead"></i>Cuentas</a>

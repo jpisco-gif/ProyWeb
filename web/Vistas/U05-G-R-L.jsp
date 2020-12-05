@@ -33,7 +33,7 @@
         </style>  
         <title>Listado General</title>
     </head>
-    <body>
+    <body onload="window.print()">
         
         
         
@@ -43,7 +43,7 @@
                               
                            
             <div>
-            <a href="U05_Controlador_Rendimiento?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>
+            <a href="javascript:window.print()">Imprimir</a> <a href="U05-G-Terminales.jsp"><input type="button" value="Regresar"></a>
             
             <table id="customers" border="1">
                 <thead>
@@ -55,7 +55,7 @@
                         <th>puntuacion</th>
                         <th>incidencias</th>
                         <th>mes</th>
-                        <th>Opciones</th>
+                
                     </tr>
                     
                 </thead>
@@ -76,9 +76,7 @@
                         <td><%=per.getPuntuacion() %></td>
                         <td><%=per.getIncidencias() %></td>
                         <td><%=per.getMes() %></td>
-                        <td>
-                            <a href="U05_Controlador_Rendimiento?accion=editar&rendimiento_id=<%=per.getRendimiento_id()%>">Editar Rendimiento</a> 
-                        </td>
+                        
                     </tr>
                     <% } %>
                 </tbody>

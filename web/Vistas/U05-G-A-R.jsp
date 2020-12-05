@@ -18,7 +18,7 @@
         
         <form name="formulario_rendimiento" action="../U05_Controlador_Rendimiento">
             
-            <table border="1">
+            <table  id="customers" border="1">
                 <thead>
                     <tr>
                         <th>ITEM</th>

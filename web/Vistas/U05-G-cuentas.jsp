@@ -19,7 +19,7 @@
         <script type="text/javascript" src="../js/jquery.js"></script>
         <title>Gerencia</title>
     </head>
-    <body class="admin">
+    <body class="admin" style="overflow: visible">
          <jsp:include page="U05-Cabecera.jsp"></jsp:include>
         <div id="contenido">
             <section>
@@ -39,19 +39,18 @@
                         <div class="finanzas">
                           
                           <div class="finanzas_texto">
-                            <div class="finanzas_titulo"><h3>Administradores</h3><hr></div>
+                            <div class="finanzas_titulo"><hr></div>
                             <div class="finanzas_parrafo">
                                 
                              <div>
                                         <h1>Administradores</h1>
                                         <!--<a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>-->
-                                        <a href="#" onclick="agregarNuevo()"><input type="button" value="Agregar nuevo"></a>
-                                        <table border="1">
+                                        <a href="#" onclick="agregarNuevo()"><input type="button" value="Agregar nuevo"></a> <a href="U05-G-L.jsp"><input type="button" value="Imprimir"></a>
+                                        <table id="customers" border="1">
                                             <thead>
 
                                                 <tr>
-                                                    <th>cuenta_id</th>
-                                                    <th>rol_id</th>
+                                                    
                                                     <th>usuario</th>
                                                     <th>contraseña</th>
                                                     <th>email</th>
@@ -63,9 +62,10 @@
                                                     <th>sexo</th>
                                                     <th>telefono</th>
                                                     <th>edad</th>
-                                                    <th>documento_id</th>
+                                                    
                                                     <th>cod_documento</th>
-                                                    <th>modificar</th>
+                                                    <th>modificar_cuenta</th>
+                                                    <th>modificar_datos_usuario</th>
                                                 </tr>
 
                                             </thead>
@@ -79,8 +79,7 @@
                                             %>
                                             <tbody>
                                                 <tr>
-                                                    <td><%=per.getCuenta_id()%></td>
-                                                    <td><%=per.getRol_id()%></td>
+                                                    
                                                     <td><%=per.getUsuario()%></td>
                                                     <td><%=per.getContraseña()%></td>
                                                     <td><%=per.getEmail()%></td>
@@ -92,15 +91,15 @@
                                                     <td><%=per.getSexo()%></td>
                                                     <td><%=per.getTelefono()%></td>
                                                     <td><%=per.getEdad()%></td>
-                                                    <td><%=per.getDocumento_id()%></td>
+                                                    
                                                     <td><%=per.getCod_documento()%></td>
                                                     <td>
                                                         <!--<a href="U05_Controlador_Admi?accion=editar&cuenta_id=<%=per.getCuenta_id()%>">Editar Cuenta"</a>
                                                         <a href="U05_Controlador_Admi?accion=editar2&cuenta_id=<%=per.getCuenta_id()%>">Editar Informacion personal"</a>-->
-                                                        <a href="#" onclick="editarCuenta(<%=per.getCuenta_id()%>)"><input type="button" value="Editar cuenta"></a>
-                                                        <a href="#" onclick="editarInfo(<%=per.getCuenta_id()%>)"><input type="button" value="Editar informacion personal"></a>
+                                                        <a href="#" onclick="editarCuenta(<%=per.getCuenta_id()%>)"><input type="button" value="Editar cuenta"></a> </td>
+                                                    <td>  <a href="#" onclick="editarInfo(<%=per.getCuenta_id()%>)"><input type="button" value="Editar informacion personal"></a></td>   
                                                         
-                                                    </td>
+                                                   
                                                 </tr>
                                                 <% }%>
                                             </tbody>
@@ -130,7 +129,7 @@
             <div class="dropdown-divider"></div>
         </div>
 
-    </body>
+    
     <script>
           function editarCuenta(val) {
             $.post("U05-G-E1.jsp", {val: val})
@@ -155,5 +154,6 @@
                     });
         }
     </script>
+    </body>
 </html>
 

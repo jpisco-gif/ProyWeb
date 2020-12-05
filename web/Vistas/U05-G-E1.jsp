@@ -18,7 +18,7 @@
        <h1>Modificar Cuenta de Administrador</h1>
        <div id="contenido">
        <form action="../U05_Controlador_Admi">
-           <table border="1">
+           <table id="customers"  border="1">
                     <tbody>
                         <tr>
                             <td>Usuario:</td>

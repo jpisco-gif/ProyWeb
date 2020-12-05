@@ -20,8 +20,9 @@
         <script type="text/javascript" src="../js/jquery.js"></script>
         <title>Gerencia</title>
     </head>
-    <body class="admin">
+    <body class="admin" style="overflow: visible">
         <jsp:include page="U05-Cabecera.jsp"></jsp:include>
+        <div class="ex1">
         <div id="contenido" >
             <section >
                 <div class="container">
@@ -40,14 +41,14 @@
                                 <div class="finanzas">
 
                                     <div class="finanzas_texto">
-                                        <div class="finanzas_titulo"><h3>Rendimiento</h3><hr></div>
+                                        <div class="finanzas_titulo"><hr></div>
                                         <div class="finanzas_parrafo">
 
 <div>
                                         <h1>Rendimiento en Terminales</h1>
                                          <a href="#" onclick="añadirRendimiento()"><input type="button" value="Agregar nuevo"></a> <a href="U05-G-R-L.jsp"><input type="button" value="Imprimir"></a>
-
-                                        <table border="1">
+                                         
+                                        <table id="customers" border="1">
                                             <thead>
 
                                                 <tr>
@@ -86,6 +87,7 @@
                                             </tbody>
 
                                         </table>
+                                    
 
 
                                     </div>   
@@ -109,15 +111,14 @@
 
             </section>
         </div>
-    </div>
+    
     <div class="dropdown-divider"></div>
-</div>
 
 
 
 
 
-</body>
+
 <script>
 
         function editarRendimiento(val) {
@@ -129,8 +130,10 @@
         }
         
         
+       
+        
         function añadirRendimiento() {
-            $.post("U05-G-A-R.jsp", {val: val})
+            $.post("U05-G-A-R.jsp", {})
                     .done(function (data) {
                         $('#contenido').html(data);
 //                console.log(data);
@@ -138,5 +141,7 @@
         }
 
     </script>
+    </div>
+    </body>
 </html>
 

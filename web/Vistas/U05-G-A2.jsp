@@ -35,7 +35,7 @@
                                 <div>
             <h1>Agregar Administrador</h1>
             <form action="../U05_Controlador_Admi">
-                <table border="1">
+                <table id="customers" border="1">
                     <tbody>
                         
                         

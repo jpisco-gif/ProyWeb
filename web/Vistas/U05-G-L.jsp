@@ -44,6 +44,7 @@
                               
                            
             <div>
+            <a href="javascript:window.print()">Imprimir</a> <a href="U05-G-cuentas.jsp"><input type="button" value="Regresar"></a>
             <table id="customers" border="1">
                 <thead>
                     
