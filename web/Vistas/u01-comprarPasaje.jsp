@@ -1,6 +1,11 @@
 <%@page import="java.util.ArrayList"%>
 <%
-    int cuenta_id = (Integer) session.getAttribute("cuenta_id");
+    int cuenta_id = 0;
+    try {
+            cuenta_id = (Integer) session.getAttribute("cuenta_id");
+        } catch (Exception e) {
+            response.sendRedirect("U04-login.jsp");
+        }
 %>
 <%@page import="Controlador.U01_Controlador"%>
 <%@page import="Modelo.U01_Comprobante"%>
