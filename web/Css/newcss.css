@@ -175,9 +175,10 @@ td{
     z-index: 1000;
     position: absolute;
     bottom: 580px;
+    left: 400px;
 }
 .contendor-form{
-    
+ 
 }
 .ruta{
     height: 30px;
