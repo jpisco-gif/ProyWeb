@@ -103,7 +103,7 @@
                         List<U01_Ruta> list3 = dao3.terminales();
 
                     %>
-                    <form method="post" action="../U01_Controlador" class="formulario"> 
+                    <form method="post" action="../U01_Controlador" class="formulario-index"> 
                         <div class="">
                             <label>Origen</label>
                             <select name="origen" class="ruta">

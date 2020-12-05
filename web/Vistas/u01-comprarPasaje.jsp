@@ -220,9 +220,13 @@
             </div>
         </section>
         <%}%>
+        <section id='contenido2'>
+            
+        </section>
         <section id='contenido3'>
             
         </section>
+        
     </body>
     <script>
 
