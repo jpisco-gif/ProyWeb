@@ -7,7 +7,7 @@
     try {
             cuenta_id = (Integer) session.getAttribute("cuenta_id");
         } catch (Exception e) {
-            cuenta_id = 0;
+            response.sendRedirect("Vistas/U04-login.jsp");
         }
 %>
 
@@ -20,6 +20,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <h1>lskdjflk</h1>
         <%
             U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
             List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
@@ -65,7 +66,7 @@
                 </form>
                 <td>
                     <%--<a class="btnAsiento"  name="btnAsiento" onclick="editarDatos(<%=comp.getUsuario_id()%>,'<%=comp.getNombre()%>','<%=comp.getApepat()%>','<%=comp.getApemat()%>','<%=comp.getSexo()%>',<%=comp.getTelefono()%>,<%=comp.getEdad()%>,<%=comp.getNumdoc()%>)"><input type="button" value="Editar mis datos"></a>--%>
-                    <a class="btnAsiento"  name="btnAsiento" onclick="editarDatos(<%=comp.getUsuario_id()%>,'<%=comp.getNombre()%>','<%=comp.getApepat()%>','<%=comp.getApemat()%>','<%=comp.getSexo()%>',<%=comp.getTelefono()%>,<%=comp.getEdad()%>,<%=comp.getNumdoc()%>)"><input type="button" value="Editar mis datos"></a>
+                    <%--<a class="btnAsiento"  name="btnAsiento" onclick="editarDatos(<%=comp.getUsuario_id()%>,'<%=comp.getNombre()%>','<%=comp.getApepat()%>','<%=comp.getApemat()%>','<%=comp.getSexo()%>',<%=comp.getTelefono()%>,<%=comp.getEdad()%>,<%=comp.getNumdoc()%>)"><input type="button" value="Editar mis datos"></a>--%>
                 </td>
 
                 </tr>

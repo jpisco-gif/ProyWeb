@@ -139,7 +139,7 @@ public class U01_Controlador extends HttpServlet {
         }
         
         else if(accion.equalsIgnoreCase("consultar-rutas")){
-            
+            int rol_id = Integer.parseInt(request.getParameter("rol_id"));
             int origen = Integer.parseInt(request.getParameter("origen"));
             int destino = Integer.parseInt(request.getParameter("destino"));
             String fecha = request.getParameter("fecha");
@@ -159,7 +159,13 @@ public class U01_Controlador extends HttpServlet {
             sesion.setAttribute("origen", origen);
             sesion.setAttribute("destino", destino);
             sesion.setAttribute("fecha", fecha);
-            response.sendRedirect("Vistas/u01-comprarPasaje.jsp");   
+            if(rol_id == 1){
+                response.sendRedirect("Vistas/u01-comprarPasaje.jsp"); 
+            }
+            else if(rol_id == 2){
+                response.sendRedirect("Vistas/U03-Vender.jsp"); 
+            }
+              
         }
         
         else if(accion.equalsIgnoreCase("guardarPasaje")){
@@ -270,6 +276,7 @@ public class U01_Controlador extends HttpServlet {
                 
                 sesion.setAttribute("cuenta_id", cuenta_id2);
                 sesion.setAttribute("usuario", usuario2);
+                sesion.setAttribute("rol_id", rol_id2);
                 
                 cuentaDao.logeos(cuenta_id2, estado, contraseña);
                 List<U04_Cuenta> list3 = cuentaDao.consulta_log(cuenta_id2);

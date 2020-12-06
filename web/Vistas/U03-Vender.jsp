@@ -1,8 +1,3 @@
-<%-- 
-    Document   : U03-Vender
-    Created on : 05/12/2020, 05:45:32 PM
-    Author     : V330
---%>
 
 <%@page import="ModeloDao.U01_RutasDao"%>
 <%@page import="Modelo.U01_Ruta"%>
@@ -13,8 +8,10 @@
 <%@page import="ModeloDao.U01_ComprobanteDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+    int rol_id = 0;
     int cuenta_id = 0;
     try {
+            rol_id = (Integer) session.getAttribute("rol_id");
             cuenta_id = (Integer) session.getAttribute("cuenta_id");
         } catch (Exception e) {
             response.sendRedirect("U04-login.jsp");
@@ -25,6 +22,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <link rel="stylesheet" href="../Css/newcss.css">
     </head>
     <body>
         <jsp:include page="U02-Menu.jsp"></jsp:include>
@@ -86,12 +85,17 @@
                     </div>
 
                     <div class="itemss">
+                        <input type="hidden" name="rol_id" value="<%=rol_id%>">
                         <input type="hidden" name="accion" value="consultar-rutas">
                         <input type="submit" name="submit" value="Buscar">
+                        
                     </div>
                 </form>
             </div>
         </section>
+             <% try {
+            %>
+                
         <%
             List<U01_Ruta> list = (List<U01_Ruta>) session.getAttribute("rutas");
             Iterator<U01_Ruta> iter = list.iterator();
@@ -146,7 +150,11 @@
         <section class='mensaje'>
             <p>No hay salidas disponibles para la fecha seleccionada</p>
         </section>
-        <% }%>
+        <% }} catch (Exception e) {
+            %>
+            <p>Seleccione una ruta</p>
+            <%
+        }%>
         <section class="asiento-form">
             <div id="contenido">
 

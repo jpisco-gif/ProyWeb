@@ -38,7 +38,10 @@
                 <%
                     U01_RutasDao dao3 = new U01_RutasDao();
                     List<U01_Ruta> list3 = dao3.terminales();
-
+                    try {
+                            
+                        } catch (Exception e) {
+                        }
                     int origen = (Integer) session.getAttribute("origen");
                     int destino = (Integer) session.getAttribute("destino");
                 %>
