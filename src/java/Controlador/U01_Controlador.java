@@ -169,6 +169,7 @@ public class U01_Controlador extends HttpServlet {
         }
         
         else if(accion.equalsIgnoreCase("guardarPasaje")){
+            int rol_id = Integer.parseInt(request.getParameter("rol_id"));
             String tipo_doc = request.getParameter("tipo-doc");
             String numdoc = request.getParameter("numdoc");
             String nombre = request.getParameter("nombre");
@@ -214,7 +215,13 @@ public class U01_Controlador extends HttpServlet {
             comp.setEstado_pago(estado_pago);
             compDao.guardar_pasaje(comp);
             
-            response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
+            if(rol_id == 1){
+                response.sendRedirect("Vistas/u01-comprarPasaje.jsp");
+            }
+            else if(rol_id == 2){
+                response.sendRedirect("Vistas/U03-Vender.jsp");
+            }
+            
             //acceso = comprar_pasajes;
             
         }

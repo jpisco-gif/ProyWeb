@@ -19,11 +19,12 @@ public class U01_Comprobante {
     private int comprobante_id;
     private int persona_id;
     private int cuenta_id;
+    private int fecha;
 
     public U01_Comprobante() {
     }
 
-    public U01_Comprobante(String tipo_doc, String numdoc, String nombre, String apepat, String apemat, int edad, String sexo, int telefono, String correo, int num_asiento, String usuario_id, double precio, int itinerario_id, int estado_pago, int comprobante_id, int persona_id, int cuenta_id) {
+    public U01_Comprobante(String tipo_doc, String numdoc, String nombre, String apepat, String apemat, int edad, String sexo, int telefono, String correo, int num_asiento, String usuario_id, double precio, int itinerario_id, int estado_pago, int comprobante_id, int persona_id, int cuenta_id, int fecha) {
         this.tipo_doc = tipo_doc;
         this.numdoc = numdoc;
         this.nombre = nombre;
@@ -41,6 +42,15 @@ public class U01_Comprobante {
         this.comprobante_id = comprobante_id;
         this.persona_id = persona_id;
         this.cuenta_id = cuenta_id;
+        this.fecha = fecha;
+    }
+
+    public int getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(int fecha) {
+        this.fecha = fecha;
     }
 
     public int getPersona_id() {

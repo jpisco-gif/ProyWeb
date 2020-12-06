@@ -7,7 +7,7 @@
     try {
             cuenta_id = (Integer) session.getAttribute("cuenta_id");
         } catch (Exception e) {
-            response.sendRedirect("Vistas/U04-login.jsp");
+            response.sendRedirect("VistasU04-login.jsp");
         }
 %>
 
@@ -20,7 +20,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>lskdjflk</h1>
         <%
             U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
             List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
@@ -31,7 +30,6 @@
             <h3>Sus viajes pendientes</h3>
             <table border="1">
                 <tr>
-                    <td>persona id</td>
                     <td>Nombres</td>
                     <td>Apellido paterno</td>
                     <td>Apellido materno</td>
@@ -47,12 +45,12 @@
                         comp = iter2.next();
                 %>
                 <tr>
-                    <td><%=comp.getUsuario_id()%></td>
                     <td><%=comp.getNombre()%></td>
                     <td><%=comp.getApepat()%></td>
                     <td><%=comp.getApemat()%></td>
                     <td><%=comp.getNumdoc()%></td>
                     <td><%=comp.getNum_asiento()%></td>
+                    <td><%=comp.getFecha()%></td>
 
                 <form action="../U01_Controlador" method="post">
                     <input type="hidden" name="accion" value="eliminar-pasaje">
@@ -80,6 +78,13 @@
                 </form>
             </div>
         </section>
-        <%}%>
+        <%}else{%>
+        <div>
+            <P>Aun no ha usado nuestro servicio. ¡Que esperas!!</P>
+        </div>
+        
+        <%
+            }
+        %>
     </body>
 </html>

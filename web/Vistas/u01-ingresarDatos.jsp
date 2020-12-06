@@ -2,7 +2,14 @@
     int itinerario_id = Integer.parseInt(request.getParameter("val2"));
     int nom_asiento = Integer.parseInt(request.getParameter("val"));
     double precio = Double.parseDouble(request.getParameter("val3"));
-    int cuenta_id = Integer.parseInt(request.getParameter("val4"));   
+    int cuenta_id = Integer.parseInt(request.getParameter("val4")); 
+
+    int rol_id = 0;
+    try {
+            cuenta_id = (Integer) session.getAttribute("rol_id");
+        } catch (Exception e) {
+            rol_id = 0;
+        }
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -97,6 +104,7 @@
                                 <input type="hidden" name="precio" value="<%=precio%>">
                                 <input type="hidden" name="estado_pago" value="0">
                                 <input type="hidden" name="accion" value="guardarPasaje">
+                                <input type='hidden' name='rol_id' value='<%=rol_id%>'>
                     </table>
                     <div class="submit">
                         <p>
