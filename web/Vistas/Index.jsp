@@ -5,12 +5,15 @@
 <%
     int cuenta_id = 0;
     String usuario = "";
+    int rol_id = 0;
     try {
+        rol_id = (Integer) session.getAttribute("rol_id");
         cuenta_id = (Integer) session.getAttribute("cuenta_id");
         usuario = String.valueOf(session.getAttribute("usuario"));
     } catch (Exception e) {
         cuenta_id = 0;
         usuario = null;
+        rol_id = 0;
     }
 %>
 
@@ -140,8 +143,10 @@
                         </div>
 
                         <div class="">
+                            <input type="hidden" name="rol_id" value="<%=rol_id%>">
                             <input type="hidden" name="accion" value="consultar-rutas"><br></br>
                             <input type="submit" name="submit" value="Buscar rutas" class="buscar-ruta">
+                            
                         </div>
                     </form>
 
