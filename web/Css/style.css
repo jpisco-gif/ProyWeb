@@ -551,7 +551,7 @@ ul.the-icons {
 /* ================= featured ========================== */
 
 section#featured {
-	background: #000 url(../img/bg/bg-1.jpg) 50% 0 no-repeat;
+	background: #000 url(../Imagenes/bg/bg-1.jpg) 50% 0 no-repeat;
 	position:relative;
 	width:100%;
 	height:auto;
@@ -794,7 +794,7 @@ section#featured p  {
 
 /* ================= services ============================ */
 section#services {
-	background: #000 url(../img/bg/bg-1.jpg) 50% 0 no-repeat;
+	background: #000 url(../Imagenes/bg/bg-1.jpg) 50% 0 no-repeat;
 	width:100%;
 	height:auto;
 	margin:0;
