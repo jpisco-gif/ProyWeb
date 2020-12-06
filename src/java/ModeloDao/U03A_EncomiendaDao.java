@@ -28,7 +28,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
     @Override
     public List listar() {
         ArrayList<U03A_Encomienda> list = new ArrayList<>();
-        String sql = "select * from encomiendas";
+        String sql = "select * from encomiendas ";
         try {
             cn = con.getConnection();
             ps = cn.prepareStatement(sql);

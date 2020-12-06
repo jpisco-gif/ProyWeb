@@ -48,7 +48,13 @@
                         
                         <tr>
                             <td>Lugar de Envio</td>
-                            <td><input type="text" name="txtLug" value=""/></td>
+                            <td> <select name="txtLug">
+                                    <option value="1">Lima</option>
+                                    <option value="2">Ica</option>
+                                    <option value="3">Arequipa</option>
+                                    <option value="4">Cusco</option>
+                                    <option value="5">Huancayo</option>                               
+                            </select> </td>
                             <td colspan="2"> <input type="submit" value="Agregar" name="accion" /> </td>
                         </tr>
                     </tbody>
