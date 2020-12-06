@@ -10,56 +10,56 @@
 
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
-<%@page import="Modelo.U05_Ventas_Mes"%>
-<%@page import="ModeloDao.U05_Ventas_MesDao"%>
+<%@page import="Modelo.U05_Ventas_Ruta"%>
+<%@page import="ModeloDao.U05_Ventas_RutaDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../U05-Gerencia/U05-estilos.css">
-        <title>Listado General</title>
+        <title>JSP Page</title>
     </head>
     <body>
-        <div>
-            <h1>Ventas por mes</h1>
-         
-            <%
-                String mes;
+        
+        
+        <%
+                String ruta;
                 float ventas;
+                String mes;
                 
                 DefaultCategoryDataset data=new DefaultCategoryDataset();
              
                     
-                U05_Ventas_MesDao dao=new U05_Ventas_MesDao();
-                List<U05_Ventas_Mes> list=dao.listar();
-                Iterator<U05_Ventas_Mes> iter=list.iterator();
-                U05_Ventas_Mes per=null;
+                U05_Ventas_RutaDao dao=new U05_Ventas_RutaDao();
+                List<U05_Ventas_Ruta> list=dao.listar();
+                Iterator<U05_Ventas_Ruta> iter=list.iterator();
+                U05_Ventas_Ruta per=null;
                 while(iter.hasNext())
                     {
                     per=iter.next();
-                    mes=per.getMes();
+                    
+                    ruta=per.getRuta();
                     ventas=per.getVentas();
-                   
+                    mes=per.getMes();
  
                         
               
-                    data.addValue(ventas,mes,"GERENCIA");
+                    data.addValue(ventas,ruta,"GERENCIA");
                   
                     
                      }
                  
-                    JFreeChart grafico=ChartFactory.createBarChart3D("Ventas por mes","Meses", "Ventas", data);
-                    
+                    JFreeChart grafico=ChartFactory.createBarChart3D("Ventas por ruta","rutas", "Ventas", data);
+             
+           
                     response.setContentType("image/JPEG");
                     OutputStream sa=response.getOutputStream();
-                    ChartUtilities.writeChartAsJPEG(sa,grafico,1920,1080);
+                    ChartUtilities.writeChartAsJPEG(sa,grafico,640,360);
                     
                     
                     
                     %>
-
-            
-        </div>
+        
+        
     </body>
 </html>

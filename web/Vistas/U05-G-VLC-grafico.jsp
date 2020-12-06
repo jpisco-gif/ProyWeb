@@ -57,7 +57,7 @@
                     JFreeChart grafico=ChartFactory.createPieChart("Ventas por clase", data,true,true,true);
                     response.setContentType("image/JPEG");
                     OutputStream sa=response.getOutputStream();
-                    ChartUtilities.writeChartAsJPEG(sa,grafico,500,500);
+                    ChartUtilities.writeChartAsJPEG(sa,grafico,500,1200);
                     
                     
                     
