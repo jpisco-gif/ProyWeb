@@ -10,13 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="../Css/newcss.css">
+        <script src="../js/U05-G-A-R-validar.js"></script>
     </head>
     <body>
         <h1>Formulario para evaluar rendimiento de las terminales</h1>
         <h4>Califique del 1 al 10 los primeros 4 Items </h4>
         <h4>En el Item "incidencias" reporte la cantidad de quejas ,accidentes o incidentes que ha tenido la terminal seleccionada</h4>
         
-        <form name="formulario_rendimiento" action="../U05_Controlador_Rendimiento">
+        <form name="formulario_rendimiento" action="../U05_Controlador_Rendimiento" onsubmit="return validar();">
             
             <table  id="customers" border="1">
                 <thead>
@@ -98,7 +100,7 @@
                     </tr>
                     <tr>
                         <td>Numero de incidencias</td>
-                        <td> <input type="text" name="txtIncidencias" value="0" /> </td>
+                        <td> <input type="text" id="txtIncidencias" name="txtIncidencias" value="0" /> </td>
                     </tr>
                     <tr>
                         <td colspan="2" > <input type="submit" value="Agregar" name="accion" /> </td>

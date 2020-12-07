@@ -17,6 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="../js/jquery.js"></script>
+        <script src="../js/U05-G-A2-validar.js"></script>
         <title>Gerencia</title>
     </head>
     <body class="admin">
@@ -34,7 +35,7 @@
                                 
                                 <div>
             <h1>Agregar Administrador</h1>
-            <form action="../U05_Controlador_Admi">
+            <form action="../U05_Controlador_Admi" onsubmit="return validar();">
                 <table id="customers" border="1">
                     <tbody>
                         
@@ -42,31 +43,36 @@
                         
                         <tr>
                             <td>Nombres:</td>
-                            <td> <input type="text" name="txtNombres" value="" /> </td>
+                            <td> <input type="text" id="txtNombres" name="txtNombres" value="" /> </td>
                         </tr>
                         <tr>
                             <td>Apellido Paterno:</td>
-                            <td> <input type="text" name="txtApellido_paterno" value="" /> </td>
+                            <td> <input type="text" id="txtApellido_paterno" name="txtApellido_paterno" value="" /> </td>
                         </tr>
                         <tr>
                             <td>Apellido Materno:</td>
-                            <td> <input type="text" name="txtApellido_materno" value="" /> </td>
+                            <td> <input type="text" id="txtApellido_materno" name="txtApellido_materno" value="" /> </td>
                         </tr>
                         <tr>
                             <td>Sexo:</td>
-                            <td> <input type="text" name="txtSexo" value="" /> </td>
+                           
+                            
+                            <td> <select id="txtSexo" name="txtSexo" >
+                                <option>M</option>
+                                <option>F</option>
+                            </select> </td>
                         </tr>
                         <tr>
                             <td>Telefono:</td>
-                            <td> <input type="text" name="txtTelefono" value="" /> </td>
+                            <td> <input type="text" id="txtTelefono" name="txtTelefono" value="" /> </td>
                         </tr>
                        <tr>
                             <td>Edad:</td>
-                            <td> <input type="text" name="txtEdad" value="" /> </td>
+                            <td> <input type="text" id="txtEdad" name="txtEdad" value="" /> </td>
                         </tr>
                         <tr>
                             <td>DNI :</td>
-                            <td> <input type="text" name="txtCod_documento" value="" /> </td>
+                            <td> <input type="text" id="txtCod_documento" name="txtCod_documento" value="" /> </td>
                         </tr>
                         
                         

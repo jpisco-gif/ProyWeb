@@ -6,6 +6,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/U05-G-A2-validar.js"></script>
         <title>Modificacion de Registros</title>
     </head>
     <body>
@@ -15,39 +17,39 @@
        U05_Admi p=(U05_Admi)dao.list(cuenta_id);
        %>
        <h1>Modificar Cuenta de Administrador</h1>
-       <form action="../U05_Controlador_Admi">
+       <form action="../U05_Controlador_Admi" onsubmit="return validar();" >
            <table id="customers" border="1">
                     <tbody>
                        
   
                         <tr>
                             <td>Nombres:</td>
-                            <td> <input type="text" name="txtNombres" value="<%=p.getNombres()%>" /> </td>
+                            <td> <input type="text" id="txtNombres" name="txtNombres" value="<%=p.getNombres()%>" /> </td>
                         </tr>
                         <tr>
                             <td>Apellido Paterno:</td>
-                            <td> <input type="text" name="txtApellido_paterno" value="<%=p.getApellido_paterno()%>" /> 
+                            <td> <input type="text" id="txtApellido_paterno" name="txtApellido_paterno" value="<%=p.getApellido_paterno()%>" /> 
                             <input type="hidden" name="txtCuenta_id" value="<%=p.getCuenta_id()%>" /> </td>
                         </tr>
                         <tr>
                             <td>Apellido Materno:</td>
-                            <td> <input type="text" name="txtApellido_materno" value="<%=p.getApellido_materno()%>" /> </td>
+                            <td> <input type="text" id="txtApellido_materno" name="txtApellido_materno" value="<%=p.getApellido_materno()%>" /> </td>
                         </tr>
                         <tr>
                             <td>Sexo:</td>
-                            <td> <input type="text" name="txtSexo" value="<%=p.getSexo()%>" /> </td>
+                            <td> <input type="text" id="txtSexo" name="txtSexo" value="<%=p.getSexo()%>" /> </td>
                         </tr>
                         <tr>
                             <td>Telefono:</td>
-                            <td> <input type="text" name="txtTelefono" value="<%=p.getTelefono()%>" /> </td>
+                            <td> <input type="text" id="txtTelefono" name="txtTelefono" value="<%=p.getTelefono()%>" /> </td>
                         </tr>
                        <tr>
                             <td>Edad:</td>
-                            <td> <input type="text" name="txtEdad" value="<%=p.getEdad()%>" /> </td>
+                            <td> <input type="text" id="txtEdad" name="txtEdad" value="<%=p.getEdad()%>" /> </td>
                         </tr>
                         <tr>
                             <td>DNI :</td>
-                            <td> <input type="text" name="txtCod_documento" value="<%=p.getCod_documento()%>" /> </td>
+                            <td> <input type="text" id="txtCod_documento" name="txtCod_documento" value="<%=p.getCod_documento()%>" /> </td>
                         </tr>
                         <tr>
                             <td colspan="2"> <input type="submit" value="Actualizar2" name="accion" /> </td>
