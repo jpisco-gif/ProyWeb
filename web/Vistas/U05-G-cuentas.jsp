@@ -29,23 +29,20 @@
                             
                             
                             <section class="reporte-grafico">
-                        <div class="head_title">
-                          <h1>CUENTAS</h1>
-
                         
-                        
-                        </div>
 
                         <div class="finanzas">
                           
                           <div class="finanzas_texto">
-                            <div class="finanzas_titulo"><hr></div>
+                            <div class="finanzas_titulo"></div>
                             <div class="finanzas_parrafo">
                                 
                              <div>
-                                        <h1>Administradores</h1>
+                                        <h1>Cuentas de Administradores</h1><hr>
                                         <!--<a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>-->
                                         <a href="#" onclick="agregarNuevo()"><input type="button" value="Agregar nuevo"></a> <a href="U05-G-L.jsp"><input type="button" value="Imprimir"></a>
+                                        <br>
+                                        <br>
                                         <table id="customers" border="1">
                                             <thead>
 

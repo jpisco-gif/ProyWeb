@@ -31,23 +31,18 @@
 
 
                             <section class="reporte-grafico">
-                                <div class="head_title">
-                                    <h1>TERMINALES</h1>
-
-
-
-                                </div>
+                                
 
                                 <div class="finanzas">
 
                                     <div class="finanzas_texto">
-                                        <div class="finanzas_titulo"><hr></div>
+                                        <div class="finanzas_titulo"></div>
                                         <div class="finanzas_parrafo">
 
-<div>
-                                        <h1>Rendimiento en Terminales</h1>
+                                        <div>
+                                            <h1>Rendimiento en Terminales</h1><hr>
                                          <a href="#" onclick="añadirRendimiento()"><input type="button" value="Agregar nuevo"></a> <a href="U05-G-R-L.jsp"><input type="button" value="Imprimir"></a>
-                                         
+                                         <br><br>
                                         <table id="customers" border="1">
                                             <thead>
 

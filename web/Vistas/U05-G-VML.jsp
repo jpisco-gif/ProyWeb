@@ -74,9 +74,9 @@
                             </div>
                               
                                 
-                                
+                            <br><br>     
                             <a href="U05-G-VML-grafico.jsp">Expandir grafico</a>   
-                            <br>
+                            <br><br> 
                             <iframe src="U05-GVML-grafico-m.jsp" name="iframe_b" height="360px" width="640px" title="Iframe Example"></iframe>
                               
                   

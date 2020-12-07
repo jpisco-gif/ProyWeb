@@ -48,7 +48,7 @@
                   
                     
                         <div class="dropdown">
-                            <button class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-briefcase"></i>Ventas</button>
+                            <button class="p-3 font-weight-bold"><i class="icon ion-md-briefcase"></i>Ventas</button>
                         <div class="dropdown-content">
                         <a href="../U05_Controlador_Ventas_Mes?accion=listar">Venta por Mes</a>
                         <a href="../U05_Controlador_Ventas_Ruta?accion=listar">Venta por Ruta</a>

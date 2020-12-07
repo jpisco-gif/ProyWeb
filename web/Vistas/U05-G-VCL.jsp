@@ -53,7 +53,7 @@
                             <tr>
                                 <th>Clase</th>
                                 <th>Ventas</th>
-                                <th>Mes</th>
+                             
                             </tr>
                     
                             </thead>
@@ -70,7 +70,7 @@
                             <tr>
                                 <td><%=per.getClase() %></td>
                                 <td><%=per.getVentas() %></td>
-                                <td><%=per.getMes() %></td>
+                           
                             </tr>
                             <% } %>
                             </tbody>
@@ -82,9 +82,11 @@
                             </div>
                               
                                 
+                            <br><br>      
+                            <a href="U05-VLC-grafico2.jsp">Expandir grafico</a>   
+                            <br><br>       
                                 
-                                
-                            <iframe src="U05-G-VLC-grafico.jsp" name="iframe_b" height="400px" width="1200px" title="Iframe Example"></iframe>
+                            <iframe src="U05-G-VLC-grafico.jsp" name="iframe_b" height="500px" width="500px" title="Iframe Example"></iframe>
                               
                   
                             
