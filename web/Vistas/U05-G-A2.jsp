@@ -16,6 +16,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script src="../js/U05-G-A2-validar.js"></script>
         <title>Gerencia</title>
@@ -34,9 +35,9 @@
                                 
                                 
                                 <div>
-            <h1>Agregar Administrador</h1>
+            <h1 class="w3-animate-right">Agregar Administrador</h1><hr><br>
             <form action="../U05_Controlador_Admi" onsubmit="return validar();">
-                <table id="customers" border="1">
+                <table class="w3-card-4 w3-centered" id="customers" border="1">
                     <tbody>
                         
                         
@@ -86,7 +87,7 @@
                 </table>
 
                 
-                <a href="U05_Controlador_Admi?accion=listar">Regresar</a>
+                
                 
             </form>
         </div>
@@ -103,7 +104,7 @@
                 </div>
             </div>
             <div class="dropdown-divider"></div>
-        </div>
+        
 
   
         

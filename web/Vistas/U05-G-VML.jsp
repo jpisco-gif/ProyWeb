@@ -17,6 +17,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <title>Gerencia</title>
     </head>
     <body class="admin">
@@ -34,7 +35,7 @@
                         <div class="finanzas">
                           
                           <div class="finanzas_texto">
-                            <div class="finanzas_titulo"><h1>Ventas por Mes</h1><hr></div>
+                            <div class="finanzas_titulo w3-animate-right"><h1>Ventas por Mes</h1><hr></div>
                             <div class="finanzas_parrafo">
                                 
                               
@@ -42,7 +43,7 @@
                             <div>
         
          
-                            <table id="customers" border="1">
+                            <table class="w3-card-4" id="customers" border="1">
                             <thead>
                     
                             <tr>

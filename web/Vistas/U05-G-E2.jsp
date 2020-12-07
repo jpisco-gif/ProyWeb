@@ -16,9 +16,14 @@
        int cuenta_id=Integer.parseInt(request.getParameter("val"));
        U05_Admi p=(U05_Admi)dao.list(cuenta_id);
        %>
-       <h1>Modificar Cuenta de Administrador</h1>
+       
+       
+       
+       
+       <div class="w3-padding-large" id="contenido">
+       <h1 class="w3-animate-right">Modificar informacion personal</h1><hr><br>    
        <form action="../U05_Controlador_Admi" onsubmit="return validar();" >
-           <table id="customers" border="1">
+           <table class="w3-card-4 w3-centered" id="customers" border="1">
                     <tbody>
                        
   
@@ -57,8 +62,9 @@
                         
                     </tbody>
                 </table>
-                            <a href="U05-G-cuentas.jsp"><input type="button" value="Regresar"></a>
+                       <br>     <a href="U05-G-cuentas.jsp"><input type="button" value="Regresar"></a>
        </form>
+       </div>
         
     </body>
 </html>

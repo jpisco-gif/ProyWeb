@@ -48,7 +48,7 @@
                   
                     
                         <div class="dropdown">
-                            <button class="p-3 font-weight-bold"><i class="icon ion-md-briefcase"></i>Ventas</button>
+                            <a class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-briefcase"></i>Ventas</a>
                         <div class="dropdown-content">
                         <a href="../U05_Controlador_Ventas_Mes?accion=listar">Venta por Mes</a>
                         <a href="../U05_Controlador_Ventas_Ruta?accion=listar">Venta por Ruta</a>
@@ -73,7 +73,7 @@
                         <ul class="navbar-nav ml-auto">                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../Imagenes/U05-finanzas.png" class="img-fluid rounded-circle avatar mr-2" > Nombre de administrador
+                                    <img src="../Imagenes/admin.svg" class="img-fluid rounded-circle avatar mr-2" > <%=usuario %>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Action</a>

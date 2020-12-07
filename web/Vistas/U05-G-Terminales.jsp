@@ -17,6 +17,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script type="text/javascript" src="../js/jquery.js"></script>
         <title>Gerencia</title>
     </head>
@@ -40,10 +41,10 @@
                                         <div class="finanzas_parrafo">
 
                                         <div>
-                                            <h1>Rendimiento en Terminales</h1><hr>
-                                         <a href="#" onclick="añadirRendimiento()"><input type="button" value="Agregar nuevo"></a> <a href="U05-G-R-L.jsp"><input type="button" value="Imprimir"></a>
+                                            <h1 class="w3-animate-right">Rendimiento en Terminales</h1><hr>
+                                         <a href="#" onclick="añadirRendimiento()"><input  type="button" value="Agregar nuevo"></a> <a href="U05-G-R-L.jsp"><input type="button" value="Imprimir"></a>
                                          <br><br>
-                                        <table id="customers" border="1">
+                                        <table class="w3-card-4 w3-centered" id="customers" border="1">
                                             <thead>
 
                                                 <tr>
@@ -53,7 +54,7 @@
                                                     <th>puntuacion</th>
                                                     <th>incidencias</th>
                                                     <th>mes</th>
-                                                    <th>Opciones</th>
+                                                    <th>modificar</th>
                                                 </tr>
 
                                             </thead>
@@ -75,7 +76,7 @@
                                                     <td><%=per.getMes()%></td>
                                                     <td>
                                                        
-                                                        <a href="#" onclick="editarRendimiento(<%=per.getRendimiento_id()%>)"><input type="button" value="Editar rendimiento"></a>
+                                                        <a href="#" onclick="editarRendimiento(<%=per.getRendimiento_id()%>)"><input class="w3-button w3-tiny w3-circle w3-green" type="button" value="+"></a>
                                                     </td>
                                                 </tr>
                                                 <% }%>
