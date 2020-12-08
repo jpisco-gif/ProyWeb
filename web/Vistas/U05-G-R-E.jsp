@@ -32,13 +32,11 @@
        %>
         
         
-        <h1>Formulario para evaluar rendimiento de las terminales</h1>
-        <h4>Califique del 1 al 10 los primeros 4 Items </h4>
-        <h4>En el Item "incidencias" reporte la cantidad de quejas ,accidentes o incidentes que ha tenido la terminal seleccionada</h4>
-        
+       <div class="w3-padding-large" id="contenido">
+        <h1 class="w3-animate-right">Modificar rendimiento</h1><hr><br>
         <form name="formulario_rendimiento" action="../U05_Controlador_Rendimiento">
             
-            <table  id="customers" border="1">
+            <table class="w3-card-4 w3-centered" id="customers" border="1">
                 <thead>
                     <tr>
                         <th>ITEM</th>
@@ -129,9 +127,9 @@
                 </tbody>
             </table>
 
-            <a href="U05-G-Terminales.jsp"><input type="button" value="Regresar"></a>
+          <br>  <a href="U05-G-Terminales.jsp"><input type="button" value="Regresar"></a>
             
         </form>
-        
+        </div>
     </body>
 </html>

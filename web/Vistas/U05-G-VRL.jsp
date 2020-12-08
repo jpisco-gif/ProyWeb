@@ -79,7 +79,7 @@
                             <br><br>      
                             <a href="U05-G-VRL-grafico.jsp">Expandir grafico</a>   
                             <br><br>   
-                            <iframe src="U05-G-VRL-grafico-m.jsp" name="iframe_b" height="360px" width="640px" title="Iframe Example"></iframe>
+                            <iframe src="U05-G-VRL-grafico-m.jsp"  style="border:none;" name="iframe_b" height="460px" width="740px" title="Iframe Example"></iframe>
                               
                   
                             

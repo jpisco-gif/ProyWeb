@@ -87,7 +87,7 @@
                             <a href="U05-VLC-grafico2.jsp">Expandir grafico</a>   
                             <br><br>       
                                 
-                            <iframe src="U05-G-VLC-grafico.jsp" name="iframe_b" height="500px" width="500px" title="Iframe Example"></iframe>
+                            <iframe src="U05-G-VLC-grafico.jsp" style="border:none;" name="iframe_b" height="600px" width="600px" title="Iframe Example"></iframe>
                               
                   
                             
