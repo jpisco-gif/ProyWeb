@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Añadir Encomienda</title>
+        <script src="../js/U03-Validacion.js" ></script>
     </head>
     <body>
         <jsp:include page="U03-Cabecera.jsp"></jsp:include>
@@ -20,7 +21,7 @@
                         <div class="col-lg-10">
         <h1>Agregar Nueva Encomienda</h1>
         <div>
-            <form action="../U03A_Controlador">
+            <form action="../U03A_Controlador" onsubmit="return validarEn();">
                 <table border="1">
                     <tbody>
                         <tr>
@@ -29,21 +30,21 @@
                         </tr>
                         <tr>
                             <td>Nombres:</td>
-                            <td><input type="text" name="txtNomE" value=""/></td>
+                            <td><input type="text" id="txtNomE" name="txtNomE" value=""/></td>
                             <td>Nombres:</td>
-                            <td><input type="text" name="txtNomR" value=""/></td>
+                            <td><input type="text" id="txtNomR" name="txtNomR" value=""/></td>
                         </tr>
                         <tr>
                             <td>Apellidos:</td>
-                            <td><input type="text" name="txtApeE" value=""/></td>
+                            <td><input type="text" id="txtApeE" name="txtApeE" value=""/></td>
                             <td>Apellidos:</td>
-                            <td><input type="text" name="txtApeR" value=""/></td>
+                            <td><input type="text" id="txtApeR" name="txtApeR" value=""/></td>
                         </tr>
                         <tr>
                             <td>DNI:</td>
-                            <td><input type="text" name="txtDniE" value=""/></td>
+                            <td><input type="text" id="txtDniE" name="txtDniE" value=""/></td>
                             <td>DNI:</td>
-                            <td><input type="text" name="txtDniR" value=""/></td>
+                            <td><input type="text" id="txtDniR" name="txtDniR" value=""/></td>
                         </tr>
                         
                         <tr>
