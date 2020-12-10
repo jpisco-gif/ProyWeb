@@ -68,7 +68,7 @@
                                                     <td><%=en.getRecoge_nom()%></td>
                                                     <td><%=en.getRecoge_ape()%></td>
                                                     <td><%=en.getRecoge_dni()%></td>
-                                                    <td><%=en.getLugar_recojo()%></td>
+                                                    <td><%=en.getCiudad()%></td>
                                                     <td><a onclick="editarDatos(<%=en.getId()%>)"><input type="button" value="Editar"></a></td>
                                                     <td><a href="../U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" ><input type="button" value="Eliminar"></a> </td>                            
                                                 </tr>

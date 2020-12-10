@@ -28,7 +28,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
     @Override
     public List listar() {
         ArrayList<U03A_Encomienda> list = new ArrayList<>();
-        String sql = "select * from encomiendas ";
+        String sql = "SELECT id,envia_nombre,envia_apellido,envia_dni,recoge_nombre,recoge_apellido,recoge_dni,lugar_recojo, ciudad FROM encomiendas AS a INNER JOIN terminales AS b WHERE a.lugar_recojo=b.terminal_id";
         try {
             cn = con.getConnection();
             ps = cn.prepareStatement(sql);
@@ -43,6 +43,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
                 en.setRecoge_ape(rs.getString("recoge_apellido"));
                 en.setRecoge_dni(rs.getInt("recoge_dni"));
                 en.setLugar_recojo(rs.getInt("lugar_recojo"));
+                en.setCiudad(rs.getString("ciudad"));
                 list.add(en);
             }
         } catch (Exception e) {
@@ -52,7 +53,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
 
     @Override
     public U03A_Encomienda list(int id) {
-       String sql="select *  from encomiendas where id="+id;
+       String sql="SELECT id,envia_nombre,envia_apellido,envia_dni,recoge_nombre,recoge_apellido,recoge_dni,lugar_recojo, ciudad FROM encomiendas AS a INNER JOIN terminales AS b ON a.lugar_recojo=b.terminal_id where id="+id;
         try {
             cn=con.getConnection();
             ps=cn.prepareStatement(sql);
@@ -66,7 +67,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
                 en.setRecoge_ape(rs.getString("recoge_apellido"));
                 en.setRecoge_dni(rs.getInt("recoge_dni"));
                 en.setLugar_recojo(rs.getInt("lugar_recojo"));
-                
+                en.setCiudad(rs.getString("ciudad"));
             }
         } catch (Exception e) {
         }
