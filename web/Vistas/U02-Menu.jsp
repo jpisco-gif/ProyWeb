@@ -53,7 +53,8 @@
                                     }else{
                                         %>
                                         <li class="dropdown">Bienvenido, <%=usuario%></li>
-                                        <li><a href="../U01_Controlador?accion=logout&cuenta_id=<%=cuenta_id%>&log_id=<%=log_id%>">Cerrar sesion</a></li>
+                                        <li><a href="u01-visualizarHistorial.jsp">Mi cuenta</a></li>
+                                        <li><a href="../U01_Controlador?accion=logout&cuenta_id=<%=cuenta_id%>&log_id=<%=log_id%>">Cerrar sesion</a></li>                                       
                                         <%
                                             }
                                         %>

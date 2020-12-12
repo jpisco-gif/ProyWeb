@@ -150,4 +150,55 @@ U01_Comprobante comp = new U01_Comprobante();
         } catch (Exception e) {
         }
     }
+    
+    @Override
+    public List listar_pasajes(int cuenta_id){
+        ArrayList<U01_Comprobante> list = new ArrayList<>();
+                
+        String sql = "select t1.cuenta_id, t1.persona_id, nombres, apellido_paterno,\n"
+                + " apellido_materno, sexo, telefono, edad, documento_id, cod_documento,\n" +
+                "t3.nom_asiento, t2.comprobante_id, t2.itinerario_id, \n"
+                + "(select ciudad from terminales where terminal_id = t8.terminal_id) as origen,\n"
+                + " (select ciudad from terminales where terminal_id = t9.terminal_id) as destino,\n"
+                + " date(t4.fecha_salida) as fecha, time(t4.fecha_salida) as hora, t9.nom_puerta from personas t1\n" +
+                "inner join comprobantes t2 on t1.persona_id = t2.persona_id\n" +
+                "inner join asientos t3 on t2.asiento_id = t3.asiento_id\n" +
+                "inner join itinerarios t4 on t2.itinerario_id = t4.itinerario_id\n" +
+                "inner join rutas t5 on t4.ruta_id = t5.ruta_id\n" +
+                "inner join llegadas t6 on t5.llegada_id = t6.llegada_id\n" +
+                "inner join embarques t7 on t5.embarque_id = t7.embarque_id\n" +
+                "inner join puertas t8 on t7.puerta_id = t8.puerta_id\n" +
+                "inner join puertas t9 on t6.puerta_id = t9.puerta_id\n" +
+                "where t1.cuenta_id = ? and t2.estado = ?";
+       
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, cuenta_id);
+            ps.setInt(2, 0);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                U01_Comprobante comp = new U01_Comprobante();
+                comp.setUsuario_id(rs.getString("t1.persona_id"));
+                comp.setNombre(rs.getString("nombres"));
+                comp.setApepat(rs.getString("apellido_paterno"));
+                comp.setApemat(rs.getString("apellido_materno"));
+                comp.setSexo(rs.getString("sexo"));
+                comp.setTelefono(rs.getInt("telefono"));
+                comp.setEdad(rs.getInt("edad"));
+                comp.setNumdoc(rs.getString("cod_documento"));
+                comp.setNum_asiento(rs.getInt("t3.nom_asiento"));
+                comp.setComprobante_id(rs.getInt("t2.comprobante_id"));
+                comp.setItinerario_id(rs.getInt("t2.itinerario_id"));
+                comp.setOrigen(rs.getString("origen"));
+                comp.setDestino(rs.getString("destino"));
+                comp.setFecha(rs.getString("fecha"));
+                comp.setHora(rs.getString("hora"));
+                comp.setPuerta(rs.getString("nom_puerta"));
+                list.add(comp);
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
 }

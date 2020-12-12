@@ -199,6 +199,7 @@ public class U01_Controlador extends HttpServlet {
             System.out.println("precio: "+precio);
             System.out.println("itinerario: "+itinerario_id);
             System.out.println("estado pago: "+estado_pago);
+            System.out.println("rol_id: "+rol_id);
             comp.setTipo_doc(tipo_doc);
             comp.setNumdoc(numdoc);
             comp.setNombre(nombre);

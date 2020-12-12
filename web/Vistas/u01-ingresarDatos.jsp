@@ -6,7 +6,7 @@
 
     int rol_id = 0;
     try {
-            cuenta_id = (Integer) session.getAttribute("rol_id");
+            rol_id = (Integer) session.getAttribute("rol_id");
         } catch (Exception e) {
             rol_id = 0;
         }

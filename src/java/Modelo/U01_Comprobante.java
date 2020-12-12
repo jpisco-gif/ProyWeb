@@ -19,12 +19,17 @@ public class U01_Comprobante {
     private int comprobante_id;
     private int persona_id;
     private int cuenta_id;
-    private int fecha;
+    private String fecha;
+    
+    private String origen;
+    private String destino;
+    private String hora;
+    private String puerta;
 
     public U01_Comprobante() {
     }
 
-    public U01_Comprobante(String tipo_doc, String numdoc, String nombre, String apepat, String apemat, int edad, String sexo, int telefono, String correo, int num_asiento, String usuario_id, double precio, int itinerario_id, int estado_pago, int comprobante_id, int persona_id, int cuenta_id, int fecha) {
+    public U01_Comprobante(String tipo_doc, String numdoc, String nombre, String apepat, String apemat, int edad, String sexo, int telefono, String correo, int num_asiento, String usuario_id, double precio, int itinerario_id, int estado_pago, int comprobante_id, int persona_id, int cuenta_id, String fecha, String origen, String destino, String hora, String puerta) {
         this.tipo_doc = tipo_doc;
         this.numdoc = numdoc;
         this.nombre = nombre;
@@ -43,13 +48,51 @@ public class U01_Comprobante {
         this.persona_id = persona_id;
         this.cuenta_id = cuenta_id;
         this.fecha = fecha;
+        this.origen = origen;
+        this.destino = destino;
+        this.hora = hora;
+        this.puerta = puerta;
     }
 
-    public int getFecha() {
+    public String getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public String getPuerta() {
+        return puerta;
+    }
+
+    public void setPuerta(String puerta) {
+        this.puerta = puerta;
+    }
+
+   
+
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(int fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

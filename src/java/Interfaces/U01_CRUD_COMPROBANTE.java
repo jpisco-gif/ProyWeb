@@ -18,4 +18,5 @@ public interface U01_CRUD_COMPROBANTE {
     public void eliminar_pasaje(int comprobante_id, int persona_id, int itinerario_id, int num_asiento);
     public void pagar(int cuenta_id);
     public void editarDatos(U01_Comprobante comp);
+    public List listar_pasajes(int cuenta_id);
 }
