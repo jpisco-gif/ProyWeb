@@ -26,7 +26,7 @@ int id = Integer.parseInt(request.getParameter("val"));
                     <div class="row">
                         <div class="col-lg-9">
         <h1>Editando </h1>
-        <form action="../U03A_Controlador" onsubmit="return validarEn();">
+        <form action="../U03A_Controlador" onsubmit="return validarEn();" id="customers">
                 <table border="1">
                     <tbody>
                         <tbody>
@@ -64,11 +64,11 @@ int id = Integer.parseInt(request.getParameter("val"));
                                     <option value="5">Huancayo</option>                               
                             </select> </td>
                             <input type="hidden" name="txtId" value="<%=en.getId()%>"/>
-                            <td colspan="2"> <input type="submit" value="Actualizar" name="accion" /> </td>
+                            <td colspan="2"><button class="btn btn-warning" value="Actualizar" type="submit" name="accion">Actualizar</button> </td>
                         </tr>
                     </tbody>                        
                 </table>
-                            <a href="U03A-listarEn.jsp">Regresar</a>
+                            <a href="U03A-listarEn.jsp"><button class="btn btn-info">Regresar</button> </a>
             </form> 
                             </div>
                             </div>

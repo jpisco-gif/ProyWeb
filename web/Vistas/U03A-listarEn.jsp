@@ -31,22 +31,25 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-14">
                                     <h1>Encomiendas</h1>
                                     <h1><a href="../U03A_Controlador?accion=addEn">Agregar nueva encomienda</a></h1>
                                     
                                         <table border="1" class="user" id="customers">
                                             <thead>
-                                                <tr>                            
-                                                    <th>ID</th>
+                                                <tr >                            
+                                                    <!--<th>ID</th>-->
                                                     <th>Nombre del Emisor</th>
                                                     <th>Apellido del Emisor</th>
                                                     <th>Dni del Emisor</th>
+                                                    <th>Peso</th>                                                   
                                                     <th>Nombre del Receptor</th>
                                                     <th>Apellido del Receptor</th>
                                                     <th>Dni del Receptor</th>
                                                     <th>Lugar</th>
-                                                    <th colspan="2" >ESTADO</th>
+                                                    <th>Monto Pagado</th>
+                                                    <th class="text-center" colspan="2" >ESTADO</th>
+                                                    <th>Voucher</th>
                                                 </tr>
                                             </thead>
                                             <%
@@ -61,17 +64,20 @@
                                             <tbody>
                                                 <tr>
 
-                                                    <td><%=en.getId()%></td>
+                                                    <!--<td><%=en.getId()%></td>-->
                                                     <td><%=en.getEnvia_nom()%></td>
                                                     <td><%=en.getEnvia_ape()%></td>
+                                                    <td><%=en.getEnvia_dni()%></td>
                                                     <td><%=en.getEnvia_dni()%></td>
                                                     <td><%=en.getRecoge_nom()%></td>
                                                     <td><%=en.getRecoge_ape()%></td>
                                                     <td><%=en.getRecoge_dni()%></td>
                                                     <td><%=en.getCiudad()%></td>
-                                                    <td><a onclick="editarDatos(<%=en.getId()%>)"><input type="button" value="Editar"></a></td>
-                                                    <td><a href="../U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" ><input type="button" value="Eliminar"></a> </td>  
-                                                    <td><a href="U03-ImpxEn.jsp?id=<%=en.getId()%>"><input type="button" value="Imprimir"></a></td>
+                                                    <td><%=en.getEnvia_dni()%></td>
+                                                    <td><a onclick="editarDatos(<%=en.getId()%>)" ><button class="btn btn-warning btn-sm" >Editar</button></a></td>
+                                                    <td><a href="../U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" ><button class="btn btn-danger btn-sm" value="Eliminar">Eliminar</button></a> </td>  
+                                                    <td><a href="U03-ImpxEn.jsp?id=<%=en.getId()%>"><button class="btn btn-info">Imprimir</button></a></td>
+                                            
                                                 </tr>
                                                 <%}%>
                                             </tbody>
