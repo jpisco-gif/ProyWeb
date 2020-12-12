@@ -70,7 +70,8 @@
                                                     <td><%=en.getRecoge_dni()%></td>
                                                     <td><%=en.getCiudad()%></td>
                                                     <td><a onclick="editarDatos(<%=en.getId()%>)"><input type="button" value="Editar"></a></td>
-                                                    <td><a href="../U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" ><input type="button" value="Eliminar"></a> </td>                            
+                                                    <td><a href="../U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" ><input type="button" value="Eliminar"></a> </td>  
+                                                    <td><a href="U03-ImpxEn.jsp?id=<%=en.getId()%>"><input type="button" value="Imprimir"></a></td>
                                                 </tr>
                                                 <%}%>
                                             </tbody>
@@ -100,6 +101,13 @@
                                     <script>
                                         function editarDatos(val) {
                                             $.post("U03A-editEn.jsp", {val: val})
+                                                    .done(function (data) {
+                                                        $('#content').html(data);
+                                                        //                console.log(data);
+                                                    });
+                                        }
+                                        function ImprimirDatos(val) {
+                                            $.post("U03-ImpxEn.jsp", {val: val})
                                                     .done(function (data) {
                                                         $('#content').html(data);
                                                         //                console.log(data);

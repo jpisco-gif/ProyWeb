@@ -1,5 +1,5 @@
 <%
-int id = Integer.parseInt(request.getParameter("val"));
+int id = Integer.parseInt(request.getParameter("id"));
 %>
 
 <%@page import="Modelo.U03A_Encomienda"%>
