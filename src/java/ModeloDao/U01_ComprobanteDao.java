@@ -175,7 +175,7 @@ U01_Comprobante comp = new U01_Comprobante();
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.setInt(1, cuenta_id);
-            ps.setInt(2, 0);
+            ps.setInt(2, 1);
             rs = ps.executeQuery();
             while(rs.next()){
                 U01_Comprobante comp = new U01_Comprobante();
