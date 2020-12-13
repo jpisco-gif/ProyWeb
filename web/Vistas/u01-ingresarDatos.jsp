@@ -22,11 +22,10 @@
     </head>
     <body>
         <section class="ingresar-datos">
-            <h3>Ingrese sus datos</h3>
+            <p>Ingrese sus datos</p>
             <div class="muestra-form">
                 <form action="../U01_Controlador" method="post">
-                    itinerario: <%=itinerario_id%>
-                    numero de asiento: <%=nom_asiento%>
+  
                     <table class="formulario">
                         <tr>
                             <td class="izq">Tipo de documento: </td>
