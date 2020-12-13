@@ -27,7 +27,7 @@
                                 <a href="U02-Add.jsp" class="font-weight-bold ">Agregar nueva ruta <i class="icon ion-md-pin mr-2"></i></a>             
                             </div>                                  
                                  <div class="col-lg-3 d-flex">
-                                     <button class="btn btn-info w-50 align-self-end"><a href="U03-Imp-ru.jsp">Imprimir</a></button>
+                                    <a href="U03-Imp-ru.jsp"> <button class="btn btn-info w-100 align-self-end">Imprimir</button></a>
                             </div>
                                 <div id="mostrar-datos">
                                     <table border="1">
@@ -59,9 +59,9 @@
                                             <td>S/. <%=per.getCosto()%></td>
                                             <td><%=per.getDuracion()%> horas</td>
                                             <td><%=per.getDescripcion()%></td>
-                                            <td><a onclick="editarDatos(<%=per.getRuta()%>)"><input type="button" value="Editar"></a></td>
+                                            <td><a onclick="editarDatos(<%=per.getRuta()%>)"><button class="btn btn-warning w-100" value="Editar">Editar</button></a></td>
 
-                                            <td><a href="../U02_Controlador?accion=eliminar&ruta_id=<%=per.getRuta()%>" onclick="return mensaje();" ><input type="button" value="Eliminar"></a> </td> 
+                                            <td><a href="../U02_Controlador?accion=eliminar&ruta_id=<%=per.getRuta()%>" onclick="return mensaje();" ><button class="btn btn-danger w-100" value="Eliminar">Eliminar</button></a> </td> 
 
                                         </tr>
                                         <% }%>

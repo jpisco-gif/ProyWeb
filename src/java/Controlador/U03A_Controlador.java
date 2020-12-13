@@ -61,6 +61,8 @@ public class U03A_Controlador extends HttpServlet {
             String Rnom = request.getParameter("txtNomR");
             String Rape = request.getParameter("txtApeR");
             int Rdni = Integer.parseInt(request.getParameter("txtDniR"));
+            int Peso = Integer.parseInt(request.getParameter("txtPeso"));
+            int Monto = Integer.parseInt(request.getParameter("txtMonto"));
             int lugar = Integer.parseInt(request.getParameter("txtLug"));
             en.setEnvia_nom(Enom);
             en.setEnvia_ape(Eape);
@@ -68,6 +70,8 @@ public class U03A_Controlador extends HttpServlet {
             en.setRecoge_nom(Rnom);
             en.setRecoge_ape(Rape);
             en.setRecoge_dni(Rdni);
+            en.setPeso(Peso);
+            en.setMonto(Monto);
             en.setLugar_recojo(lugar);
             end.add(en);
             acceso = listarEn;
@@ -84,6 +88,8 @@ public class U03A_Controlador extends HttpServlet {
             String Rnom = request.getParameter("txtNomR");
             String Rape = request.getParameter("txtApeR");
             int Rdni = Integer.parseInt(request.getParameter("txtDniR"));
+            int Peso = Integer.parseInt(request.getParameter("txtPeso"));
+            int Monto = Integer.parseInt(request.getParameter("txtMonto"));
             int lugar = Integer.parseInt(request.getParameter("txtLug"));
             en.setId(id);
             en.setEnvia_nom(Enom);
@@ -92,6 +98,8 @@ public class U03A_Controlador extends HttpServlet {
             en.setRecoge_nom(Rnom);
             en.setRecoge_ape(Rape);
             en.setRecoge_dni(Rdni);
+            en.setPeso(Peso);
+            en.setMonto(Monto);
             en.setLugar_recojo(lugar);
             end.edit(en);
             acceso = listarEn;

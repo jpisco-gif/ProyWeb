@@ -245,6 +245,9 @@ a:hover {
 .bg-primary{
     background-color:var(--primary) !important;
 }
+.bg-mix{
+    background: linear-gradient(180deg, var(--light) 50%,var(--grey)0);
+}
 #u3sidebar{
     min-height: 100vh;
 }
@@ -267,7 +270,10 @@ a:hover {
     height: 100vh;
     padding-bottom: 5rem;
 }
-
+.stat{
+    border-right: 1px solid var(--primary);
+}
+.
 
 
   .login {

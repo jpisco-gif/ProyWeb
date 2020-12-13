@@ -28,7 +28,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
     @Override
     public List listar() {
         ArrayList<U03A_Encomienda> list = new ArrayList<>();
-        String sql = "SELECT id,envia_nombre,envia_apellido,envia_dni,recoge_nombre,recoge_apellido,recoge_dni,lugar_recojo, ciudad FROM encomiendas AS a INNER JOIN terminales AS b WHERE a.lugar_recojo=b.terminal_id";
+        String sql = "SELECT id,envia_nombre,envia_apellido,envia_dni,recoge_nombre,recoge_apellido,recoge_dni,lugar_recojo,Peso,Monto,ciudad FROM encomiendas AS a INNER JOIN terminales AS b WHERE a.lugar_recojo=b.terminal_id";
         try {
             cn = con.getConnection();
             ps = cn.prepareStatement(sql);
@@ -43,6 +43,8 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
                 en.setRecoge_ape(rs.getString("recoge_apellido"));
                 en.setRecoge_dni(rs.getInt("recoge_dni"));
                 en.setLugar_recojo(rs.getInt("lugar_recojo"));
+                en.setPeso(rs.getInt("Peso"));
+                en.setMonto(rs.getInt("Monto"));
                 en.setCiudad(rs.getString("ciudad"));
                 list.add(en);
             }
@@ -53,7 +55,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
 
     @Override
     public U03A_Encomienda list(int id) {
-       String sql="SELECT id,envia_nombre,envia_apellido,envia_dni,recoge_nombre,recoge_apellido,recoge_dni,lugar_recojo, ciudad FROM encomiendas AS a INNER JOIN terminales AS b ON a.lugar_recojo=b.terminal_id where id="+id;
+       String sql="SELECT id,envia_nombre,envia_apellido,envia_dni,recoge_nombre,recoge_apellido,recoge_dni,lugar_recojo,Peso,Monto,ciudad FROM encomiendas AS a INNER JOIN terminales AS b ON a.lugar_recojo=b.terminal_id where id="+id;
         try {
             cn=con.getConnection();
             ps=cn.prepareStatement(sql);
@@ -67,6 +69,8 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
                 en.setRecoge_ape(rs.getString("recoge_apellido"));
                 en.setRecoge_dni(rs.getInt("recoge_dni"));
                 en.setLugar_recojo(rs.getInt("lugar_recojo"));
+                en.setPeso(rs.getInt("Peso"));
+                en.setMonto(rs.getInt("Monto"));
                 en.setCiudad(rs.getString("ciudad"));
             }
         } catch (Exception e) {
@@ -78,7 +82,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
     public boolean add(U03A_Encomienda u) {
          try {
             cn = con.getConnection();
-            ps = cn.prepareStatement("insert into encomiendas(envia_nombre,envia_apellido,envia_dni,recoge_nombre,recoge_apellido,recoge_dni,lugar_recojo) values(?,?,?,?,?,?,?)");
+            ps = cn.prepareStatement("insert into encomiendas(envia_nombre,envia_apellido,envia_dni,recoge_nombre,recoge_apellido,recoge_dni,lugar_recojo,Peso,Monto) values(?,?,?,?,?,?,?,?,?)");
             ps.setString(1, u.getEnvia_nom());
             ps.setString(2,u.getEnvia_ape());
             ps.setInt(3, u.getEnvia_dni());
@@ -86,6 +90,8 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
             ps.setString(5,u.getRecoge_ape());
             ps.setInt(6, u.getRecoge_dni());
             ps.setInt(7, u.getLugar_recojo());
+            ps.setInt(8, u.getPeso());
+            ps.setInt(9, u.getMonto());
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error" + e);
@@ -96,7 +102,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda{
 
     @Override
     public boolean edit(U03A_Encomienda en) {
-        String sql="update encomiendas set envia_nombre='"+en.getEnvia_nom()+"',envia_apellido='"+en.getEnvia_ape()+"',envia_dni='"+en.getEnvia_dni()+"',recoge_nombre='"+en.getRecoge_nom()+"',recoge_apellido='"+en.getEnvia_ape()+"',recoge_dni='"+en.getRecoge_dni()+"'where id="+en.getId();
+        String sql="update encomiendas set envia_nombre='"+en.getEnvia_nom()+"',envia_apellido='"+en.getEnvia_ape()+"',envia_dni='"+en.getEnvia_dni()+"',recoge_nombre='"+en.getRecoge_nom()+"',recoge_apellido='"+en.getEnvia_ape()+"',recoge_dni='"+en.getRecoge_dni()+"',Peso='"+en.getPeso()+"',Monto='"+en.getMonto()+"' where id="+en.getId();
         try {
             cn=con.getConnection();
             ps=cn.prepareStatement(sql);
