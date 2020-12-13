@@ -18,4 +18,6 @@ public interface U03A_CRUDEncomienda {
     public boolean add(U03A_Encomienda u);
     public boolean edit(U03A_Encomienda en);
     public boolean delete(int id);
+    public List listarMes();
+    public List listarDia();
 }

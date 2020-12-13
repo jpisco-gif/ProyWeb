@@ -21,12 +21,13 @@ public class U03A_Encomienda {
     String Ciudad;
     int peso;
     int monto;
+    String Fecha;
     
 
     public U03A_Encomienda() {
     }
 
-    public U03A_Encomienda(int id, String envia_nom, String envia_ape, int envia_dni, String recoge_nom, String recoge_ape, int recoge_dni, int lugar_recojo, String Ciudad, int peso, int monto) {
+    public U03A_Encomienda(int id, String envia_nom, String envia_ape, int envia_dni, String recoge_nom, String recoge_ape, int recoge_dni, int lugar_recojo, String Ciudad, int peso, int monto, String Fecha) {
         this.id = id;
         this.envia_nom = envia_nom;
         this.envia_ape = envia_ape;
@@ -38,6 +39,7 @@ public class U03A_Encomienda {
         this.Ciudad = Ciudad;
         this.peso = peso;
         this.monto = monto;
+        this.Fecha = Fecha;
     }
 
     public int getId() {
@@ -128,6 +130,13 @@ public class U03A_Encomienda {
         this.monto = monto;
     }
 
-    
+    public String getFecha() {
+        return Fecha;
+    }
 
+    public void setFecha(String Fecha) {
+        this.Fecha = Fecha;
+    }
+
+   
 }

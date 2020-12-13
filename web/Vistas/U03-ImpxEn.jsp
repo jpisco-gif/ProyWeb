@@ -31,10 +31,11 @@
                         <div class="col-lg-9">
                             <a href="U03A-listarEn.jsp">Regresar</a> 
 
-                            <table >
+                            <table border="1">
                                 <tbody>
                                     <tr>
-                                        <td colspan="4"><a href="U05-G-index.jsp">  <img src="../Imagenes/logo2.svg" width="250"></a><br> Empresa de transporte interprovincial Llama Bus</td>                        
+                                        <td width="100"><a href="U05-G-index.jsp">  <img src="../Imagenes/logo2.svg" width="250"></a><br> Empresa de transporte interprovincial Llama Bus</td>                        
+                                        <td width="100"></td>
                                         <td>BOLETA DE VENTA ELECTRONICA<br>
                                             RUC: 12345678958<br>                            
                                         </td>                        
@@ -42,8 +43,11 @@
                                 <br>
                                 <br>
                                 <tr>
+                                    
+                                </tr>
+                                <tr>
                                     <td>Nombres:</td>
-                                    <td><%=en.getEnvia_nom()%></td>
+                                    <td width="100"><%=en.getEnvia_nom()%></td>
                                     <td>Nombres:</td>
                                     <td><%=en.getRecoge_nom()%></td>
                                 </tr>
@@ -67,8 +71,6 @@
                                 </tr>
                                 </tbody>                        
                             </table>
-
-
                         </div>
                     </div>
                 </div>
