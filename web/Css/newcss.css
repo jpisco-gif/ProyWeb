@@ -122,11 +122,12 @@
 }
 .ingresar-datos-ruta{
     margin-top: 5em;
-
-    
 }
 
-
+.body-historial{
+    background-image: url("../Imagenes/bg/bg-1.jpg");
+    background-size: cover;
+}
 
 
 .btn-buscar{
