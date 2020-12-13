@@ -9,10 +9,9 @@
         <jsp:include page="U03-Cabecera.jsp"></jsp:include>
         <div id="content">
             <section>
-                <div class="container" id="customers">
+                <div class="container" >
                     <div class="row">
                         <div class="col-lg-10">
-                            <div>
                                 <h1>Agregar Viajes</h1>
                                 <form action="Controlador">
                                     <table border="1" id="customers">

@@ -68,12 +68,12 @@
                                                     <td><%=en.getEnvia_nom()%></td>
                                                     <td><%=en.getEnvia_ape()%></td>
                                                     <td><%=en.getEnvia_dni()%></td>
-                                                    <td><%=en.getEnvia_dni()%></td>
+                                                    <td><%=en.getPeso()%>Kg</td>
                                                     <td><%=en.getRecoge_nom()%></td>
                                                     <td><%=en.getRecoge_ape()%></td>
                                                     <td><%=en.getRecoge_dni()%></td>
                                                     <td><%=en.getCiudad()%></td>
-                                                    <td><%=en.getEnvia_dni()%></td>
+                                                    <td>S/. <%=en.getMonto()%></td>
                                                     <td><a onclick="editarDatos(<%=en.getId()%>)" ><button class="btn btn-warning btn-sm" >Editar</button></a></td>
                                                     <td><a href="../U03A_Controlador?accion=eliminarEn&id=<%=en.getId()%>" onclick="return mensaje();" ><button class="btn btn-danger btn-sm" value="Eliminar">Eliminar</button></a> </td>  
                                                     <td><a href="U03-ImpxEn.jsp?id=<%=en.getId()%>"><button class="btn btn-info">Imprimir</button></a></td>
