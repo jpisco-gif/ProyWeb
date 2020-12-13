@@ -9,6 +9,11 @@ int id = Integer.parseInt(request.getParameter("id"));
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+        <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
     </head>
     <body onload="window.print()">
@@ -24,15 +29,18 @@ int id = Integer.parseInt(request.getParameter("id"));
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-9">
-        <h1>Editando </h1>
-        <form action="../U03A_Controlador">
-                <table border="1">
-                    <tbody>
+                            
+              
+                <table >
                         <tbody>
                         <tr>
-                            <td colspan="2">EM </td>                        
-                            <td colspan="2">RECEPTOR </td>
-                        </tr>
+                            <td colspan="4"><a href="U05-G-index.jsp">  <img src="../Imagenes/logo2.svg" width="250"></a><br> Empresa de transporte interprovincial Llama Bus</td>                        
+                            <td>BOLETA DE VENTA ELECTRONICA<br>
+                                RUC:<br>                            
+                            </td>                        
+                        </tr><br>
+                        <br>
+                        <br>
                         <tr>
                             <td>Nombres:</td>
                             <td><input type="text" name="txtNomE" value="<%=en.getEnvia_nom() %>"/></td>
@@ -56,12 +64,11 @@ int id = Integer.parseInt(request.getParameter("id"));
                             <td>Lugar de Envio</td>
                             <td><input type="text" name="txtLug" value="<%=en.getLugar_recojo() %>"/></td>
                             <input type="hidden" name="txtId" value="<%=en.getId()%>"/>
-                            <td colspan="2"> <input type="submit" value="Actualizar" name="accion" /> </td>
                         </tr>
                     </tbody>                        
                 </table>
                             <a href="U03A-listarEn.jsp">Regresar</a>
-            </form> 
+           
                             </div>
                             </div>
                         </div>

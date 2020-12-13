@@ -40,7 +40,7 @@
         <div class="d-flex" >
             <div id="u3sidebar" class="bg-primary">
                 <div class="u3logo">
-                    <a href="A_Index.jsp">  <img src="../Imagenes/logo2.svg" width="250"></a>
+                    <a href="A_Index.jsp">  <img src="../Imagenes/logo2.svg" width="210"></a>
                 </div>
                 <div class="u3menu">                    
                     <a href="U02-Rutas.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-pin mr-3"></i>Rutas</a> 
