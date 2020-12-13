@@ -165,6 +165,9 @@ public class U01_Controlador extends HttpServlet {
             else if(rol_id == 2){
                 response.sendRedirect("Vistas/U03-Vender.jsp"); 
             }
+            else{
+                response.sendRedirect("Vistas/U04-login.jsp");
+            }
               
         }
         
@@ -221,6 +224,9 @@ public class U01_Controlador extends HttpServlet {
             }
             else if(rol_id == 2){
                 response.sendRedirect("Vistas/U03-Vender.jsp");
+            }
+            else{
+                response.sendRedirect("Vistas/u04-login.jsp");
             }
             
             //acceso = comprar_pasajes;

@@ -52,12 +52,6 @@
         <header>
             <!-- start top -->
             <jsp:include page="U02-Menu.jsp"></jsp:include>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
 
             <div align="center">
                 <div class="login">

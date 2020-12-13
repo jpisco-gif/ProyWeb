@@ -20,20 +20,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../Css/newcss.css">
-        <link href="../Css/bootstrap.css" rel="stylesheet">
-        <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="../Css/flexslider.css" rel="stylesheet">
-        <link rel="stylesheet" media="screen" href="../Css/sequencejs.css">
-        <link href="../Css/style.css" rel="stylesheet">
+        
         <script type="text/javascript" src="../js/jquery.js"></script>
 
         <title>Comprar pasaje</title>
     </head>
-    <body class="bodys">
+    <style>
+        body{
+            background-image: url(../Imagenes/bg/bg-1.jpg);
+            background-size: cover;
+        }
+    </style>
+    <body class="body-pasajes">
         <jsp:include page="U02-Menu.jsp"></jsp:include>
-        <br></br>
-        <br></br>
-        <section class="ingresar-datos">
+        <section class="ingresar-datos-ruta">
             <div class="muestra-form">
                 <%
                     U01_RutasDao dao3 = new U01_RutasDao();
@@ -42,8 +42,7 @@
                             
                         } catch (Exception e) {
                         }
-                    int origen = (Integer) session.getAttribute("origen");
-                    int destino = (Integer) session.getAttribute("destino");
+                    
                 %>
                 <form method="post" action="../U01_Controlador" class="labels-formulario">
                     <div class="itemss">
@@ -95,7 +94,7 @@
 
                     <div class="itemss">
                         <input type="hidden" name="accion" value="consultar-rutas">
-                        <input type="submit" name="submit" value="Buscar">
+                        <input type="submit" name="submit" value="Buscar" class="btn-buscar">
                     </div>
                 </form>
             </div>
@@ -156,10 +155,10 @@
         </section>
         <% }%>
         <section class="asiento-form">
-            <div id="contenido">
+            <div id="contenido" class="contenido">
 
             </div>
-            <div id="contenido2">
+            <div id="contenido2" class="contenido2">
 
             </div>
         </section>
@@ -179,6 +178,7 @@
                     <td>Apellido materno</td>
                     <td>Nro. documento</td>
                     <td>Nro. asiento</td>
+                    <td></td>
                     <td></td>
 
                 </tr>
@@ -223,10 +223,10 @@
             </div>
         </section>
         <%}%>
-        <section id='contenido2'>
+        <section id='contenido2' class="contenido2">
             
         </section>
-        <section id='contenido3'>
+        <section id='contenido3' class="contenido3">
             
         </section>
         

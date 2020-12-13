@@ -25,6 +25,16 @@
         <meta name="description" content="">
         <meta name="author" content="">
         
+        <link href="../Css/newcss.css" rel="stylesheet">
+        <link href="../Css/animate.css" rel="stylesheet">
+        <link href="../Css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../font/stylesheet.css" rel="stylesheet">
+        <link href="../Css/bootstrap.css" rel="stylesheet">
+        <link href="../Css/flexslider.css" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="../Css/sequencejs.css">
+        <link href="../Css/style.css" rel="stylesheet">
+        <link href="../color/default.css" rel="stylesheet">
+        
 
 
     </head>

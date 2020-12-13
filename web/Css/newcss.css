@@ -11,6 +11,9 @@
 }
 
 /*###################u01##########################*/
+/----------compra de pasajes----------*/
+
+
 /*-------- seccion datos --------*/
 .datos{
     display: flex;
@@ -110,17 +113,44 @@
 .muestra-form form{
     margin: 0 auto;
 }
-.ingresar-datos h3{
+.ingresar-datos{
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+	width: 100%;
+
+}
+.ingresar-datos-ruta{
+    margin-top: 5em;
+
+    
+}
+
+
+
+
+.btn-buscar{
+    position: relative;
+    top: 25px;
+}
+.ingresar-datos p{
+    font-size: 2em;
     text-align: center;
-    padding: 2em 0;
-    background-color: white;
+}
+
+
+.info-rutas h3{
+    color: white;
 }
 .muestra-form{
-    background-color: #F8D7AE ;
+    //background-color: #F8D7AE ;
     width: 100%;
     display: flex;
     align-items: center;
     
+}
+.tabla{
+    color: white;
 }
 .formulario{
     width: 100%;
