@@ -16,6 +16,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="../Css/newcss.css" rel="stylesheet" type="text/css"/>
+        <link href="../Css/pop.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
        
         <script type="text/javascript" src="../js/jquery.js"></script>
@@ -42,7 +43,9 @@
                              <div>
                                         <h1 class="w3-animate-right" >Cuentas de Administradores</h1><hr>
                                         <!--<a href="U05_Controlador_Admi?accion=add">Agregar Nuevo></a> <a href="javascript:window.print()">Imprimir</a>-->
-                                        <a href="#" onclick="agregarNuevo()"><input type="button" value="Agregar nuevo"></a> <a href="U05-G-L.jsp"><input type="button" value="Imprimir"></a>
+                                        <a href="#" onclick="agregarNuevo()"><input type="button" value="Agregar nuevo"></a> 
+                                        <a href="U05-G-L.jsp"><input type="button" value="Imprimir"></a>
+                                        <button id="myBtn">Ayuda</button>
                                         <br>
                                         <br>
                                         <table class="w3-card-4 w3-centered" id="customers" border="1">
@@ -130,10 +133,65 @@
                         
                     </section>
                 </div>
-            </div>
+            
             <div class="dropdown-divider"></div>
-        </div>
+        
 
+            
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2></h2>
+    </div>
+    <div class="modal-body">
+      <h1>Ayuda</h1>
+      <p>En esta pagina se podran realizar las siguientes acciones:</p>
+        <ul>
+            <li>Crear nuevas cuentas de administrador con el boton Agregar nuevo</li>
+            <li>Editar la cuenta con el boton modificar</li>
+            <li>Editar los datos personales con el boton modificar</li>
+        </ul>  
+        </div>
+    <div class="modal-footer">
+      <h3><br></h3>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>         
+            
+            
     
     <script>
           function editarCuenta(val) {

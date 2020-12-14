@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "U05_Controlador_Rendimiento", urlPatterns = {"/U05_Controlador_Rendimiento"})
 public class U05_Controlador_Rendimiento extends HttpServlet {
 
-    String listar="Vistas/U05-G-R-L.jsp";
+    String listar="Vistas/U05-G-Terminales.jsp";
     String add="Vistas/U05-G-A-R.jsp";
     String edit="Vistas/U05-G-R-E.jsp";
     U05_Rendimiento p=new U05_Rendimiento();
