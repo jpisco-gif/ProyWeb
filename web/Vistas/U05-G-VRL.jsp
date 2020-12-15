@@ -35,7 +35,7 @@
                         <div class="finanzas">
                           
                           <div class="finanzas_texto">
-                            <div class="finanzas_titulo w3-animate-right"><h1>Ventas por Ruta</h1><hr></div>
+                            <div class="finanzas_titulo w3-animate-right"><h1>Ventas por Ruta (top 7)</h1><hr></div>
                             <div class="finanzas_parrafo">
                                 
                               
@@ -50,7 +50,6 @@
                     <tr>
                         <th>Ruta</th>
                         <th>Ventas</th>
-                        <th>Mes</th>
                     </tr>
                     
                 </thead>
@@ -67,7 +66,6 @@
                     <tr>
                         <td><%=per.getRuta() %></td>
                         <td><%=per.getVentas() %></td>
-                        <td><%=per.getMes() %></td>
                     </tr>
                     <% } %>
                 </tbody>
@@ -79,7 +77,7 @@
                             <br><br>      
                             <a href="U05-G-VRL-grafico.jsp">Expandir grafico</a>   
                             <br><br>   
-                            <iframe src="U05-G-VRL-grafico-m.jsp"  style="border:none;" name="iframe_b" height="460px" width="740px" title="Iframe Example"></iframe>
+                            <iframe src="U05-G-VRL-grafico-m.jsp"  style="border:none;" name="iframe_b" height="460px" width="900px" title="Iframe Example"></iframe>
                               
                   
                             

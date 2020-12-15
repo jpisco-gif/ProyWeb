@@ -54,7 +54,7 @@
            
                     response.setContentType("image/JPEG");
                     OutputStream sa=response.getOutputStream();
-                    ChartUtilities.writeChartAsJPEG(sa,grafico,640,360);
+                    ChartUtilities.writeChartAsJPEG(sa,grafico,740,360);
                     
                     
                     

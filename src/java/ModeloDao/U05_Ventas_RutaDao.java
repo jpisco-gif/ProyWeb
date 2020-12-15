@@ -23,13 +23,14 @@ U05_Ventas_Ruta p=new U05_Ventas_Ruta();
         
         ArrayList<U05_Ventas_Ruta> list=new ArrayList<>();
          String sql="SELECT a.descripcion AS ruta , SUM(c.monto) AS ventas , MONTHNAME(b.fecha_salida) AS mes \n" +
-                    "FROM rutas AS a \n" +
-                    "INNER JOIN itinerarios AS b \n" +
-                    "ON a.ruta_id=b.ruta_id\n" +
-                    "INNER JOIN comprobantes AS c \n" +
-                    "ON b.itinerario_id=c.itinerario_id\n" +
-                    "GROUP BY a.ruta_id\n" +
-                    "ORDER BY a.ruta_id ASC;";
+"FROM rutas AS a \n" +
+"INNER JOIN itinerarios AS b \n" +
+"ON a.ruta_id=b.ruta_id\n" +
+"INNER JOIN comprobantes AS c \n" +
+"ON b.itinerario_id=c.itinerario_id\n" +
+"GROUP BY a.ruta_id\n" +
+"ORDER BY (SUM(c.monto)) DESC\n" +
+"LIMIT 7";
          
          try {
             con=cn.getConnection();
