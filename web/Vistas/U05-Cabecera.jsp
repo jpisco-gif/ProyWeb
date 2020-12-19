@@ -56,7 +56,7 @@
                         </div>
                         </div>
                     
-                    <a href="#" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-person mr-2 lead"></i>Perfil</a>              
+                           
                 </div>
             </div>
             <div class="w-100">
@@ -75,8 +75,7 @@
                                     <img src="../Imagenes/admin.svg" class="img-fluid rounded-circle avatar mr-2" > <%=usuario %>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Perfil</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="../U01_Controlador?accion=logout&cuenta_id=<%=cuenta_id%>&log_id=<%=log_id%>">Cerrar Sesion</a>
                                 </div>
