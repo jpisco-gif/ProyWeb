@@ -1,8 +1,10 @@
 <%@page import="java.util.ArrayList"%>
 <%
     int cuenta_id = 0;
+    int rol_id = 0;
     try {
             cuenta_id = (Integer) session.getAttribute("cuenta_id");
+            rol_id = (Integer) session.getAttribute("rol_id");
         } catch (Exception e) {
             response.sendRedirect("U04-login.jsp");
         }
@@ -93,6 +95,7 @@
                     </div>
 
                     <div class="itemss">
+                        <input type="hidden" name="rol_id" value="<%=rol_id%>">
                         <input type="hidden" name="accion" value="consultar-rutas">
                         <input type="submit" name="submit" value="Buscar" class="btn-buscar">
                     </div>
@@ -108,20 +111,20 @@
         %>              
         <section class="info-rutas">
             <h3>Horarios disponibles</h3>
-            <table class="tabla">
+            <table class="w3-card-4 w3-centered" id="customers" border="1">
                 <tr class="cabecera-tabla">
 <!--                    <td>Cod. itinerario</td>
                     <td>id origen</td>
                     <td>id destino</td>-->
-                    <td>Origen</td>
-                    <td>Destino</td>
+                    <td class="cabecera-tablahist">Origen</td>
+                    <td class="cabecera-tablahist">Destino</td>
 <!--                    <td>P. embarque</td>
                     <td>P. llegada</td>-->
-                    <td>Duración</td>
-                    <td>Fecha</td>
-                    <td>Hora de salida</td>
-                    <td>Precio</td>
-                    <td>Asientos</td>
+                    <td class="cabecera-tablahist">Duración</td>
+                    <td class="cabecera-tablahist">Fecha</td>
+                    <td class="cabecera-tablahist">Hora de salida</td>
+                    <td class="cabecera-tablahist">Precio</td>
+                    <td class="cabecera-tablahist">Asientos</td>
                 </tr>
                 <%
                     //U01_RutasDao dao = new U01_RutasDao();
@@ -165,21 +168,24 @@
         <%
             U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
             List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
+            double total = 0;
             int aux4 = list2.size();
             if (aux4 != 0) {
         %>
         <section class="info-rutas">
             <h3>Sus viajes pendientes</h3>
-            <table border="1">
+            <table class="w3-card-4 w3-centered" id="customers" border="1">
                 <tr>
-                    <td>persona id</td>
-                    <td>Nombres</td>
-                    <td>Apellido paterno</td>
-                    <td>Apellido materno</td>
-                    <td>Nro. documento</td>
-                    <td>Nro. asiento</td>
-                    <td></td>
-                    <td></td>
+                    <td class="cabecera-tablahist">Persona Id</td>
+                    <td class="cabecera-tablahist">Nombres</td>
+                    <td class="cabecera-tablahist">Apellido paterno</td>
+                    <td class="cabecera-tablahist">Apellido materno</td>
+                    <td class="cabecera-tablahist">Nro. documento</td>
+                    <td class="cabecera-tablahist">Nro. asiento</td>
+                    <td class="cabecera-tablahist">Precio</td>
+                    <td class="cabecera-tablahist"></td>
+                    <td class="cabecera-tablahist"></td>
+                    
 
                 </tr>
                 <%
@@ -187,6 +193,7 @@
                     U01_Comprobante comp = null;
                     while (iter2.hasNext()) {
                         comp = iter2.next();
+                        total += comp.getPrecio();
                 %>
                 <tr>
                     <td><%=comp.getUsuario_id()%></td>
@@ -195,6 +202,7 @@
                     <td><%=comp.getApemat()%></td>
                     <td><%=comp.getNumdoc()%></td>
                     <td><%=comp.getNum_asiento()%></td>
+                    <td>S/. <%=comp.getPrecio()%></td>
 
                 <form action="../U01_Controlador" method="post">
                     <input type="hidden" name="accion" value="eliminar-pasaje">
@@ -203,7 +211,7 @@
                     <input type="hidden" name="itinerario_id" value="<%=comp.getItinerario_id()%>">
                     <input type="hidden" name="num_asiento" value="<%=comp.getNum_asiento()%>">   
                     <td>
-                        <input type="submit" name="submit" value="eliminar">    
+                        <input type="submit" name="submit" value="Eliminar">    
                     </td>
                 </form>
                 <td>
@@ -213,6 +221,12 @@
 
                 </tr>
                 <%}%>
+                <tr>
+                    <td colspan="6">Total</td>
+                    <td>S/. <%=total%></td>
+                    <td colspan="2"><a href="#" onclick="pagarPasaje()"><input type="button" value="Pagar"></a></td>
+                        
+                </tr>
             </table>
             <div>
                 <!--<form action="../U01_Controlador" method="post">
@@ -220,7 +234,7 @@
                     <input type="hidden" name="accion" value="pagar-pasajes">
                     <input type="submit" name="submit" value="Pagar" class="pagar">
                 </form>-->
-                <a href="#" onclick="pagarPasaje()"><input type="button" value="Pagar"></a>
+                
             </div>
         </section>
         <%}%>

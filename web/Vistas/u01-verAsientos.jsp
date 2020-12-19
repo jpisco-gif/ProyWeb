@@ -33,12 +33,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <link rel="stylesheet" href="../Css/newcss.css">
         <title>JSP Page</title>
     </head>
     <body>
         <section class="ver-asientos">
-            <h3>Seleccione su asiento</h3><br>  
+            <h3 class="msj-pagarPasaje">Seleccione su asiento</h3><br>  
             <div class="leyenda">
             <p><span class="asiento-ocupado">n°</span>Ocupado</p>
             <p><span class="asiento-disponible">n°</span>Disponible</p>

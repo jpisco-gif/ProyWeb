@@ -21,7 +21,7 @@
     </head>
     <body>
         <section class="ingresar-datos">
-            <h3>Ingrese sus datos</h3>
+            <h3 class="msj-ingresarDatos">Ingrese sus datos</h3>
             <div class="muestra-form">
                 <form action="../U01_Controlador" method="post" onsubmit="return validar();">
                     <table class="formulario">

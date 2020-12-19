@@ -17,9 +17,9 @@ public class Conexion {
 
     public Conexion() {
         try {
-            String url = "jdbc:mysql://localhost:3306/llamabus?zeroDateTimeBehavior=convertToNull&useSSL=false&useTimezone=true&serverTimezone=UTC";
+            String url = "jdbc:mysql://localhost:3306/llama_bus?zeroDateTimeBehavior=convertToNull&useSSL=false&useTimezone=true&serverTimezone=UTC";
             Class.forName("com.mysql.jdbc.Driver");
-            cn = DriverManager.getConnection(url, "root", "");
+            cn = DriverManager.getConnection(url, "root", "96809361");
 
         } catch (Exception e) {
             System.out.println("Error"+e);
