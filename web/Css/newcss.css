@@ -308,7 +308,7 @@ a:hover {
     align-items: center;
     height: 100vh;
 }
-  .login {
+ .login {
   margin: auto;
   max-width:400px;
   padding: 50px;
@@ -373,7 +373,7 @@ a:hover {
 #customers {
           font-family: Arial, Helvetica, sans-serif;
           border-collapse: collapse;
-          width: 100%;
+          width: 80%;
         }
 
         #customers td, #customers th {
