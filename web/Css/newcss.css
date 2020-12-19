@@ -21,7 +21,8 @@
 }
 .info-rutas{
     text-align: center;
-    margin-bottom: 2em;
+    top: 7em;
+    position: relative;
 }
 .info-rutas h3{
     margin: 2em 0;
@@ -32,6 +33,17 @@
 .mensaje p{
     margin: 1em 0; 
     text-align: center;
+}
+.cabecera-tablahist{
+    background-color: #ef6603;
+    color: white;
+}
+.imprimir-historial{
+    margin: 1em 0;
+}
+.mensaje-historial{
+    font-size: 2em;
+    color: white;
 }
 
 

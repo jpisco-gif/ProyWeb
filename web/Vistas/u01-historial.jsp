@@ -1,7 +1,14 @@
+<%-- 
+    Document   : u01-historial
+    Created on : 18-dic-2020, 23:12:16
+    Author     : Manuel
+--%>
+
 <%@page import="java.util.Iterator"%>
 <%@page import="Modelo.U01_Comprobante"%>
 <%@page import="java.util.List"%>
 <%@page import="ModeloDao.U01_ComprobanteDao"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     int cuenta_id = 0;
     try {
@@ -10,9 +17,6 @@
         response.sendRedirect("U04-login.jsp");
     }
 %>
-
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,8 +24,7 @@
         
         <title>JSP Page</title>
     </head>
-    <body class="body-historial">
-        <jsp:include page="U02-Menu.jsp"></jsp:include>
+    <body onload="window.print()">
         <section>
             <%
                 U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
@@ -30,20 +33,20 @@
                 if (aux4 != 0) {
             %>
             <section class="info-rutas">
-                <p class="mensaje-historial">Sus pasajes adquiridos: </p>
-                <a href="u01-historial.jsp"><input type="button" value="Imprimir" class="imprimir-historial"></a>
-                <table class="w3-card-4 w3-centered" id="customers" border="1">
+                <a href="u01-historial.jsp"><input type="button" value="Imprimir"></a>
+                <a href="u01-visualizarHistorial.jsp"><input type="button" value="Atras"></a>
+                <table>
                     <tr>
-                        <td class="cabecera-tablahist">Nombres</td>
-                        <td class="cabecera-tablahist">Apellido paterno</td>
-                        <td class="cabecera-tablahist">Apellido materno</td>
-                        <td class="cabecera-tablahist">Nro. documento</td>
-                        <td class="cabecera-tablahist">Origen</td>
-                        <td class="cabecera-tablahist">Destino</td>
-                        <td class="cabecera-tablahist">Fecha</td>
-                        <td class="cabecera-tablahist">Hora de salida</td>
-                        <td class="cabecera-tablahist">Puerta de embarque</td>
-                        <td class="cabecera-tablahist">Nro. asiento</td>
+                        <td>Nombres</td>
+                        <td>Apellido paterno</td>
+                        <td>Apellido materno</td>
+                        <td>Nro. documento</td>
+                        <td>Origen</td>
+                        <td>Destino</td>
+                        <td>Fecha</td>
+                        <td>Hora de salida</td>
+                        <td>Puerta de embarque</td>
+                        <td>Nro. asiento</td>
                     </tr>
                     <%
                         Iterator<U01_Comprobante> iter2 = list2.iterator();
