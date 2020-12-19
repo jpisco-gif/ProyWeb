@@ -4,6 +4,8 @@
     Author     : V330
 --%>
 
+<%@page import="Modelo.U05_Admi"%>
+<%@page import="ModeloDao.U05_AdmiDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     int cuenta_id = 0;
@@ -14,13 +16,16 @@
         log_id = (Integer) session.getAttribute("log_id");
         usuario = String.valueOf(session.getAttribute("usuario"));
     } catch (Exception e) {
-        cuenta_id = 0;
-        log_id = 0;
-        usuario = null;
+        response.sendRedirect("U04-login.jsp");
     }
 
 
 %>
+<% 
+       U05_AdmiDao dao=new U05_AdmiDao();
+       int cuent_id=cuenta_id;
+       U05_Admi p=(U05_Admi)dao.list(cuent_id);
+       %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,8 +51,8 @@
                     <a href="U02-Rutas.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-pin mr-3"></i>Rutas</a> 
                     <a href="U03A-listarEn.jsp" class="d-block text-light p-5 font-weight-bold"> <i class="icon ion-md-briefcase mr-3"></i>Encomiendas</a>
                     <a href="U03-Vender.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-cart mr-3 lead"></i>Venta Pasaje</a>
-                    <a href="#" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-person mr-3 lead"></i>Perfil</a>
-                                
+                    <a href="#" onclick="editarCuenta(<%=p.getCuenta_id() %>)" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-person mr-3 lead"></i>Perfil</a>
+                    <%System.out.println(p.getCuenta_id()); %>
                 </div>
             </div>
             <div class="w-100">
@@ -59,7 +64,7 @@
                         <ul class="navbar-nav ml-auto">                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../Imagenes/admin.svg" class="img-fluid rounded-circle avatar mr-2" > <%=usuario %>
+                                    <img src="../Imagenes/admin.svg" class="img-fluid rounded-circle avatar mr-2" > <%=usuario%>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Perfil</a>
@@ -70,5 +75,13 @@
                         </ul>
                     </div>
                 </nav>
-                
-</html>
+                <script>
+                    function editarCuenta(val) {
+                        $.post("U03-editPerfil.jsp", {val: val})
+                                .done(function (data) {
+                                    $('#contenido').html(data);
+//                console.log(data);
+                                });
+                    }
+                </script>  
+                </html>
