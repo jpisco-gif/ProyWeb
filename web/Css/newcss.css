@@ -67,7 +67,20 @@
     justify-content: center;
 }
 .ver-asientos{
-    background-color: white;
+    position: relative;
+    z-index: 1000;
+}
+.ver-asientos::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -500;
+    opacity: 0.5;
+    background-color: #ef6603;
+    box-shadow: 5px 5px 5px black;
 }
 .ver-asientos h3{
     text-align: center;
@@ -124,13 +137,26 @@
 
 .muestra-form form{
     margin: 0 auto;
+    margin-bottom: 0;
 }
 .ingresar-datos{
     color: white;
-    padding: 10px 0;
     z-index: 1000;
-	width: 100%;
-
+    width: 100%;
+    position: relative;
+    
+}
+.ingresar-datos::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -500;
+    opacity: 0.5;
+    background-color: #ef6603;
+    box-shadow: 5px 5px 5px black;
 }
 .ingresar-datos-ruta{
     margin-top: 5em;
@@ -161,6 +187,9 @@
     display: flex;
     align-items: center;
     
+}
+.submit-ingresarDatos{
+    margin-bottom: 3.8em;
 }
 .tabla{
     color: white;
@@ -196,6 +225,10 @@ td{
 #contenido2{
     width: 50%;
 }
+#contenido3{
+    width: 40%;
+    margin: 0 auto;
+}
 #contenido4{
     margin: 0 auto;
     position: relative;
@@ -207,6 +240,13 @@ td{
 .msj-pagarPasaje{
     text-align: center;
     color: white;
+    margin: 0;
+}
+.msj-ingresarDatos{
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 52px 0;
 }
 .submit-pagarPasaje{
     text-align: center;

@@ -1,8 +1,10 @@
 <%@page import="java.util.ArrayList"%>
 <%
     int cuenta_id = 0;
+    int rol_id = 0;
     try {
             cuenta_id = (Integer) session.getAttribute("cuenta_id");
+            rol_id = (Integer) session.getAttribute("rol_id");
         } catch (Exception e) {
             response.sendRedirect("U04-login.jsp");
         }
@@ -93,6 +95,7 @@
                     </div>
 
                     <div class="itemss">
+                        <input type="hidden" name="rol_id" value="<%=rol_id%>">
                         <input type="hidden" name="accion" value="consultar-rutas">
                         <input type="submit" name="submit" value="Buscar" class="btn-buscar">
                     </div>

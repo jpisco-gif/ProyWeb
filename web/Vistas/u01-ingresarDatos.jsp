@@ -18,11 +18,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../js/U01-venta-validar.js"></script>
+        <link rel="stylesheet" href="../Css/newcss.css">
         <title>JSP Page</title>
     </head>
     <body>
         <section class="ingresar-datos">
-            <p>Ingrese sus datos</p>
+            <h3 class="msj-ingresarDatos">Ingrese sus datos</h3>
             <div class="muestra-form">
                 <form action="../U01_Controlador" method="post" onsubmit="return validar();">
   
@@ -106,7 +107,7 @@
                                 <input type='hidden' name='rol_id' value='<%=rol_id%>'>
                     </table>
                     <div class="submit">
-                        <p>
+                        <p class="submit-ingresarDatos">
                             <input type="submit" name="accion" value="Agregar">
                         </p>
                     </div>
