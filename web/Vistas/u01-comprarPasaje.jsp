@@ -215,11 +215,12 @@
                 <%}%>
             </table>
             <div>
-                <form action="../U01_Controlador" method="post">
+                <!--<form action="../U01_Controlador" method="post">
                     <input type="hidden" name="cuenta_id" value="<%=cuenta_id%>">
                     <input type="hidden" name="accion" value="pagar-pasajes">
                     <input type="submit" name="submit" value="Pagar" class="pagar">
-                </form>
+                </form>-->
+                <a href="#" onclick="pagarPasaje()"><input type="button" value="Pagar"></a>
             </div>
         </section>
         <%}%>
@@ -227,6 +228,9 @@
             
         </section>
         <section id='contenido3' class="contenido3">
+            
+        </section>
+        <section id='contenido4' class="contenido4">
             
         </section>
         
@@ -252,6 +256,13 @@
             $.post("u01-editarDatos.jsp", {val:val, val2:val2, val3:val3, val4:val4, val5:val5, val6:val6, val7:val7, val8:val8})
                     .done(function (data) {
                         $('#contenido3').html(data);
+//                console.log(data);
+                    });
+        }
+        function pagarPasaje(){
+            $.post("u01-pagarPasaje.jsp", {})
+                    .done(function (data) {
+                        $('#contenido4').html(data);
 //                console.log(data);
                     });
         }

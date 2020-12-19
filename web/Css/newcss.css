@@ -196,6 +196,21 @@ td{
 #contenido2{
     width: 50%;
 }
+#contenido4{
+    margin: 0 auto;
+    position: relative;
+}
+.form-pagarPasaje{
+    display: flex;
+    justify-content: center;
+}
+.msj-pagarPasaje{
+    text-align: center;
+    color: white;
+}
+.submit-pagarPasaje{
+    text-align: center;
+}
 .pagar{
     margin: 1em 0;
 }
