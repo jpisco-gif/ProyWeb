@@ -16,7 +16,7 @@
     <body>
        <% 
        U05_AdmiDao dao=new U05_AdmiDao();
-       int cuenta_id=Integer.parseInt(request.getParameter("val"));
+       int cuenta_id=Integer.parseInt(request.getParameter("cuenta_id"));
        U05_Admi p=(U05_Admi)dao.list(cuenta_id);
        %>
        

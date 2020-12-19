@@ -51,7 +51,8 @@
                     <a href="U02-Rutas.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-pin mr-3"></i>Rutas</a> 
                     <a href="U03A-listarEn.jsp" class="d-block text-light p-5 font-weight-bold"> <i class="icon ion-md-briefcase mr-3"></i>Encomiendas</a>
                     <a href="U03-Vender.jsp" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-cart mr-3 lead"></i>Venta Pasaje</a>
-                    <a href="#" onclick="editarCuenta(<%=p.getCuenta_id() %>)" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-person mr-3 lead"></i>Perfil</a>
+                    <!--<a href="#" onclick="editarCuenta(<%=cuenta_id%>)" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-person mr-3 lead"></i>Perfil</a>-->
+                    <a href="U03-editPerfil.jsp?cuenta_id=<%=cuenta_id%>" class="d-block text-light p-5 font-weight-bold"><i class="icon ion-md-person mr-3 lead"></i>Perfil</a>
                     <%System.out.println(p.getCuenta_id()); %>
                 </div>
             </div>
@@ -75,6 +76,7 @@
                         </ul>
                     </div>
                 </nav>
+                
                 <script>
                     function editarCuenta(val) {
                         $.post("U03-editPerfil.jsp", {val: val})
