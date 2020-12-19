@@ -15,6 +15,7 @@ import Interfaces.U03A_CRUDEncomienda;
 import Modelo.U03A_Encomienda;
 import Modelo.U03_VentasEnDia;
 import Modelo.U03_VentasEnco;
+import Modelo.U03_VentasUltEn;
 
 /**
  *
@@ -29,6 +30,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda {
     U03A_Encomienda en = new U03A_Encomienda();
     U03_VentasEnco venc=new U03_VentasEnco();
     U03_VentasEnDia ven = new U03_VentasEnDia();
+    U03_VentasUltEn venul=new U03_VentasUltEn();
 
     @Override
     public List listar() {
@@ -161,7 +163,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda {
         try {
             cn = con.getConnection();
             ps = cn.prepareStatement(sql);
-            ps.executeQuery();
+            rs=ps.executeQuery();
             while (rs.next()) {
                 U03_VentasEnDia ven = new U03_VentasEnDia();
                 ven.setDias(rs.getString("dia"));
@@ -171,6 +173,26 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda {
         } catch (Exception e) {
         }
         return list;
+    }
+
+    @Override
+    public List listarUlt() {
+        ArrayList<U03_VentasUltEn> listu = new ArrayList<>();
+        String sql = "SELECT Peso,Monto,ciudad FROM encomiendas AS a INNER JOIN terminales AS b on a.lugar_recojo=b.terminal_id WHERE Fecha=date(NOW()) ORDER by id DESC LIMIT 7";
+        try {
+            cn = con.getConnection();
+            ps = cn.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {
+                U03_VentasUltEn venul = new U03_VentasUltEn();
+                venul.setPeso(rs.getInt("Peso"));
+                venul.setCiudad(rs.getString("ciudad"));
+                venul.setMonto(rs.getInt("Monto"));
+                listu.add(venul);
+            }
+        } catch (Exception e) {
+        }
+        return listu;
     }
 
     

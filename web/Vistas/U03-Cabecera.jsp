@@ -55,10 +55,6 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <form class="form-inline position-relative my-2 d-inline-block">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn btn-search position-absolute" type="submit" ><i class="icon ion-md-search"></i></button>
-                    </form>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">                            
                             <li class="nav-item dropdown">
@@ -66,8 +62,7 @@
                                     <img src="../Imagenes/admin.svg" class="img-fluid rounded-circle avatar mr-2" > <%=usuario %>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Perfil</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="../U01_Controlador?accion=logout&cuenta_id=<%=cuenta_id%>&log_id=<%=log_id%>">Cerrar Sesion</a>
                                 </div>

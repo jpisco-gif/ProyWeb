@@ -20,4 +20,5 @@ public interface U03A_CRUDEncomienda {
     public boolean delete(int id);
     public List listarMes();
     public List listarDia();
+    public List listarUlt();
 }
