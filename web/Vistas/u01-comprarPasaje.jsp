@@ -108,20 +108,20 @@
         %>              
         <section class="info-rutas">
             <h3>Horarios disponibles</h3>
-            <table class="tabla">
+            <table class="w3-card-4 w3-centered" id="customers" border="1">
                 <tr class="cabecera-tabla">
 <!--                    <td>Cod. itinerario</td>
                     <td>id origen</td>
                     <td>id destino</td>-->
-                    <td>Origen</td>
-                    <td>Destino</td>
+                    <td class="cabecera-tablahist">Origen</td>
+                    <td class="cabecera-tablahist">Destino</td>
 <!--                    <td>P. embarque</td>
                     <td>P. llegada</td>-->
-                    <td>Duración</td>
-                    <td>Fecha</td>
-                    <td>Hora de salida</td>
-                    <td>Precio</td>
-                    <td>Asientos</td>
+                    <td class="cabecera-tablahist">Duración</td>
+                    <td class="cabecera-tablahist">Fecha</td>
+                    <td class="cabecera-tablahist">Hora de salida</td>
+                    <td class="cabecera-tablahist">Precio</td>
+                    <td class="cabecera-tablahist">Asientos</td>
                 </tr>
                 <%
                     //U01_RutasDao dao = new U01_RutasDao();
@@ -171,17 +171,18 @@
         %>
         <section class="info-rutas">
             <h3>Sus viajes pendientes</h3>
-            <table border="1">
+            <table class="w3-card-4 w3-centered" id="customers" border="1">
                 <tr>
-                    <td>persona id</td>
-                    <td>Nombres</td>
-                    <td>Apellido paterno</td>
-                    <td>Apellido materno</td>
-                    <td>Nro. documento</td>
-                    <td>Nro. asiento</td>
-                    <td>Precio</td>
-                    <td></td>
-                    <td></td>
+                    <td class="cabecera-tablahist">Persona Id</td>
+                    <td class="cabecera-tablahist">Nombres</td>
+                    <td class="cabecera-tablahist">Apellido paterno</td>
+                    <td class="cabecera-tablahist">Apellido materno</td>
+                    <td class="cabecera-tablahist">Nro. documento</td>
+                    <td class="cabecera-tablahist">Nro. asiento</td>
+                    <td class="cabecera-tablahist">Precio</td>
+                    <td class="cabecera-tablahist"></td>
+                    <td class="cabecera-tablahist"></td>
+                    
 
                 </tr>
                 <%
@@ -207,7 +208,7 @@
                     <input type="hidden" name="itinerario_id" value="<%=comp.getItinerario_id()%>">
                     <input type="hidden" name="num_asiento" value="<%=comp.getNum_asiento()%>">   
                     <td>
-                        <input type="submit" name="submit" value="eliminar">    
+                        <input type="submit" name="submit" value="Eliminar">    
                     </td>
                 </form>
                 <td>
