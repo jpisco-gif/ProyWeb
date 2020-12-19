@@ -56,8 +56,7 @@
                         </div>
                         </div>
                     
-                    <a href="#" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-person mr-2 lead"></i>Perfil</a>
-                    <a href="#" class="d-block text-light p-3 font-weight-bold">Tablero</a>                     
+                    <a href="#" class="d-block text-light p-3 font-weight-bold"><i class="icon ion-md-person mr-2 lead"></i>Perfil</a>              
                 </div>
             </div>
             <div class="w-100">
