@@ -34,7 +34,7 @@
                             <table border="1">
                                 <tbody>
                                     <tr>
-                                        <td width="100"><a href="U05-G-index.jsp">  <img src="../Imagenes/logo2.svg" width="250"></a><br> Empresa de transporte interprovincial Llama Bus</td>                        
+                                        <td width="100"> <img src="../Imagenes/logo2.svg" width="250"></a><br> Empresa de transporte interprovincial Llama Bus</td>                        
                                         <td width="100"></td>
                                         <td>BOLETA DE VENTA ELECTRONICA<br>
                                             RUC: 12345678958<br>                            

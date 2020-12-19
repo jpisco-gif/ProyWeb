@@ -54,8 +54,8 @@
                                     <tbody>
                                         <tr>
                                             <td><%=per.getRuta()%></td>
-                                            <td><%=per.getEmbarque()%></td>
-                                            <td><%=per.getLlegada()%></td>
+                                            <td><%=per.getNomEmbarque()%></td>
+                                            <td><%=per.getNomLlegada()%></td>
                                             <td>S/. <%=per.getCosto()%></td>
                                             <td><%=per.getDuracion()%> horas</td>
                                             <td><%=per.getDescripcion()%></td>

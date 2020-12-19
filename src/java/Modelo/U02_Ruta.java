@@ -7,8 +7,10 @@ package Modelo;
  */
 public class U02_Ruta {
     int ruta ;
-    int embarque ; 
+    int embarque ;
+    String nomEmbarque;
     int llegada ; 
+    String nomLlegada;
     double costo ; 
     int duracion ; 
     String descripcion ;
@@ -16,7 +18,12 @@ public class U02_Ruta {
     public U02_Ruta() {
     }
 
-    public U02_Ruta(  double costo, int duracion, String descripcion) {
+    public U02_Ruta(int ruta, int embarque, String nomEmbarque, int llegada, String nomLlegada, double costo, int duracion, String descripcion) {
+        this.ruta = ruta;
+        this.embarque = embarque;
+        this.nomEmbarque = nomEmbarque;
+        this.llegada = llegada;
+        this.nomLlegada = nomLlegada;
         this.costo = costo;
         this.duracion = duracion;
         this.descripcion = descripcion;
@@ -38,12 +45,28 @@ public class U02_Ruta {
         this.embarque = embarque;
     }
 
+    public String getNomEmbarque() {
+        return nomEmbarque;
+    }
+
+    public void setNomEmbarque(String nomEmbarque) {
+        this.nomEmbarque = nomEmbarque;
+    }
+
     public int getLlegada() {
         return llegada;
     }
 
     public void setLlegada(int llegada) {
         this.llegada = llegada;
+    }
+
+    public String getNomLlegada() {
+        return nomLlegada;
+    }
+
+    public void setNomLlegada(String nomLlegada) {
+        this.nomLlegada = nomLlegada;
     }
 
     public double getCosto() {
@@ -70,8 +93,5 @@ public class U02_Ruta {
         this.descripcion = descripcion;
     }
 
-    public void setCosto(String costo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
 }
