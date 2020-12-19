@@ -17,14 +17,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <script src="../js/U01-venta-validar.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
         <section class="ingresar-datos">
             <p>Ingrese sus datos</p>
             <div class="muestra-form">
-                <form action="../U01_Controlador" method="post">
+                <form action="../U01_Controlador" method="post" onsubmit="return validar();">
   
                     <table class="formulario">
                         <tr>

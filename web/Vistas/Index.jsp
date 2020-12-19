@@ -37,7 +37,7 @@
         <link rel="stylesheet" media="screen" href="../Css/sequencejs.css">
         <link href="../Css/style.css" rel="stylesheet">
         <link href="../color/default.css" rel="stylesheet">
-        
+        <script src="../js/U01-ruta-validar.js"></script>
 
 
 
@@ -102,10 +102,10 @@
                         List<U01_Ruta> list3 = dao3.terminales();
 
                     %>
-                    <form method="post" action="../U01_Controlador" class="formulario-index"> 
+                    <form method="post" action="../U01_Controlador" class="formulario-index" onsubmit="return validar1();"> 
                         <div class="">
                             <label>Origen</label>
-                            <select name="origen" class="ruta">
+                            <select name="origen" id="origen" class="ruta" >
                                 <option value="">Origen</option>
                                 <%                                
                                     Iterator<U01_Ruta> iter_origen = list3.iterator();
@@ -120,7 +120,7 @@
                         </div>
                         <div class="">
                             <label>Destino</label>
-                            <select name="destino" class="ruta">
+                            <select name="destino" id="destino" class="ruta">
                                 <option value="">Destino</option>
                                 <%
                                     Iterator<U01_Ruta> iter_destino = list3.iterator();
@@ -135,7 +135,7 @@
                         </div>
                         <div class="">
                             <label>Fecha</label>
-                            <input type="date" name="fecha">
+                            <input type="date" name="fecha" id="fecha">
                         </div>
 
                         <div class="">

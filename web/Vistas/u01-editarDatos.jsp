@@ -16,13 +16,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../Css/newcss.css">
+        <script src="../js/U01-venta-validar.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
         <section class="ingresar-datos">
             <h3>Ingrese sus datos</h3>
             <div class="muestra-form">
-                <form action="../U01_Controlador" method="post">
+                <form action="../U01_Controlador" method="post" onsubmit="return validar();">
                     <table class="formulario">
                         <tr>
                             <td class="izq">Tipo de documento: </td>
@@ -92,7 +93,7 @@
                                 <label for="telef">Telefono</label>
                             </td>
                             <td>
-                                <input type="tel" class="input" value="<%=telefono%>" name="telef">
+                                <input type="tel" class="input" value="<%=telefono%>" name="telef" id="telef">
                                 <input type="hidden" name="accion" value="editarDatos">
                                 <input type="hidden" name="usuario_id" value="<%=usuario_id%>">
                             </td>

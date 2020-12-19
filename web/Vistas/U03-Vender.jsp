@@ -23,6 +23,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <script type="text/javascript" src="../js/jquery.js"></script>
+        <script src="../js/U01-ruta-validar.js"></script>
         <link rel="stylesheet" href="../Css/newcss.css">
     </head>
     <body>
@@ -36,10 +37,10 @@
                     List<U01_Ruta> list3 = dao3.terminales();
 
                 %>
-                <form method="post" action="../U01_Controlador" class="labels-formulario">
+                <form method="post" action="../U01_Controlador" class="labels-formulario" onsubmit="return validar1();" >
                     <div class="itemss">
                         <label>Origen</label>
-                        <select name="origen">
+                        <select name="origen" id="origen">
                             <option value=''>Seleccione</option>
 
                             <%
@@ -59,7 +60,7 @@
                     </div>
                     <div class="itemss">
                         <label>Destino</label>
-                        <select name="destino">
+                        <select name="destino" id="destino">
                             <option value=''>Seleccione</option>
                             <%
                                 String aux2 = "";
@@ -81,7 +82,7 @@
                     </div>
                     <div class="itemss">
                         <label>Fecha</label>
-                        <input type="date" name="fecha" value=''>
+                        <input type="date" name="fecha" id="fecha" value=''>
                     </div>
 
                     <div class="itemss">
@@ -214,12 +215,14 @@
                 </tr>
                 <%}%>
             </table>
-            <div>
+                <div>
+                    <!--
                 <form action="../U01_Controlador" method="post">
                     <input type="hidden" name="cuenta_id" value="<%=cuenta_id%>">
                     <input type="hidden" name="accion" value="pagar-pasajes">
                     <input type="submit" name="submit" value="Pagar" class="pagar">
-                </form>
+                </form>-->
+                <a href="#" onclick="pagarPasaje()"><input type="button" value="Pagar"></a>
             </div>
         </section>
         <%}%>
@@ -252,6 +255,13 @@
             $.post("u01-editarDatos.jsp", {val:val, val2:val2, val3:val3, val4:val4, val5:val5, val6:val6, val7:val7, val8:val8})
                     .done(function (data) {
                         $('#contenido3').html(data);
+//                console.log(data);
+                    });
+        }
+        function pagarPasaje(){
+            $.post("u01-pagarPasaje.jsp", {})
+                    .done(function (data) {
+                        $('#contenido4').html(data);
 //                console.log(data);
                     });
         }

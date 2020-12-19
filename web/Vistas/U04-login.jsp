@@ -34,12 +34,6 @@
         <link href="../Css/style.css" rel="stylesheet">
         <link href="../color/default.css" rel="stylesheet">
 
-        <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
-        <link rel="shortcut icon" href="../Css/favicon.ico">
         <style>
             body{
                 background-image: url(../Imagenes/bg/bg-1.jpg);
@@ -56,21 +50,18 @@
             <div align="center">
                 <div class="login">
                     <div class="login-header">
-                        <h1>Iniciar Sesion</h1>
+                        <h1 class="name">Iniciar Sesion</h1>
                     </div>
                     <form action="../U01_Controlador" method="post">
-                        <div class="login-form">
-                            <label>Usuario:</label>
+                            <label class="name">Usuario:</label>
                             <input type="text" name="usuario" />
-                            <label>Contraseña:</label>
+                            <label class="name">Contraseña:</label>
                             <input type="password" name="contraseña" />  
                             <input type="hidden" name="accion" value="login"/><br>
                             <input type="submit" value="Ingresar" />
-                        </div>
-                        
                     </form>
                     <br>
-                    No tiene una cuenta... <a href="U04-registro.jsp">Registrarme</a>
+                    No tiene una cuenta... <a href="U04-registro.jsp" >Registrarme</a>
                 </div>
             </div>
     </body>
