@@ -10,33 +10,42 @@ package Modelo;
  * @author Javier Pisco
  */
 public class U03_VentasEnco {
-    String fechaE;
-    Float ventas;
+    String fechaA;
+    int enco;
+    int ventas;   
 
     public U03_VentasEnco() {
     }
 
-    public U03_VentasEnco(String fechaE, Float ventas) {
-        this.fechaE = fechaE;
+    public U03_VentasEnco(String fechaA, int enco, int ventas) {
+        this.fechaA = fechaA;
+        this.enco = enco;
         this.ventas = ventas;
     }
 
-    public String getFechaE() {
-        return fechaE;
+    public String getFechaA() {
+        return fechaA;
     }
 
-    public void setFechaE(String fechaE) {
-        this.fechaE = fechaE;
+    public void setFechaA(String fechaA) {
+        this.fechaA = fechaA;
     }
 
-    public Float getVentas() {
+    public int getEnco() {
+        return enco;
+    }
+
+    public void setEnco(int enco) {
+        this.enco = enco;
+    }
+
+    public int getVentas() {
         return ventas;
     }
 
-    public void setVentas(Float ventas) {
+    public void setVentas(int ventas) {
         this.ventas = ventas;
     }
 
-    
     
 }

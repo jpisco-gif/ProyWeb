@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Interfaces.U03A_CRUDEncomienda;
 import Modelo.U03A_Encomienda;
+import Modelo.U03_VentasEnDia;
 import Modelo.U03_VentasEnco;
 
 /**
@@ -26,6 +27,8 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda {
     PreparedStatement ps;
     ResultSet rs;
     U03A_Encomienda en = new U03A_Encomienda();
+    U03_VentasEnco venc=new U03_VentasEnco();
+    U03_VentasEnDia ven = new U03_VentasEnDia();
 
     @Override
     public List listar() {
@@ -130,8 +133,8 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda {
 
     @Override
     public List listarMes() {
-        ArrayList<U03_VentasEnco> list = new ArrayList<>();
-        String sql = "SELECT monthname(Fecha) As mes, sum(Monto) as ventas FROM encomiendas GROUP BY MONTHNAME(Fecha) ORDER by Fecha ASC";
+         ArrayList<U03_VentasEnco> list = new ArrayList<>();
+        String sql = "SELECT monthname(Fecha) As mes, sum(Monto) as ventas,COUNT(`id`) as enco from encomiendas WHERE Fecha BETWEEN (SELECT date_sub(date(now()), INTERVAL 2 month)) and (SELECT date(NOW())) GROUP by MONTHNAME(Fecha) ORDER by Fecha ASC";
 
         try {
             cn = con.getConnection();
@@ -139,9 +142,10 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda {
             ps.executeQuery();
             while (rs.next()) {
                 U03_VentasEnco venco = new U03_VentasEnco();
-                venco.setFechaE(rs.getString("mes"));
-                venco.setVentas(rs.getFloat("ventas"));
-
+                venco.setFechaA(rs.getString("mes"));
+                venco.setVentas(rs.getInt("ventas"));
+                venco.setEnco(rs.getInt("enco"));
+                list.add(venco);
             }
         } catch (Exception e) {
         }
@@ -152,21 +156,23 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda {
 
     @Override
     public List listarDia() {
-        ArrayList<U03_VentasEnco> list = new ArrayList<>();
+        ArrayList<U03_VentasEnDia> list = new ArrayList<>();
         String sql = "SELECT DAYname(Fecha) As dia, sum(Monto) as ventas from encomiendas WHERE Fecha BETWEEN (SELECT date_sub(date(now()), INTERVAL 3 day)) and (SELECT date(NOW())) GROUP by dayname(Fecha) ORDER by Fecha ASC";
         try {
             cn = con.getConnection();
             ps = cn.prepareStatement(sql);
             ps.executeQuery();
             while (rs.next()) {
-                U03_VentasEnco venco = new U03_VentasEnco();
-                venco.setVentas(rs.getFloat("ventas"));
-
+                U03_VentasEnDia ven = new U03_VentasEnDia();
+                ven.setDias(rs.getString("dia"));
+                ven.setVentasD(rs.getInt("ventas"));
+                list.add(ven);
             }
         } catch (Exception e) {
         }
         return list;
     }
+
     
  
 }
