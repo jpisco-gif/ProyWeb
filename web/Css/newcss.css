@@ -11,7 +11,7 @@
 }
 
 /*###################u01##########################*/
-/----------compra de pasajes----------*/
+/*----------compra de pasajes----------*/
 
 
 /*-------- seccion datos --------*/
@@ -232,7 +232,7 @@ td{
     justify-content: center;
     z-index: 1000;
     position: absolute;
-    bottom: 580px;
+    bottom: 560px;
     left: 400px;
 }
 .contendor-form{
@@ -339,6 +339,9 @@ a:hover {
   font-family:  sans-serif;
   cursor:pointer;
 } 
+.name{
+    color : #ffffff;
+}
 /*###################u05##########################*/
 
 /* Estilo de las tablas */
