@@ -165,6 +165,7 @@
         <%
             U01_ComprobanteDao dao2 = new U01_ComprobanteDao();
             List<U01_Comprobante> list2 = dao2.mostrar_pasaje(cuenta_id);
+            double total = 0;
             int aux4 = list2.size();
             if (aux4 != 0) {
         %>
@@ -178,6 +179,7 @@
                     <td>Apellido materno</td>
                     <td>Nro. documento</td>
                     <td>Nro. asiento</td>
+                    <td>Precio</td>
                     <td></td>
                     <td></td>
 
@@ -187,6 +189,7 @@
                     U01_Comprobante comp = null;
                     while (iter2.hasNext()) {
                         comp = iter2.next();
+                        total += comp.getPrecio();
                 %>
                 <tr>
                     <td><%=comp.getUsuario_id()%></td>
@@ -195,6 +198,7 @@
                     <td><%=comp.getApemat()%></td>
                     <td><%=comp.getNumdoc()%></td>
                     <td><%=comp.getNum_asiento()%></td>
+                    <td>S/. <%=comp.getPrecio()%></td>
 
                 <form action="../U01_Controlador" method="post">
                     <input type="hidden" name="accion" value="eliminar-pasaje">
@@ -213,6 +217,12 @@
 
                 </tr>
                 <%}%>
+                <tr>
+                    <td colspan="6">Total</td>
+                    <td>S/. <%=total%></td>
+                    <td colspan="2"><a href="#" onclick="pagarPasaje()"><input type="button" value="Pagar"></a></td>
+                        
+                </tr>
             </table>
             <div>
                 <!--<form action="../U01_Controlador" method="post">
@@ -220,7 +230,7 @@
                     <input type="hidden" name="accion" value="pagar-pasajes">
                     <input type="submit" name="submit" value="Pagar" class="pagar">
                 </form>-->
-                <a href="#" onclick="pagarPasaje()"><input type="button" value="Pagar"></a>
+                
             </div>
         </section>
         <%}%>

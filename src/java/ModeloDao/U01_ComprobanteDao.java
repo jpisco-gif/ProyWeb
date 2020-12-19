@@ -67,7 +67,7 @@ U01_Comprobante comp = new U01_Comprobante();
         ArrayList<U01_Comprobante> list = new ArrayList<>();
                 
         String sql = "select t1.persona_id, nombres, apellido_paterno, apellido_materno, sexo, telefono, edad, documento_id, cod_documento, \n"
-                + "t3.nom_asiento, t2.comprobante_id, t2.itinerario_id from personas t1 \n"
+                + "t3.nom_asiento, t2.comprobante_id, t2.itinerario_id,t2.monto from personas t1 \n"
                 + "inner join comprobantes t2 on t1.persona_id = t2.persona_id \n"
                 +"inner join asientos t3 on t2.asiento_id = t3.asiento_id\n"
                 + "where t2.cuenta_id = ? and t2.estado = ?";
@@ -90,6 +90,7 @@ U01_Comprobante comp = new U01_Comprobante();
                 comp.setNum_asiento(rs.getInt("t3.nom_asiento"));
                 comp.setComprobante_id(rs.getInt("t2.comprobante_id"));
                 comp.setItinerario_id(rs.getInt("t2.itinerario_id"));
+                comp.setPrecio(rs.getDouble("t2.monto"));
                 list.add(comp);
             }
         } catch (Exception e) {
