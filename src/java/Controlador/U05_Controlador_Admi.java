@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "U05_Controlador_Admi", urlPatterns = {"/U05_Controlador_Admi"})
 public class U05_Controlador_Admi extends HttpServlet {
-    
+    String in="Vistas/A_Index.jsp";
     String listar="Vistas/U05-G-cuentas.jsp";
     String add="Vistas/U05-G-A1.jsp";
     String add2="Vistas/U05-G-A2.jsp";
@@ -147,6 +147,27 @@ public class U05_Controlador_Admi extends HttpServlet {
      
        dao.edit(p);
        acceso=listar;
+       
+       }else if(accion.equalsIgnoreCase("ActualizarA")){
+          
+       String xCuenta_id=request.getParameter("txtCuenta_id");
+       int cuenta_id=Integer.parseInt(xCuenta_id);    
+           
+       String usuario=request.getParameter("txtUsuario");
+       String contraseña=request.getParameter("txtContrasena");
+       String email=request.getParameter("txtEmail");
+       
+       
+          
+       p.setCuenta_id(cuenta_id);
+       p.setUsuario(usuario);
+       p.setContraseña(contraseña);
+       p.setEmail(email);   
+       
+       
+     
+       dao.edit(p);
+       acceso=in;
        }
        
        else if(accion.equalsIgnoreCase("editar2")){

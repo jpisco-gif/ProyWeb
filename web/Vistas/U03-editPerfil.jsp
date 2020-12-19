@@ -14,6 +14,13 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="U03-Cabecera.jsp"></jsp:include>
+        <div id="content">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            
        <% 
        U05_AdmiDao dao=new U05_AdmiDao();
        int cuenta_id=Integer.parseInt(request.getParameter("cuenta_id"));
@@ -36,7 +43,7 @@
        
        
        
-       <div class="w3-padding-large" id="contenido">
+       <div class="w3-padding-large center-block" >
        <h1 class="w3-animate-right">Modificar Cuenta</h1><hr><br><br>    
        <form action="../U05_Controlador_Admi" onsubmit="return validar();">
            <table class="w3-card-4 w3-centered" id="customers"  border="1">
@@ -59,7 +66,7 @@
                         
                         
                         <tr>
-                            <td colspan="2"> <input type="submit" value="Actualizar" name="accion" /> </td>
+                            <td colspan="2"> <input type="submit" value="ActualizarA" name="accion" /> </td>
                         </tr>
                         
                     </tbody>
@@ -67,14 +74,23 @@
                         
                         <br><br>
                         
-                            <a href="U05-G-cuentas.jsp"><input type="button" value="Regresar"></a>
+                        <a href="A_Index.jsp"><input type="button" value="Regresar"></a>
        </form>
        </div> 
+                        </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+        </div>
     </body>
     
     <script>
           function regresar() {
-            $.post("U05-G-cuentas.jsp", {val: val})
+            $.post("A_Index.jsp", {val: val})
                     .done(function (data) {
                         $('#contenido').html(data);
 //                console.log(data);
