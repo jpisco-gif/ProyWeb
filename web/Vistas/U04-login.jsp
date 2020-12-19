@@ -46,9 +46,9 @@
         <header>
             <!-- start top -->
             <jsp:include page="U02-Menu.jsp"></jsp:include>
-
-            <div align="center">
-                <div class="login">
+        </header>
+            <div align="center" class="login">
+                <div>
                     <div class="login-header">
                         <h1 class="name">Iniciar Sesion</h1>
                     </div>
