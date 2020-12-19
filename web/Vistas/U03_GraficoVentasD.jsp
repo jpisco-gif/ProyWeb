@@ -33,21 +33,29 @@
                 DefaultCategoryDataset data=new DefaultCategoryDataset();
              
                     
-                U03A_EncomiendaDao dao=new U03A_EncomiendaDao();
+                /*U03A_EncomiendaDao dao=new U03A_EncomiendaDao();
                 List<U03_VentasEnDia> list=dao.listarDia();
                 Iterator<U03_VentasEnDia> iter=list.iterator();
-                U03_VentasEnDia per=null;
+                U03_VentasEnDia per=null;*/
+                U03A_EncomiendaDao daom = new U03A_EncomiendaDao();
+                List<U03_VentasEnco> list = daom.listarMes();
+                Iterator<U03_VentasEnco> iter = list.iterator();
+                U03_VentasEnco env = null;
                 while(iter.hasNext())
-                    {per=iter.next();}
+                    {
+                       %>
+                            mes = "<%= env.getFechaA()%>";
+                            ventas = "<%= env.getVentas()%>";
+                       
+                     
                     
-                    mes="julio";
-                    ventas=50;
-                   
  
                         
               
                     data.addValue(ventas,mes,"Administracion");
                   
+                      <%
+                    }
                     
                      
                  

@@ -56,26 +56,32 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-
+                                <%
+                                    U03A_EncomiendaDao daom = new U03A_EncomiendaDao();
+                                    List<U03_VentasEnco> list = daom.listarMes();
+                                    Iterator<U03_VentasEnco> iter = list.iterator();
+                                    U03_VentasEnco env = null;
+                                %>
                                 <table>
-                                    <thead> <tr>
-                                            <th>fsdf</th>
-                                            <th>fsdf</th>
-                                        </tr></thead> <%
-                                            U03A_EncomiendaDao daom = new U03A_EncomiendaDao();
-                                            List<U03_VentasEnDia> list = daom.listarMes();
-                                            Iterator<U03_VentasEnDia> iter = list.iterator();
-                                            U03_VentasEnDia env = null;
-                                            while (iter.hasNext()) {
-                                                env = iter.next();
+                                    <thead> 
+                                        <tr>
+                                            <th>Mes</th>
+                                            <th>Ventas</th>
+                                        </tr>
+                                    </thead> 
 
-                                        %>
-                                    <tbody><tr>
-                                            <td>
-                                                <%= env.getDias()%></td>
-                                            <td> <%= env.getVentasD()%></td> </tr>  
-                                            <%}%>
-                                    </tbody>
+                                    <%
+                                        while (iter.hasNext()) {
+                                            env = iter.next();
+
+                                    %>
+
+                                    <tr>
+                                        <td><%= env.getFechaA()%></td>
+                                        <td> <%= env.getVentas()%></td> 
+                                    </tr>  
+                                    <%}%>
+
                                 </table>
                                 <!-- <div class="col-lg-3  d-flex stat my-2">
                                      <div class="mx-auto">
@@ -181,6 +187,7 @@
 <script>
 
 </script>
+
 </body>
 </html>
 

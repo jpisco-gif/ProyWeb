@@ -139,7 +139,7 @@ public class U03A_EncomiendaDao implements U03A_CRUDEncomienda {
         try {
             cn = con.getConnection();
             ps = cn.prepareStatement(sql);
-            ps.executeQuery();
+            rs = ps.executeQuery();
             while (rs.next()) {
                 U03_VentasEnco venco = new U03_VentasEnco();
                 venco.setFechaA(rs.getString("mes"));
